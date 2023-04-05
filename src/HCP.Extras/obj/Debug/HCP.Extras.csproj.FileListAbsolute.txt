@@ -1,0 +1,6 @@
+C:\GitApps\healthcareplus\src\HCP.Extras\bin\Debug\HCP.Extras.dll
+C:\GitApps\healthcareplus\src\HCP.Extras\bin\Debug\HCP.Extras.pdb
+C:\GitApps\healthcareplus\src\HCP.Extras\obj\Debug\HCP.Extras.csproj.AssemblyReference.cache
+C:\GitApps\healthcareplus\src\HCP.Extras\obj\Debug\HCP.Extras.csproj.CoreCompileInputs.cache
+C:\GitApps\healthcareplus\src\HCP.Extras\obj\Debug\HCP.Extras.dll
+C:\GitApps\healthcareplus\src\HCP.Extras\obj\Debug\HCP.Extras.pdb
