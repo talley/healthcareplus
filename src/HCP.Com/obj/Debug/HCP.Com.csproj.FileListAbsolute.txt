@@ -1,10 +1,6 @@
+C:\GitApps\healthcareplus\src\HCP.Com\bin\Debug\HCP.Com.dll.config
 C:\GitApps\healthcareplus\src\HCP.Com\bin\Debug\HCP.Com.dll
 C:\GitApps\healthcareplus\src\HCP.Com\bin\Debug\HCP.Com.pdb
-C:\GitApps\healthcareplus\src\HCP.Com\obj\Debug\HCP.Com.csproj.AssemblyReference.cache
-C:\GitApps\healthcareplus\src\HCP.Com\obj\Debug\HCP.Com.csproj.CoreCompileInputs.cache
-C:\GitApps\healthcareplus\src\HCP.Com\obj\Debug\HCP.Com.dll
-C:\GitApps\healthcareplus\src\HCP.Com\obj\Debug\HCP.Com.pdb
-C:\GitApps\healthcareplus\src\HCP.Com\bin\Debug\HCP.Com.dll.config
 C:\GitApps\healthcareplus\src\HCP.Com\bin\Debug\BouncyCastle.Crypto.dll
 C:\GitApps\healthcareplus\src\HCP.Com\bin\Debug\KellermanSoftware.NET-Email-Validation.dll
 C:\GitApps\healthcareplus\src\HCP.Com\bin\Debug\MailKit.dll
@@ -27,4 +23,8 @@ C:\GitApps\healthcareplus\src\HCP.Com\bin\Debug\System.Memory.xml
 C:\GitApps\healthcareplus\src\HCP.Com\bin\Debug\System.Numerics.Vectors.xml
 C:\GitApps\healthcareplus\src\HCP.Com\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
 C:\GitApps\healthcareplus\src\HCP.Com\bin\Debug\System.Threading.Tasks.Extensions.xml
+C:\GitApps\healthcareplus\src\HCP.Com\obj\Debug\HCP.Com.csproj.AssemblyReference.cache
+C:\GitApps\healthcareplus\src\HCP.Com\obj\Debug\HCP.Com.csproj.CoreCompileInputs.cache
 C:\GitApps\healthcareplus\src\HCP.Com\obj\Debug\HCP.Com.csproj.CopyComplete
+C:\GitApps\healthcareplus\src\HCP.Com\obj\Debug\HCP.Com.dll
+C:\GitApps\healthcareplus\src\HCP.Com\obj\Debug\HCP.Com.pdb

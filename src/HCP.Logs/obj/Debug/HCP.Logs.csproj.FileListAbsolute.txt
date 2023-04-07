@@ -1,10 +1,6 @@
+C:\GitApps\healthcareplus\src\HCP.Logs\bin\Debug\HCP.Logs.dll.config
 C:\GitApps\healthcareplus\src\HCP.Logs\bin\Debug\HCP.Logs.dll
 C:\GitApps\healthcareplus\src\HCP.Logs\bin\Debug\HCP.Logs.pdb
-C:\GitApps\healthcareplus\src\HCP.Logs\obj\Debug\HCP.Logs.csproj.AssemblyReference.cache
-C:\GitApps\healthcareplus\src\HCP.Logs\obj\Debug\HCP.Logs.csproj.CoreCompileInputs.cache
-C:\GitApps\healthcareplus\src\HCP.Logs\obj\Debug\HCP.Logs.dll
-C:\GitApps\healthcareplus\src\HCP.Logs\obj\Debug\HCP.Logs.pdb
-C:\GitApps\healthcareplus\src\HCP.Logs\bin\Debug\HCP.Logs.dll.config
 C:\GitApps\healthcareplus\src\HCP.Logs\bin\Debug\log4net.dll
 C:\GitApps\healthcareplus\src\HCP.Logs\bin\Debug\Microsoft.Bcl.AsyncInterfaces.dll
 C:\GitApps\healthcareplus\src\HCP.Logs\bin\Debug\Microsoft.Extensions.DependencyInjection.Abstractions.dll
@@ -39,4 +35,8 @@ C:\GitApps\healthcareplus\src\HCP.Logs\bin\Debug\System.Numerics.Vectors.xml
 C:\GitApps\healthcareplus\src\HCP.Logs\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
 C:\GitApps\healthcareplus\src\HCP.Logs\bin\Debug\System.Threading.Tasks.Extensions.xml
 C:\GitApps\healthcareplus\src\HCP.Logs\bin\Debug\System.ValueTuple.xml
+C:\GitApps\healthcareplus\src\HCP.Logs\obj\Debug\HCP.Logs.csproj.AssemblyReference.cache
+C:\GitApps\healthcareplus\src\HCP.Logs\obj\Debug\HCP.Logs.csproj.CoreCompileInputs.cache
 C:\GitApps\healthcareplus\src\HCP.Logs\obj\Debug\HCP.Logs.csproj.CopyComplete
+C:\GitApps\healthcareplus\src\HCP.Logs\obj\Debug\HCP.Logs.dll
+C:\GitApps\healthcareplus\src\HCP.Logs\obj\Debug\HCP.Logs.pdb

@@ -309,10 +309,8 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\HCP.Dao\HCP.Dao.csproj">
-      <Project>{a8e19d18-44df-4657-b81f-c52b0441085c}</Project>
-      <Name>HCP.Dao</Name>
-    </ProjectReference>
+    <Content Include="En\Notes.txt" />
+    <Content Include="Fr\Notes.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <ProjectExtensions>
