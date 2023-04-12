@@ -1,0 +1,1 @@
+﻿SELECT dbo.func_hash_password('Abibou')

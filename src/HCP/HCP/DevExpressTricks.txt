@@ -1,0 +1,41 @@
+﻿---change row color--
+  private void gridView1_RowStyle(object sender, RowStyleEventArgs e)
+        {
+            string statut = Convert.ToString(gridView1.GetRowCellValue(e.RowHandle, "Statut"));
+
+            if (statut =="InActif")
+            {
+                e.Appearance.BackColor = Color.Red;
+            }
+            else
+            {
+               // e.Appearance.BackColor = Color.LightGreen;
+            }
+
+            //Override any other formatting
+            e.HighPriority = true;
+        }
+
+        ---row click----------
+
+        Thank you for the detailed description.
+
+As described in our documentation:
+The GridView.RowClick event allows you to respond to clicking a row. The event will not fire when clicking on a row cell, if data editing is enabled and the  ColumnViewOptionsBehavior.EditorShowMode property is set to  MouseDown (and to  Default, if multiple row selection is disabled).
+
+As you set the Gridview.OptionBehaviour.Editable property to True, this event is not raised. To get a value from the currently selected row, handle the GridView.FocusedRowObjectChanged event and then use the e.Row property to get the actual row data.
+
+Should you have additional questions, let us know.
+
+public frAdminManageUsers(string email)
+        {
+            InitializeComponent();
+            _email = email;
+            gridView1.FocusedRowObjectChanged += GridView1_FocusedRowObjectChanged;
+        }
+
+        private void GridView1_FocusedRowObjectChanged(object sender, DevExpress.XtraGrid.Views.Base.FocusedRowObjectChangedEventArgs e)
+        {
+            var data = e.Row;
+
+        }

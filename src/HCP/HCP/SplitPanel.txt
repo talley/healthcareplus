@@ -1,0 +1,20 @@
+﻿ private  void ShowFormInPanel(RadForm frm, SplitPanel panel)
+        {
+            frm.TopLevel = false;
+            foreach (Control ctr in panel.Controls)
+            {
+                if (ctr != frm)
+                    ctr.Visible = false;
+            }
+            if (!panel.Controls.Contains(frm))
+            {
+                panel.Controls.Add(frm);
+                frm.FormBorderStyle = FormBorderStyle.None;
+                frm.Dock = DockStyle.Fill;
+                frm.Show();
+            }
+            else
+            {
+                frm.Visible = true;
+            }
+        }

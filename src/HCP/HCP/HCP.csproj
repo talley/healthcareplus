@@ -1,4 +1,5 @@
 ﻿<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\EntityFramework.6.4.4\build\EntityFramework.props" Condition="Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.props')" />
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
@@ -41,11 +42,29 @@
     <Reference Include="DevExpress.BonusSkins.v22.2" />
     <Reference Include="DevExpress.Data.Desktop.v22.2" />
     <Reference Include="DevExpress.Data.v22.2" />
+    <Reference Include="DevExpress.Images.v22.2, Version=22.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Office.v22.2.Core, Version=22.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Pdf.v22.2.Core, Version=22.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.RichEdit.v22.2.Core, Version=22.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.Utils.v22.2" />
     <Reference Include="DevExpress.Sparkline.v22.2.Core" />
+    <Reference Include="DevExpress.XtraBars.v22.2, Version=22.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.XtraEditors.v22.2" />
     <Reference Include="DevExpress.Printing.v22.2.Core" />
     <Reference Include="DevExpress.Drawing.v22.2" />
+    <Reference Include="DevExpress.XtraGrid.v22.2, Version=22.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraLayout.v22.2, Version=22.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraPrinting.v22.2, Version=22.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraRichEdit.v22.2, Version=22.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.4.4\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.4.4\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Infragistics4.Shared.v22.2, Version=22.2.20222.16, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb" />
+    <Reference Include="Infragistics4.Win.Misc.v22.2, Version=22.2.20222.16, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb, processorArchitecture=MSIL" />
+    <Reference Include="Infragistics4.Win.v22.2, Version=22.2.20222.16, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb" />
     <Reference Include="MediaFoundation, Version=3.1.0.32450, Culture=neutral, PublicKeyToken=36fa660e1d6ebf8d, processorArchitecture=MSIL">
       <HintPath>..\lib\RCWF\2023.1.117.48\MediaFoundation.dll</HintPath>
       <Private>True</Private>
@@ -105,6 +124,7 @@
     <Reference Include="System.Runtime.CompilerServices.Unsafe, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
       <HintPath>..\packages\System.Runtime.CompilerServices.Unsafe.6.0.0\lib\net461\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
     </Reference>
+    <Reference Include="System.Runtime.Serialization.Formatters.Soap" />
     <Reference Include="System.Text.Encodings.Web, Version=7.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
       <HintPath>..\packages\System.Text.Encodings.Web.7.0.0\lib\net462\System.Text.Encodings.Web.dll</HintPath>
     </Reference>
@@ -272,6 +292,8 @@
       <HintPath>..\lib\RCWF\2023.1.117.48\TelerikExport.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="UIAutomationProvider" />
+    <Reference Include="UIAutomationTypes" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Form1.cs">
@@ -280,11 +302,70 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="Fr\Admin\frAdminAddUser.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Fr\Admin\frAdminAddUser.Designer.cs">
+      <DependentUpon>frAdminAddUser.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Fr\Admin\frAdminDashBoard.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Fr\Admin\frAdminDashBoard.Designer.cs">
+      <DependentUpon>frAdminDashBoard.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Fr\Admin\frAdminDisableUser.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Fr\Admin\frAdminDisableUser.Designer.cs">
+      <DependentUpon>frAdminDisableUser.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Fr\Admin\frAdminEditUser.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Fr\Admin\frAdminEditUser.Designer.cs">
+      <DependentUpon>frAdminEditUser.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Fr\Admin\frAdminManageUsers.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Fr\Admin\frAdminManageUsers.Designer.cs">
+      <DependentUpon>frAdminManageUsers.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Fr\frLogin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Fr\frLogin.Designer.cs">
+      <DependentUpon>frLogin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Helpers\ApplicationHelper.cs" />
+    <Compile Include="Helpers\CommonHelpers.cs" />
+    <Compile Include="Helpers\DevExpressFrHelper.cs" />
+    <Compile Include="Helpers\PathsHelper.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Fr\Admin\frAdminAddUser.resx">
+      <DependentUpon>frAdminAddUser.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Fr\Admin\frAdminDashBoard.resx">
+      <DependentUpon>frAdminDashBoard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Fr\Admin\frAdminDisableUser.resx">
+      <DependentUpon>frAdminDisableUser.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Fr\Admin\frAdminEditUser.resx">
+      <DependentUpon>frAdminEditUser.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Fr\Admin\frAdminManageUsers.resx">
+      <DependentUpon>frAdminManageUsers.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Fr\frLogin.resx">
+      <DependentUpon>frLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\licenses.licx" />
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -309,8 +390,25 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="DevExpressTricks.txt" />
     <Content Include="En\Notes.txt" />
     <Content Include="Fr\Notes.txt" />
+    <Content Include="Images\x.gif" />
+    <Content Include="SplitPanel.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Fr\Sys\" />
+    <Folder Include="Fr\User\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\HCP.Fr.Dao\HCP.Fr.Dao.csproj">
+      <Project>{AE19CF4C-7448-4921-83E2-A2DFD710A39B}</Project>
+      <Name>HCP.Fr.Dao</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\HCP.Fr.DS\HCP.Fr.DS.csproj">
+      <Project>{D470AD77-9FAA-46DE-B734-A4438E35FF73}</Project>
+      <Name>HCP.Fr.DS</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <ProjectExtensions>
@@ -318,6 +416,14 @@
       <UserProperties ShouldAddDPIScalingManifest="True" />
     </VisualStudio>
   </ProjectExtensions>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\EntityFramework.6.4.4\build\EntityFramework.props'))" />
+    <Error Condition="!Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\EntityFramework.6.4.4\build\EntityFramework.targets'))" />
+  </Target>
+  <Import Project="..\packages\EntityFramework.6.4.4\build\EntityFramework.targets" Condition="Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.targets')" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
        Other similar extension points exist, see Microsoft.Common.targets.
   <Target Name="BeforeBuild">

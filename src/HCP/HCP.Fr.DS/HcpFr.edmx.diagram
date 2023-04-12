@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="339b4d19d1544f9693164843f31d36eb" Name="Diagram1">
+        <EntityTypeShape EntityType="HCPFRModel.PatientEmployers" Width="1.5" PointX="5.75" PointY="0.75" />
+        <EntityTypeShape EntityType="HCPFRModel.Patients" Width="1.5" PointX="2.75" PointY="5.75" />
+        <EntityTypeShape EntityType="HCPFRModel.Roles" Width="1.5" PointX="0.75" PointY="1.375" />
+        <EntityTypeShape EntityType="HCPFRModel.sécurité_ssn" Width="1.5" PointX="4.75" PointY="6.75" />
+        <EntityTypeShape EntityType="HCPFRModel.sysdiagrams" Width="1.5" PointX="6.75" PointY="6.75" />
+        <EntityTypeShape EntityType="HCPFRModel.SystemAccessLogs" Width="1.5" PointX="7.75" PointY="0.75" />
+        <EntityTypeShape EntityType="HCPFRModel.SystemConfigs" Width="1.5" PointX="8.75" PointY="4.75" />
+        <EntityTypeShape EntityType="HCPFRModel.Users" Width="1.5" PointX="3" PointY="1" />
+        <EntityTypeShape EntityType="HCPFRModel.UserStatuses" Width="1.5" PointX="0.75" PointY="5.5" />
+        <AssociationConnector Association="HCPFRModel.FK__Users__nom_role__4222D4EF" />
+        <AssociationConnector Association="HCPFRModel.FK__Users__Statut__4316F928" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

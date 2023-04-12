@@ -31,8 +31,17 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -41,7 +50,84 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Exts\UserExtensions.cs" />
+    <Compile Include="HcpFr.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>HcpFr.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="HcpFr.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>HcpFr.tt</DependentUpon>
+    </Compile>
+    <Compile Include="HcpFr.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>HcpFr.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="PatientEmployers.cs">
+      <DependentUpon>HcpFr.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Patients.cs">
+      <DependentUpon>HcpFr.tt</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Roles.cs">
+      <DependentUpon>HcpFr.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sp_helpdiagramdefinition_Result.cs">
+      <DependentUpon>HcpFr.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sp_helpdiagrams_Result.cs">
+      <DependentUpon>HcpFr.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sysdiagrams.cs">
+      <DependentUpon>HcpFr.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SystemAccessLogs.cs">
+      <DependentUpon>HcpFr.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SystemConfigs.cs">
+      <DependentUpon>HcpFr.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sécurité_ssn.cs">
+      <DependentUpon>HcpFr.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Users.cs">
+      <DependentUpon>HcpFr.tt</DependentUpon>
+    </Compile>
+    <Compile Include="UserStatuses.cs">
+      <DependentUpon>HcpFr.tt</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EntityDeploy Include="HcpFr.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>HcpFr.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.Config" />
+    <None Include="HcpFr.edmx.diagram">
+      <DependentUpon>HcpFr.edmx</DependentUpon>
+    </None>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="HcpFr.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>HcpFr.Context.cs</LastGenOutput>
+      <DependentUpon>HcpFr.edmx</DependentUpon>
+    </Content>
+    <Content Include="HcpFr.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>HcpFr.edmx</DependentUpon>
+      <LastGenOutput>HcpFr.cs</LastGenOutput>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
