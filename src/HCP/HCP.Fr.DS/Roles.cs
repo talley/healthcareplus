@@ -14,12 +14,6 @@ namespace HCP.Fr.DS
     
     public partial class Roles
     {
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public Roles()
-        {
-            this.Users = new HashSet<Users>();
-        }
-    
         public int Id { get; set; }
         public string nom_role { get; set; }
         public bool actif { get; set; }
@@ -28,8 +22,5 @@ namespace HCP.Fr.DS
         public string ajouter_par { get; set; }
         public string modifier_au { get; set; }
         public string modifier_par { get; set; }
-    
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Users> Users { get; set; }
     }
 }

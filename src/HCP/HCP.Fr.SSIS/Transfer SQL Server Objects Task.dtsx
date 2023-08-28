@@ -1,0 +1,158 @@
+﻿<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="7/3/2023 5:03:02 PM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="DESKTOP-3TNJ3HD"
+  DTS:CreatorName="DESKTOP-3TNJ3HD\Talley"
+  DTS:DTSID="{285EBB30-58BD-46C8-9953-80BAC8A2B443}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="16.0.5223.0"
+  DTS:LocaleID="1033"
+  DTS:ObjectName="Package1"
+  DTS:PackageType="5"
+  DTS:VersionBuild="2"
+  DTS:VersionGUID="{0792E999-7F66-4C5E-836D-4C3DF382BBFE}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[DESKTOP-3TNJ3HD\SQLEXPRESS2022]"
+      DTS:CreationName="SMOServer"
+      DTS:DTSID="{12FB85A6-B58D-4C44-A717-D6614AE78C77}"
+      DTS:ObjectName="DESKTOP-3TNJ3HD\SQLEXPRESS2022">
+      <DTS:ObjectData>
+        <SMOServerConnectionManager
+          ConnectionString="SqlServerName=DESKTOP-3TNJ3HD\SQLEXPRESS2022;UseWindowsAuthentication=True;UserName=;"
+          ConnectByProxy="False" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[localhost]"
+      DTS:CreationName="SMOServer"
+      DTS:DTSID="{92C48DCE-D0C4-4C28-A0E8-DE30690B4503}"
+      DTS:ObjectName="localhost">
+      <DTS:ObjectData>
+        <SMOServerConnectionManager
+          ConnectionString="SqlServerName=localhost;UseWindowsAuthentication=True;UserName=;"
+          ConnectByProxy="False" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:Variables />
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\Data Flow Task"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Data Flow Task"
+      DTS:DTSID="{3CDDDEA5-348C-4111-BC30-E99E07B619D5}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Data Flow Task"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Transfer SQL Server Objects Task"
+      DTS:CreationName="Microsoft.TransferSqlServerObjectsTask"
+      DTS:Description="Transfer SQL Server Objects Task"
+      DTS:DTSID="{0DFAE08E-95D1-46DE-8971-7CC01464D0F4}"
+      DTS:ExecutableType="Microsoft.TransferSqlServerObjectsTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Transfer SQL Server Objects Task"
+      DTS:TaskContact="Transfer Objects Task; Microsoft Corporation; SQL Server 2022; (c) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <TransferSqlServerObjectsTaskData
+          SourceConnection="{92C48DCE-D0C4-4C28-A0E8-DE30690B4503}"
+          DestinationConnection="{12FB85A6-B58D-4C44-A717-D6614AE78C77}"
+          SourceDatabase="HCP"
+          DestinationDatabase="HCP"
+          CopyAllObjects="True"
+          IncludeExtendedProperties="True"
+          CopyData="True"
+          CopyDatabaseUsers="True"
+          CopyDatabaseRoles="True"
+          CopySqlServerLogins="True"
+          CopyObjectLevelPermissions="True"
+          CopyIndexes="True"
+          CopyTriggers="True"
+          CopyFullTextIndexes="True"
+          CopyAllDRIObjects="True" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:PrecedenceConstraints>
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint]"
+      DTS:CreationName=""
+      DTS:DTSID="{48930BFE-885F-418D-8767-36ECE8D24244}"
+      DTS:From="Package\Data Flow Task"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint"
+      DTS:To="Package\Transfer SQL Server Objects Task" />
+  </DTS:PrecedenceConstraints>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="8">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="236.8,41.6"
+          Id="Package\Transfer SQL Server Objects Task"
+          TopLeft="253.571429111216,258.470588008735" />
+        <NodeLayout
+          Size="150.4,41.6"
+          Id="Package\Data Flow Task"
+          TopLeft="152.142857466729,100.176470500427" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint]"
+          TopLeft="227.342857466729,141.776470500427">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="144.628571644486,116.694117508308"
+              Start="0,0"
+              End="144.628571644486,109.194117508308">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,54.3470587541539" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,54.3470587541539"
+                    Point2="0,58.3470587541539"
+                    Point3="4,58.3470587541539" />
+                  <mssgle:LineSegment
+                    End="140.628571644486,58.3470587541539" />
+                  <mssgle:CubicBezierSegment
+                    Point1="140.628571644486,58.3470587541539"
+                    Point2="144.628571644486,58.3470587541539"
+                    Point3="144.628571644486,62.3470587541539" />
+                  <mssgle:LineSegment
+                    End="144.628571644486,109.194117508308" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>

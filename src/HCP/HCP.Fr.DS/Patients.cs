@@ -14,19 +14,37 @@ namespace HCP.Fr.DS
     
     public partial class Patients
     {
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public Patients()
+        {
+            this.PatientIdentities = new HashSet<PatientIdentities>();
+            this.Patients_Doctors_Relations = new HashSet<Patients_Doctors_Relations>();
+            this.Patients_Nurses_Relations = new HashSet<Patients_Nurses_Relations>();
+        }
+    
         public System.Guid Id { get; set; }
         public string ssn_ou_identité { get; set; }
+        public string numero_carte_identité { get; set; }
+        public string Identité_expiration { get; set; }
+        public string Identité_date_de_publication { get; set; }
+        public string adresse_carte_identité { get; set; }
         public string nom { get; set; }
         public string prénom { get; set; }
         public string deuxième_nom { get; set; }
         public string date_naissance { get; set; }
         public string raison_de_la_visite { get; set; }
+        public string taille { get; set; }
+        public string yeux { get; set; }
+        public string cheveux { get; set; }
         public string adresse { get; set; }
         public string appartement { get; set; }
         public string ville { get; set; }
         public string état_ou_région { get; set; }
         public string Pays { get; set; }
         public string boite_postale { get; set; }
+        public string genre { get; set; }
+        public string naissance { get; set; }
+        public string lieux_naissance { get; set; }
         public string téléphone { get; set; }
         public string fax { get; set; }
         public string email { get; set; }
@@ -35,10 +53,18 @@ namespace HCP.Fr.DS
         public string linkedin { get; set; }
         public string employeur { get; set; }
         public string notes { get; set; }
+        public string statut { get; set; }
         public string ajouter_au { get; set; }
         public string ajouter_par { get; set; }
         public string modifier_au { get; set; }
         public string modifier_par { get; set; }
         public string date_de_la_dernière_connexion { get; set; }
+    
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<PatientIdentities> PatientIdentities { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Patients_Doctors_Relations> Patients_Doctors_Relations { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Patients_Nurses_Relations> Patients_Nurses_Relations { get; set; }
     }
 }

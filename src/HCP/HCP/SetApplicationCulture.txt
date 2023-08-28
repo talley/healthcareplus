@@ -1,0 +1,10 @@
+﻿if (Thread.CurrentThread.CurrentCulture.Name != "fr-FR") {
+         // If current culture is not fr-FR, set culture to fr-FR.
+         Thread.CurrentThread.CurrentCulture = CultureInfo.CreateSpecificCulture("fr-FR");
+         Thread.CurrentThread.CurrentUICulture = CultureInfo.CreateSpecificCulture("fr-FR");
+      }
+      else {
+         // Set culture to en-US.
+         Thread.CurrentThread.CurrentCulture = CultureInfo.CreateSpecificCulture("en-US");
+         Thread.CurrentThread.CurrentUICulture = CultureInfo.CreateSpecificCulture("en-US");
+      }

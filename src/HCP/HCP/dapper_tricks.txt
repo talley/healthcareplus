@@ -1,0 +1,15 @@
+﻿How to Call a Stored Procedure Using Dapper in C#
+
+Now that we have created a stored procedure in SQL Server, we can call it using Dapper in C#. Here is an example of how to do this:
+
+using Dapper;
+using System.Data.SqlClient;
+
+string connectionString = "Data Source=SERVERNAME;Initial Catalog=DATABASENAME;Integrated Security=True;";
+int customerID = 1;
+
+using (SqlConnection connection = new SqlConnection(connectionString))
+{
+    var parameters = new { CustomerID = customerID };
+    var result = connection.Query<Customer>("GetCustomerByID", parameters, commandType: System.Data.CommandType.StoredProcedure);
+}

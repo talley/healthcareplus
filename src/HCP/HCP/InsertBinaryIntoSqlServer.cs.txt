@@ -1,0 +1,150 @@
+﻿using Microsoft.AspNetCore.Http;
+using Newtonsoft.Json;
+using System;
+using System.Collections.Generic;
+using System.Data.SqlClient;
+using System.IO;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using UploadExcelToSql.ViewModels;
+
+namespace UploadExcelToSql.Helpers
+{
+    public static class InsertBinaryIntoSqlServer
+    {
+        public static void InsertAnyFileDataIntoSqlServer1(IFormFile file, string constr, UserAttachmentsViewModel model)
+        {
+            // byte[] bytes = model.Attachment1;
+           // var bytes = ValidateBytes(model.Attachment1, model.Attachment2, model.Attachment3);
+            using (SqlConnection con = new SqlConnection(constr))
+            {
+                //con.Open();
+                var builder = new StringBuilder();
+                builder.Append("INSERT INTO UserAttachments(UserAttachmentsID,UserID,Attachment1,Attachment2,Attachment3,Attachment4,Attachment5,Attachment6,");
+                builder.Append(" ContentType,ContentDisposition,Length,Name,FileName,Headers) ");
+                builder.Append(" VALUES(@UserAttachmentsID,@UserID,@Attachment1,@Attachment2,@Attachment3,@Attachment4,@Attachment5,@Attachment6,");
+                builder.Append(" @ContentType,@ContentDisposition,@Length,@Name,@FileName,@Headers)");
+                using (SqlCommand cmd = new SqlCommand(builder.ToString()))
+                {
+                    cmd.Connection = con;
+                    cmd.Connection.Open();
+                    cmd.Parameters.AddWithValue("@UserAttachmentsID", Guid.NewGuid());
+                    cmd.Parameters.AddWithValue("@UserID", model.Id);
+                    cmd.Parameters.AddWithValue("@Attachment1", ByteValidatator(model.Attachment1));
+                    //cmd.Parameters.AddWithValue("@Attachment2", Array.Empty<byte>());
+                    cmd.Parameters.AddWithValue("@Attachment2", ByteValidatator(model.Attachment2));
+                    cmd.Parameters.AddWithValue("@Attachment3", ByteValidatator(model.Attachment3));
+                    cmd.Parameters.AddWithValue("@Attachment4", StringValidator(model.Attachment4));
+                    cmd.Parameters.AddWithValue("@Attachment5", StringValidator(model.Attachment5));
+                    cmd.Parameters.AddWithValue("@Attachment6", StringValidator(model.Attachment6));
+                    cmd.Parameters.AddWithValue("@ContentType", file.ContentType);
+                    cmd.Parameters.AddWithValue("@ContentDisposition", file.ContentDisposition);
+                    cmd.Parameters.AddWithValue("@Length", file.Length);
+                    cmd.Parameters.AddWithValue("@Name", file.Name);
+                    cmd.Parameters.AddWithValue("@FileName", file.FileName);
+                    cmd.Parameters.AddWithValue("@Headers", JsonConvert.SerializeObject(file.Headers));
+                    cmd.ExecuteNonQuery();
+                    con.Close();
+                }
+            }
+        }
+        public static void InsertAnyFileDataIntoSqlServer2(IFormFile file, string constr, UserAttachmentsViewModel2 model)
+        {
+            using (SqlConnection con = new SqlConnection(constr))
+            {
+                var builder = new StringBuilder();
+                builder.Append("INSERT INTO UserAttachments2(UserAttachmentsID,UserID,Attachment,");
+                builder.Append(" ContentType,ContentDisposition,Length,Name,FileName,Headers) ");
+                builder.Append(" VALUES(@UserAttachmentsID,@UserID,@Attachment,");
+                builder.Append(" @ContentType,@ContentDisposition,@Length,@Name,@FileName,@Headers)");
+                using (SqlCommand cmd = new SqlCommand(builder.ToString()))
+                {
+                    cmd.Connection = con;
+                    cmd.Connection.Open();
+                    cmd.Parameters.AddWithValue("@UserAttachmentsID", Guid.NewGuid());
+                    cmd.Parameters.AddWithValue("@UserID", model.Id);
+                    cmd.Parameters.AddWithValue("@Attachment", ByteValidatator(model.Attachment));
+                    cmd.Parameters.AddWithValue("@ContentType", file.ContentType);
+                    cmd.Parameters.AddWithValue("@ContentDisposition", file.ContentDisposition);
+                    cmd.Parameters.AddWithValue("@Length", file.Length);
+                    cmd.Parameters.AddWithValue("@Name", file.Name);
+                    cmd.Parameters.AddWithValue("@FileName", file.FileName);
+                    cmd.Parameters.AddWithValue("@Headers", JsonConvert.SerializeObject(file.Headers));
+                    cmd.ExecuteNonQuery();
+                    con.Close();
+                }
+            }
+        }
+        public static string StringValidator(string s)
+        {
+            if(s!=null && s.Length>0)
+            {
+                return s;
+            }
+            return "";
+        }
+        public static byte[] ByteValidatator(byte[] b)
+        {
+            if(b==null)
+            {
+                return Array.Empty<byte>();
+            }
+            return b;
+        }
+        public static byte[] ValidateBytes(byte[] a1, byte[] a2,byte[] a3)
+        {
+            if(a1 != null && a2== null && a3== null)
+            {
+                return a1;
+            }
+            else if(a1 ==null && a2 != null && a3 == null)
+            {
+                return a2;
+
+            }
+            else if (a1 == null && a2 == null && a3 != null)
+            {
+                return a2;
+
+            }
+            return Array.Empty<byte>();
+        }
+            public static void InsertAnyFileDataIntoSqlServer(IFormFile file, string constr, UserAttachmentsViewModel model)
+        {
+            //long size = file.Sum(f => f.Length);
+            // full path to file in temp location
+            var filePath = Path.GetTempFileName();
+            var test = Path.GetTempPath();
+            file.OpenReadStream();
+            //using (var fs = new FileStream(filePath, FileMode.Open,FileAccess.Read))
+            using (var fs = File.Open(filePath,FileMode.Create))
+            {
+                //file.CopyTo(fs);
+                using (BinaryReader br = new BinaryReader(fs))
+                {
+                    byte[] bytes = br.ReadBytes((int)fs.Length);
+                    using (SqlConnection con = new SqlConnection(constr))
+                    {
+                       //con.Open();
+                        string query = "INSERT INTO UserAttachments(UserAttachmentsID,UserID,Attachment1) values (@UserAttachmentsID,@UserID,@Attachment1)";
+                        using (SqlCommand cmd = new SqlCommand(query))
+                        {
+                            cmd.Connection = con;
+                            cmd.Connection.Open();
+                            cmd.Parameters.AddWithValue("@UserAttachmentsID",Guid.NewGuid());
+                            cmd.Parameters.AddWithValue("@UserID", model.Id);
+                            cmd.Parameters.AddWithValue("@Attachment1", bytes);
+                            cmd.ExecuteNonQuery();
+                            con.Close();
+                        }
+                    }
+                    fs.Close();
+                    br.Close();
+
+                }
+            }
+        }
+
+    }
+}

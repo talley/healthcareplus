@@ -5,6 +5,111 @@
     <!-- SSDL content -->
     <edmx:StorageModels>
     <Schema Namespace="HCPFRModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Doctors">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Titre" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="Spécialité" Type="nvarchar" MaxLength="200" Nullable="false" />
+          <Property Name="Nom" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="Prénom" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="deuxième_nom" Type="nvarchar" MaxLength="100" />
+          <Property Name="date_naissance" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="adresse" Type="nvarchar" MaxLength="300" Nullable="false" />
+          <Property Name="appartement" Type="nvarchar" MaxLength="20" />
+          <Property Name="ville" Type="nvarchar" MaxLength="300" Nullable="false" />
+          <Property Name="état_ou_région" Type="nvarchar" MaxLength="300" />
+          <Property Name="Pays" Type="nvarchar" MaxLength="300" Nullable="false" />
+          <Property Name="boite_postale" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="téléphone" Type="nvarchar" MaxLength="20" Nullable="false" />
+          <Property Name="fax" Type="nvarchar" MaxLength="20" />
+          <Property Name="email" Type="nvarchar" MaxLength="200" Nullable="false" />
+          <Property Name="twitter" Type="nvarchar" MaxLength="200" />
+          <Property Name="whatsapp" Type="nvarchar" MaxLength="200" />
+          <Property Name="linkedin" Type="nvarchar" MaxLength="200" />
+          <Property Name="employeur" Type="nvarchar" MaxLength="200" />
+          <Property Name="notes" Type="nvarchar(max)" />
+          <Property Name="ajouter_au" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="ajouter_par" Type="nvarchar" MaxLength="200" Nullable="false" />
+          <Property Name="modifier_au" Type="nvarchar" MaxLength="100" />
+          <Property Name="modifier_par" Type="nvarchar" MaxLength="200" />
+          <Property Name="date_de_la_dernière_connexion" Type="nvarchar" MaxLength="200" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Genders">
+          <Key>
+            <PropertyRef Name="Genre" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Genre" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="description" Type="nvarchar" MaxLength="200" />
+          <Property Name="ajouter_au" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="ajouter_par" Type="nvarchar" MaxLength="200" Nullable="false" />
+          <Property Name="modifier_au" Type="nvarchar" MaxLength="100" />
+          <Property Name="modifier_par" Type="nvarchar" MaxLength="200" />
+        </EntityType>
+        <EntityType Name="IdentityTypes">
+          <Key>
+            <PropertyRef Name="Type" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Type" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="description" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="ajouter_au" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="ajouter_par" Type="nvarchar" MaxLength="200" Nullable="false" />
+          <Property Name="modifier_au" Type="nvarchar" MaxLength="100" />
+          <Property Name="modifier_par" Type="nvarchar" MaxLength="200" />
+        </EntityType>
+        <EntityType Name="Nurses">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Titre" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="Spécialité" Type="nvarchar" MaxLength="200" Nullable="false" />
+          <Property Name="Nom" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="Prénom" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="deuxième_nom" Type="nvarchar" MaxLength="100" />
+          <Property Name="date_naissance" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="adresse" Type="nvarchar" MaxLength="300" Nullable="false" />
+          <Property Name="appartement" Type="nvarchar" MaxLength="20" />
+          <Property Name="ville" Type="nvarchar" MaxLength="300" Nullable="false" />
+          <Property Name="état_ou_région" Type="nvarchar" MaxLength="300" />
+          <Property Name="Pays" Type="nvarchar" MaxLength="300" Nullable="false" />
+          <Property Name="boite_postale" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="téléphone" Type="nvarchar" MaxLength="20" Nullable="false" />
+          <Property Name="fax" Type="nvarchar" MaxLength="20" />
+          <Property Name="email" Type="nvarchar" MaxLength="200" Nullable="false" />
+          <Property Name="twitter" Type="nvarchar" MaxLength="200" />
+          <Property Name="whatsapp" Type="nvarchar" MaxLength="200" />
+          <Property Name="linkedin" Type="nvarchar" MaxLength="200" />
+          <Property Name="employeur" Type="nvarchar" MaxLength="200" />
+          <Property Name="notes" Type="nvarchar(max)" />
+          <Property Name="ajouter_au" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="ajouter_par" Type="nvarchar" MaxLength="200" Nullable="false" />
+          <Property Name="modifier_au" Type="nvarchar" MaxLength="100" />
+          <Property Name="modifier_par" Type="nvarchar" MaxLength="200" />
+          <Property Name="date_de_la_dernière_connexion" Type="nvarchar" MaxLength="200" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Patient_Addresses">
+          <Key>
+            <PropertyRef Name="PadId" />
+          </Key>
+          <Property Name="PadId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Id" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="adresse" Type="nvarchar" MaxLength="300" Nullable="false" />
+          <Property Name="appartement" Type="nvarchar" MaxLength="20" />
+          <Property Name="ville" Type="nvarchar" MaxLength="300" Nullable="false" />
+          <Property Name="état_ou_région" Type="nvarchar" MaxLength="300" />
+          <Property Name="Pays" Type="nvarchar" MaxLength="300" Nullable="false" />
+          <Property Name="boite_postale" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="téléphone" Type="nvarchar" MaxLength="20" Nullable="false" />
+          <Property Name="Notes" Type="nvarchar(max)" />
+          <Property Name="ajouter_au" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="ajouter_par" Type="nvarchar" MaxLength="200" Nullable="false" />
+          <Property Name="modifier_au" Type="nvarchar" MaxLength="100" />
+          <Property Name="modifier_par" Type="nvarchar" MaxLength="200" />
+        </EntityType>
         <EntityType Name="PatientEmployers">
           <Key>
             <PropertyRef Name="id" />
@@ -28,23 +133,50 @@
           <Property Name="modifier_par" Type="nvarchar" MaxLength="200" Nullable="false" />
           <Property Name="date_de_la_dernière_connexion" Type="nvarchar" MaxLength="200" Nullable="false" />
         </EntityType>
+        <EntityType Name="PatientIdentities">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Type" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="Fichier" Type="varbinary(max)" />
+          <Property Name="PatId" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="Taille" Type="varchar" MaxLength="20" />
+          <Property Name="longueur" Type="varchar" MaxLength="20" />
+          <Property Name="largeur" Type="varchar" MaxLength="20" />
+          <Property Name="ajouter_au" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="ajouter_par" Type="nvarchar" MaxLength="200" Nullable="false" />
+          <Property Name="modifier_au" Type="nvarchar" MaxLength="100" />
+          <Property Name="modifier_par" Type="nvarchar" MaxLength="200" />
+          <Property Name="Chemin_Du_Fichier" Type="nvarchar(max)" Nullable="false" />
+        </EntityType>
         <EntityType Name="Patients">
           <Key>
-            <PropertyRef Name="ssn_ou_identité" />
+            <PropertyRef Name="Id" />
           </Key>
           <Property Name="Id" Type="uniqueidentifier" Nullable="false" />
           <Property Name="ssn_ou_identité" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="numero_carte_identité" Type="nvarchar" MaxLength="50" />
+          <Property Name="Identité_expiration" Type="nvarchar" MaxLength="50" />
+          <Property Name="Identité_date_de_publication" Type="nvarchar" MaxLength="50" />
+          <Property Name="adresse_carte_identité" Type="nvarchar" MaxLength="100" />
           <Property Name="nom" Type="nvarchar" MaxLength="100" Nullable="false" />
           <Property Name="prénom" Type="nvarchar" MaxLength="100" Nullable="false" />
           <Property Name="deuxième_nom" Type="nvarchar" MaxLength="100" />
           <Property Name="date_naissance" Type="nvarchar" MaxLength="100" Nullable="false" />
           <Property Name="raison_de_la_visite" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="taille" Type="nvarchar" MaxLength="20" />
+          <Property Name="yeux" Type="nvarchar" MaxLength="50" />
+          <Property Name="cheveux" Type="nvarchar" MaxLength="50" />
           <Property Name="adresse" Type="nvarchar" MaxLength="300" Nullable="false" />
           <Property Name="appartement" Type="nvarchar" MaxLength="20" />
           <Property Name="ville" Type="nvarchar" MaxLength="300" Nullable="false" />
           <Property Name="état_ou_région" Type="nvarchar" MaxLength="300" />
           <Property Name="Pays" Type="nvarchar" MaxLength="300" Nullable="false" />
           <Property Name="boite_postale" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="genre" Type="nvarchar" MaxLength="50" />
+          <Property Name="naissance" Type="nvarchar" MaxLength="20" />
+          <Property Name="lieux_naissance" Type="nvarchar" MaxLength="50" />
           <Property Name="téléphone" Type="nvarchar" MaxLength="20" Nullable="false" />
           <Property Name="fax" Type="nvarchar" MaxLength="20" />
           <Property Name="email" Type="nvarchar" MaxLength="200" Nullable="false" />
@@ -53,11 +185,160 @@
           <Property Name="linkedin" Type="nvarchar" MaxLength="200" />
           <Property Name="employeur" Type="nvarchar" MaxLength="200" />
           <Property Name="notes" Type="nvarchar(max)" />
+          <Property Name="statut" Type="nchar" MaxLength="100" />
           <Property Name="ajouter_au" Type="nvarchar" MaxLength="100" Nullable="false" />
           <Property Name="ajouter_par" Type="nvarchar" MaxLength="200" Nullable="false" />
-          <Property Name="modifier_au" Type="nvarchar" MaxLength="100" Nullable="false" />
-          <Property Name="modifier_par" Type="nvarchar" MaxLength="200" Nullable="false" />
-          <Property Name="date_de_la_dernière_connexion" Type="nvarchar" MaxLength="200" Nullable="false" />
+          <Property Name="modifier_au" Type="nvarchar" MaxLength="100" />
+          <Property Name="modifier_par" Type="nvarchar" MaxLength="200" />
+          <Property Name="date_de_la_dernière_connexion" Type="nvarchar" MaxLength="200" />
+        </EntityType>
+        <EntityType Name="Patients_Doctors_Relations">
+          <Key>
+            <PropertyRef Name="Pid" />
+          </Key>
+          <Property Name="Pid" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Id" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="Spécialité" Type="nvarchar" MaxLength="200" Nullable="false" />
+          <Property Name="ssn_ou_identité" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="numero_carte_identité" Type="nvarchar" MaxLength="50" />
+          <Property Name="Identité_expiration" Type="nvarchar" MaxLength="50" />
+          <Property Name="Identité_date_de_publication" Type="nvarchar" MaxLength="50" />
+          <Property Name="adresse_carte_identité" Type="nvarchar" MaxLength="100" />
+          <Property Name="nom" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="prénom" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="deuxième_nom" Type="nvarchar" MaxLength="100" />
+          <Property Name="date_naissance" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="raison_de_la_visite" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="taille" Type="nvarchar" MaxLength="20" />
+          <Property Name="yeux" Type="nvarchar" MaxLength="50" />
+          <Property Name="cheveux" Type="nvarchar" MaxLength="50" />
+          <Property Name="adresse" Type="nvarchar" MaxLength="300" Nullable="false" />
+          <Property Name="appartement" Type="nvarchar" MaxLength="20" />
+          <Property Name="ville" Type="nvarchar" MaxLength="300" Nullable="false" />
+          <Property Name="état_ou_région" Type="nvarchar" MaxLength="300" />
+          <Property Name="Pays" Type="nvarchar" MaxLength="300" Nullable="false" />
+          <Property Name="boite_postale" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="genre" Type="nvarchar" MaxLength="50" />
+          <Property Name="naissance" Type="nvarchar" MaxLength="20" />
+          <Property Name="lieux_naissance" Type="nvarchar" MaxLength="50" />
+          <Property Name="téléphone" Type="nvarchar" MaxLength="20" Nullable="false" />
+          <Property Name="fax" Type="nvarchar" MaxLength="20" />
+          <Property Name="email" Type="nvarchar" MaxLength="200" Nullable="false" />
+          <Property Name="twitter" Type="nvarchar" MaxLength="200" />
+          <Property Name="whatsapp" Type="nvarchar" MaxLength="200" />
+          <Property Name="linkedin" Type="nvarchar" MaxLength="200" />
+          <Property Name="employeur" Type="nvarchar" MaxLength="200" />
+          <Property Name="notes" Type="nvarchar(max)" />
+          <Property Name="Statut" Type="bit" Nullable="false" />
+          <Property Name="AjouterAu" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="AjouterPar" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="ModifierAu" Type="nvarchar" MaxLength="100" />
+          <Property Name="ModifierPar" Type="nvarchar" MaxLength="100" />
+        </EntityType>
+        <EntityType Name="Patients_Nurses_Relations">
+          <Key>
+            <PropertyRef Name="Pid" />
+          </Key>
+          <Property Name="Pid" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Id" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="Spécialité" Type="nvarchar" MaxLength="200" Nullable="false" />
+          <Property Name="ssn_ou_identité" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="numero_carte_identité" Type="nvarchar" MaxLength="50" />
+          <Property Name="Identité_expiration" Type="nvarchar" MaxLength="50" />
+          <Property Name="Identité_date_de_publication" Type="nvarchar" MaxLength="50" />
+          <Property Name="adresse_carte_identité" Type="nvarchar" MaxLength="100" />
+          <Property Name="nom" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="prénom" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="deuxième_nom" Type="nvarchar" MaxLength="100" />
+          <Property Name="date_naissance" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="raison_de_la_visite" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="taille" Type="nvarchar" MaxLength="20" />
+          <Property Name="yeux" Type="nvarchar" MaxLength="50" />
+          <Property Name="cheveux" Type="nvarchar" MaxLength="50" />
+          <Property Name="adresse" Type="nvarchar" MaxLength="300" Nullable="false" />
+          <Property Name="appartement" Type="nvarchar" MaxLength="20" />
+          <Property Name="ville" Type="nvarchar" MaxLength="300" Nullable="false" />
+          <Property Name="état_ou_région" Type="nvarchar" MaxLength="300" />
+          <Property Name="Pays" Type="nvarchar" MaxLength="300" Nullable="false" />
+          <Property Name="boite_postale" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="genre" Type="nvarchar" MaxLength="50" />
+          <Property Name="naissance" Type="nvarchar" MaxLength="20" />
+          <Property Name="lieux_naissance" Type="nvarchar" MaxLength="50" />
+          <Property Name="téléphone" Type="nvarchar" MaxLength="20" Nullable="false" />
+          <Property Name="fax" Type="nvarchar" MaxLength="20" />
+          <Property Name="email" Type="nvarchar" MaxLength="200" Nullable="false" />
+          <Property Name="twitter" Type="nvarchar" MaxLength="200" />
+          <Property Name="whatsapp" Type="nvarchar" MaxLength="200" />
+          <Property Name="linkedin" Type="nvarchar" MaxLength="200" />
+          <Property Name="employeur" Type="nvarchar" MaxLength="200" />
+          <Property Name="notes" Type="nvarchar(max)" />
+          <Property Name="Statut" Type="bit" Nullable="false" />
+          <Property Name="AjouterAu" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="AjouterPar" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="ModifierAu" Type="nvarchar" MaxLength="100" />
+          <Property Name="ModifierPar" Type="nvarchar" MaxLength="100" />
+        </EntityType>
+        <EntityType Name="PatientSearchColumns">
+          <Key>
+            <PropertyRef Name="colonne" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="colonne" Type="nvarchar" MaxLength="2000" Nullable="false" />
+          <Property Name="Statut" Type="bit" Nullable="false" />
+          <Property Name="ajouter_au" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="ajouter_par" Type="nvarchar" MaxLength="200" Nullable="false" />
+          <Property Name="modifier_au" Type="nvarchar" MaxLength="100" />
+          <Property Name="modifier_par" Type="nvarchar" MaxLength="200" />
+        </EntityType>
+        <EntityType Name="PatientsNotes">
+          <Key>
+            <PropertyRef Name="PnId" />
+          </Key>
+          <Property Name="PnId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Id" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="Notes" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="ajouter_au" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="ajouter_par" Type="nvarchar" MaxLength="200" Nullable="false" />
+          <Property Name="modifier_au" Type="nvarchar" MaxLength="100" />
+          <Property Name="modifier_par" Type="nvarchar" MaxLength="200" />
+        </EntityType>
+        <EntityType Name="PatientsVisitNotes">
+          <Key>
+            <PropertyRef Name="PvId" />
+          </Key>
+          <Property Name="PvId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Id" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="Notes" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="ajouter_au" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="ajouter_par" Type="nvarchar" MaxLength="200" Nullable="false" />
+          <Property Name="modifier_au" Type="nvarchar" MaxLength="100" />
+          <Property Name="modifier_par" Type="nvarchar" MaxLength="200" />
+        </EntityType>
+        <EntityType Name="Pays">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" />
+          <Property Name="Nom" Type="varchar" MaxLength="50" />
+          <Property Name="Code2" Type="char" MaxLength="2" />
+          <Property Name="Code3" Type="char" MaxLength="3" />
+          <Property Name="ajouter_au" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="ajouter_par" Type="nvarchar" MaxLength="200" Nullable="false" />
+          <Property Name="modifier_au" Type="nvarchar" MaxLength="100" />
+          <Property Name="modifier_par" Type="nvarchar" MaxLength="200" />
+        </EntityType>
+        <EntityType Name="Regions">
+          <Key>
+            <PropertyRef Name="région" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="pays_id" Type="int" Nullable="false" />
+          <Property Name="région" Type="nvarchar" MaxLength="200" Nullable="false" />
+          <Property Name="status" Type="bit" Nullable="false" />
+          <Property Name="ajouter_au" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="ajouter_par" Type="nvarchar" MaxLength="200" Nullable="false" />
+          <Property Name="modifier_au" Type="nvarchar" MaxLength="100" />
+          <Property Name="modifier_par" Type="nvarchar" MaxLength="200" />
         </EntityType>
         <EntityType Name="Roles">
           <Key>
@@ -85,13 +366,53 @@
           <Property Name="modifier_par" Type="nvarchar" MaxLength="200" Nullable="false" />
           <Property Name="date_de_la_dernière_connexion" Type="nvarchar" MaxLength="200" Nullable="false" />
         </EntityType>
+        <EntityType Name="SecuritySsn">
+          <Key>
+            <PropertyRef Name="SsnId" />
+          </Key>
+          <Property Name="SsnId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Ssn" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="utilisateur_id" Type="uniqueidentifier" />
+          <Property Name="ajouter_au" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="ajouter_par" Type="nvarchar" MaxLength="200" Nullable="false" />
+          <Property Name="modifier_au" Type="nvarchar" MaxLength="100" />
+          <Property Name="modifier_par" Type="nvarchar" MaxLength="200" />
+        </EntityType>
+        <EntityType Name="Specialities">
+          <Key>
+            <PropertyRef Name="Spécialité" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Spécialité" Type="nvarchar" MaxLength="200" Nullable="false" />
+          <Property Name="Description" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="Statut" Type="bit" Nullable="false" />
+          <Property Name="AjouterAu" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="AjouterPar" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="ModifierAu" Type="nvarchar" MaxLength="100" />
+          <Property Name="ModifierPar" Type="nvarchar" MaxLength="100" />
+        </EntityType>
+        <EntityType Name="Sub_Specialties">
+          <Key>
+            <PropertyRef Name="Sous_Spécialité" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Spécialité" Type="nvarchar" MaxLength="200" Nullable="false" />
+          <Property Name="Sous_Spécialité" Type="nvarchar" MaxLength="300" Nullable="false" />
+          <Property Name="Description" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="Statut" Type="bit" Nullable="false" />
+          <Property Name="AjouterAu" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="AjouterPar" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="ModifierAu" Type="nvarchar" MaxLength="100" />
+          <Property Name="ModifierPar" Type="nvarchar" MaxLength="100" />
+        </EntityType>
         <EntityType Name="sysdiagrams">
           <Key>
-            <PropertyRef Name="diagram_id" />
+            <PropertyRef Name="id" />
           </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
           <Property Name="principal_id" Type="int" Nullable="false" />
-          <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="diagram_id" Type="int" Nullable="false" />
           <Property Name="version" Type="int" />
           <Property Name="definition" Type="varbinary(max)" />
         </EntityType>
@@ -124,6 +445,33 @@
           <Property Name="modifier_par" Type="nvarchar" MaxLength="200" Nullable="false" />
           <Property Name="date_de_la_dernière_connexion" Type="nvarchar" MaxLength="200" Nullable="false" />
         </EntityType>
+        <EntityType Name="Titles">
+          <Key>
+            <PropertyRef Name="Titre" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Titre" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="Description" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="Actif" Type="bit" Nullable="false" />
+          <Property Name="ajouter_au" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="ajouter_par" Type="nvarchar" MaxLength="200" Nullable="false" />
+          <Property Name="modifier_au" Type="nvarchar" MaxLength="100" />
+          <Property Name="modifier_par" Type="nvarchar" MaxLength="200" />
+        </EntityType>
+        <EntityType Name="UserPdfSplitPaths">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ComputerName" Type="nvarchar" MaxLength="200" Nullable="false" />
+          <Property Name="Email" Type="nvarchar" MaxLength="200" Nullable="false" />
+          <Property Name="UserName" Type="nvarchar" MaxLength="200" Nullable="false" />
+          <Property Name="SavedPath" Type="nvarchar" MaxLength="200" Nullable="false" />
+          <Property Name="AjouterAu" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="AjouterPar" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="ModifierAu" Type="nvarchar" MaxLength="100" />
+          <Property Name="ModifierPar" Type="nvarchar" MaxLength="100" />
+        </EntityType>
         <EntityType Name="Users">
           <Key>
             <PropertyRef Name="email" />
@@ -145,7 +493,7 @@
         </EntityType>
         <EntityType Name="UserStatuses">
           <Key>
-            <PropertyRef Name="Statut" />
+            <PropertyRef Name="Id" />
           </Key>
           <Property Name="Id" Type="uniqueidentifier" Nullable="false" />
           <Property Name="description" Type="nvarchar" MaxLength="200" Nullable="false" />
@@ -155,82 +503,231 @@
           <Property Name="modifier_au" Type="nvarchar" MaxLength="100" />
           <Property Name="modifier_par" Type="nvarchar" MaxLength="200" />
         </EntityType>
-        <Association Name="FK__Users__nom_role__4222D4EF">
-          <End Role="Roles" Type="Self.Roles" Multiplicity="1" />
-          <End Role="Users" Type="Self.Users" Multiplicity="*" />
+        <EntityType Name="view_gen_ssn">
+          <Key>
+            <PropertyRef Name="SSN" />
+          </Key>
+          <Property Name="SSN" Type="varchar" MaxLength="11" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Villes">
+          <Key>
+            <PropertyRef Name="Ville" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="région" Type="nvarchar" MaxLength="200" Nullable="false" />
+          <Property Name="Ville" Type="nvarchar" MaxLength="200" Nullable="false" />
+          <Property Name="status" Type="bit" Nullable="false" />
+          <Property Name="ajouter_au" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="ajouter_par" Type="nvarchar" MaxLength="200" Nullable="false" />
+          <Property Name="modifier_au" Type="nvarchar" MaxLength="100" />
+          <Property Name="modifier_par" Type="nvarchar" MaxLength="200" />
+        </EntityType>
+        <EntityType Name="vw_available_ssns">
+          <Key>
+            <PropertyRef Name="ssn" />
+          </Key>
+          <Property Name="ssn" Type="nvarchar" MaxLength="100" Nullable="false" />
+        </EntityType>
+        <Association Name="FK__Nurses__Spéciali__251C81ED">
+          <End Role="Specialities" Type="Self.Specialities" Multiplicity="1" />
+          <End Role="Nurses" Type="Self.Nurses" Multiplicity="*" />
           <ReferentialConstraint>
-            <Principal Role="Roles">
-              <PropertyRef Name="nom_role" />
+            <Principal Role="Specialities">
+              <PropertyRef Name="Spécialité" />
             </Principal>
-            <Dependent Role="Users">
-              <PropertyRef Name="nom_role" />
+            <Dependent Role="Nurses">
+              <PropertyRef Name="Spécialité" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Users__Statut__4316F928">
-          <End Role="UserStatuses" Type="Self.UserStatuses" Multiplicity="1" />
-          <End Role="Users" Type="Self.Users" Multiplicity="*" />
+        <Association Name="FK__PatientId__PatId__6E01572D">
+          <End Role="Patients" Type="Self.Patients" Multiplicity="1" />
+          <End Role="PatientIdentities" Type="Self.PatientIdentities" Multiplicity="*" />
           <ReferentialConstraint>
-            <Principal Role="UserStatuses">
-              <PropertyRef Name="Statut" />
+            <Principal Role="Patients">
+              <PropertyRef Name="Id" />
             </Principal>
-            <Dependent Role="Users">
-              <PropertyRef Name="Statut" />
+            <Dependent Role="PatientIdentities">
+              <PropertyRef Name="PatId" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Function Name="fn_diagramobjects" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" ReturnType="int" />
+        <Association Name="FK__Patients___Spéci__18B6AB08">
+          <End Role="Specialities" Type="Self.Specialities" Multiplicity="1" />
+          <End Role="Patients_Nurses_Relations" Type="Self.Patients_Nurses_Relations" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Specialities">
+              <PropertyRef Name="Spécialité" />
+            </Principal>
+            <Dependent Role="Patients_Nurses_Relations">
+              <PropertyRef Name="Spécialité" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Patients___Spéci__1F63A897">
+          <End Role="Specialities" Type="Self.Specialities" Multiplicity="1" />
+          <End Role="Patients_Doctors_Relations" Type="Self.Patients_Doctors_Relations" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Specialities">
+              <PropertyRef Name="Spécialité" />
+            </Principal>
+            <Dependent Role="Patients_Doctors_Relations">
+              <PropertyRef Name="Spécialité" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Patients_Doc__Id__1E6F845E">
+          <End Role="Patients" Type="Self.Patients" Multiplicity="1" />
+          <End Role="Patients_Doctors_Relations" Type="Self.Patients_Doctors_Relations" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Patients">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Patients_Doctors_Relations">
+              <PropertyRef Name="Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Patients_Nur__Id__17C286CF">
+          <End Role="Patients" Type="Self.Patients" Multiplicity="1" />
+          <End Role="Patients_Nurses_Relations" Type="Self.Patients_Nurses_Relations" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Patients">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Patients_Nurses_Relations">
+              <PropertyRef Name="Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Regions__pays_id__6BE40491">
+          <End Role="Pays" Type="Self.Pays" Multiplicity="1" />
+          <End Role="Regions" Type="Self.Regions" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Pays">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Regions">
+              <PropertyRef Name="pays_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Sub_Speci__Spéci__2EA5EC27">
+          <End Role="Specialities" Type="Self.Specialities" Multiplicity="1" />
+          <End Role="Sub_Specialties" Type="Self.Sub_Specialties" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Specialities">
+              <PropertyRef Name="Spécialité" />
+            </Principal>
+            <Dependent Role="Sub_Specialties">
+              <PropertyRef Name="Spécialité" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Villes__région__73852659">
+          <End Role="Regions" Type="Self.Regions" Multiplicity="1" />
+          <End Role="Villes" Type="Self.Villes" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Regions">
+              <PropertyRef Name="région" />
+            </Principal>
+            <Dependent Role="Villes">
+              <PropertyRef Name="région" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Doctors_Specialities">
+          <End Role="Specialities" Type="Self.Specialities" Multiplicity="1" />
+          <End Role="Doctors" Type="Self.Doctors" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Specialities">
+              <PropertyRef Name="Spécialité" />
+            </Principal>
+            <Dependent Role="Doctors">
+              <PropertyRef Name="Spécialité" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Function Name="func_gen_ssn" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" ReturnType="char" />
-        <Function Name="func_hash_password" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" ReturnType="varbinary(max)">
-          <Parameter Name="password_text" Type="nvarchar(max)" Mode="In" />
+        <Function Name="proc_add_SubSpeciality" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="Spécialité" Type="nvarchar" Mode="In" />
+          <Parameter Name="Sous_Spécialité" Type="nvarchar" Mode="In" />
+          <Parameter Name="Description" Type="nvarchar(max)" Mode="In" />
         </Function>
-        <Function Name="sp_alterdiagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-          <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
-          <Parameter Name="owner_id" Type="int" Mode="In" />
-          <Parameter Name="version" Type="int" Mode="In" />
-          <Parameter Name="definition" Type="varbinary(max)" Mode="In" />
+        <Function Name="procPatientSeach2" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="term" Type="nvarchar" Mode="In" />
+          <Parameter Name="valeur" Type="nvarchar" Mode="In" />
         </Function>
-        <Function Name="sp_creatediagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-          <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
-          <Parameter Name="owner_id" Type="int" Mode="In" />
-          <Parameter Name="version" Type="int" Mode="In" />
-          <Parameter Name="definition" Type="varbinary(max)" Mode="In" />
-        </Function>
-        <Function Name="sp_dropdiagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-          <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
-          <Parameter Name="owner_id" Type="int" Mode="In" />
-        </Function>
-        <Function Name="sp_helpdiagramdefinition" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-          <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
-          <Parameter Name="owner_id" Type="int" Mode="In" />
-        </Function>
-        <Function Name="sp_helpdiagrams" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-          <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
-          <Parameter Name="owner_id" Type="int" Mode="In" />
-        </Function>
-        <Function Name="sp_renamediagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-          <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
-          <Parameter Name="owner_id" Type="int" Mode="In" />
-          <Parameter Name="new_diagramname" Type="nvarchar" Mode="In" />
-        </Function>
-        <Function Name="sp_upgraddiagrams" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
         <EntityContainer Name="HCPFRModelStoreContainer">
+          <EntitySet Name="Doctors" EntityType="Self.Doctors" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Genders" EntityType="Self.Genders" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="IdentityTypes" EntityType="Self.IdentityTypes" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Nurses" EntityType="Self.Nurses" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Patient_Addresses" EntityType="Self.Patient_Addresses" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="PatientEmployers" EntityType="Self.PatientEmployers" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="PatientIdentities" EntityType="Self.PatientIdentities" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Patients" EntityType="Self.Patients" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Patients_Doctors_Relations" EntityType="Self.Patients_Doctors_Relations" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Patients_Nurses_Relations" EntityType="Self.Patients_Nurses_Relations" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="PatientSearchColumns" EntityType="Self.PatientSearchColumns" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="PatientsNotes" EntityType="Self.PatientsNotes" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="PatientsVisitNotes" EntityType="Self.PatientsVisitNotes" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Pays" EntityType="Self.Pays" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Regions" EntityType="Self.Regions" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Roles" EntityType="Self.Roles" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="sécurité_ssn" EntityType="Self.sécurité_ssn" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="SecuritySsn" EntityType="Self.SecuritySsn" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Specialities" EntityType="Self.Specialities" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Sub_Specialties" EntityType="Self.Sub_Specialties" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="SystemAccessLogs" EntityType="Self.SystemAccessLogs" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="SystemConfigs" EntityType="Self.SystemConfigs" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Titles" EntityType="Self.Titles" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="UserPdfSplitPaths" EntityType="Self.UserPdfSplitPaths" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Users" EntityType="Self.Users" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="UserStatuses" EntityType="Self.UserStatuses" Schema="dbo" store:Type="Tables" />
-          <AssociationSet Name="FK__Users__nom_role__4222D4EF" Association="Self.FK__Users__nom_role__4222D4EF">
-            <End Role="Roles" EntitySet="Roles" />
-            <End Role="Users" EntitySet="Users" />
+          <EntitySet Name="view_gen_ssn" EntityType="Self.view_gen_ssn" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Villes" EntityType="Self.Villes" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="vw_available_ssns" EntityType="Self.vw_available_ssns" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK__Nurses__Spéciali__251C81ED" Association="Self.FK__Nurses__Spéciali__251C81ED">
+            <End Role="Specialities" EntitySet="Specialities" />
+            <End Role="Nurses" EntitySet="Nurses" />
           </AssociationSet>
-          <AssociationSet Name="FK__Users__Statut__4316F928" Association="Self.FK__Users__Statut__4316F928">
-            <End Role="UserStatuses" EntitySet="UserStatuses" />
-            <End Role="Users" EntitySet="Users" />
+          <AssociationSet Name="FK__PatientId__PatId__6E01572D" Association="Self.FK__PatientId__PatId__6E01572D">
+            <End Role="Patients" EntitySet="Patients" />
+            <End Role="PatientIdentities" EntitySet="PatientIdentities" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Patients___Spéci__18B6AB08" Association="Self.FK__Patients___Spéci__18B6AB08">
+            <End Role="Specialities" EntitySet="Specialities" />
+            <End Role="Patients_Nurses_Relations" EntitySet="Patients_Nurses_Relations" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Patients___Spéci__1F63A897" Association="Self.FK__Patients___Spéci__1F63A897">
+            <End Role="Specialities" EntitySet="Specialities" />
+            <End Role="Patients_Doctors_Relations" EntitySet="Patients_Doctors_Relations" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Patients_Doc__Id__1E6F845E" Association="Self.FK__Patients_Doc__Id__1E6F845E">
+            <End Role="Patients" EntitySet="Patients" />
+            <End Role="Patients_Doctors_Relations" EntitySet="Patients_Doctors_Relations" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Patients_Nur__Id__17C286CF" Association="Self.FK__Patients_Nur__Id__17C286CF">
+            <End Role="Patients" EntitySet="Patients" />
+            <End Role="Patients_Nurses_Relations" EntitySet="Patients_Nurses_Relations" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Regions__pays_id__6BE40491" Association="Self.FK__Regions__pays_id__6BE40491">
+            <End Role="Pays" EntitySet="Pays" />
+            <End Role="Regions" EntitySet="Regions" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Sub_Speci__Spéci__2EA5EC27" Association="Self.FK__Sub_Speci__Spéci__2EA5EC27">
+            <End Role="Specialities" EntitySet="Specialities" />
+            <End Role="Sub_Specialties" EntitySet="Sub_Specialties" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Villes__région__73852659" Association="Self.FK__Villes__région__73852659">
+            <End Role="Regions" EntitySet="Regions" />
+            <End Role="Villes" EntitySet="Villes" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Doctors_Specialities" Association="Self.FK_Doctors_Specialities">
+            <End Role="Specialities" EntitySet="Specialities" />
+            <End Role="Doctors" EntitySet="Doctors" />
           </AssociationSet>
         </EntityContainer>
       </Schema></edmx:StorageModels>
@@ -268,23 +765,86 @@
             <Parameter Name="new_diagramname" Mode="In" Type="String" />
           </FunctionImport>
           <FunctionImport Name="sp_upgraddiagrams" />
+          <FunctionImport Name="proc_available_ssns" ReturnType="Collection(String)" />
+          <EntitySet Name="Doctors" EntityType="HCPFRModel.Doctors" />
+          <EntitySet Name="Genders" EntityType="HCPFRModel.Genders" />
+          <EntitySet Name="IdentityTypes" EntityType="HCPFRModel.IdentityTypes" />
+          <EntitySet Name="Nurses" EntityType="HCPFRModel.Nurses" />
+          <EntitySet Name="Patient_Addresses" EntityType="HCPFRModel.Patient_Addresses" />
           <EntitySet Name="PatientEmployers" EntityType="HCPFRModel.PatientEmployers" />
+          <EntitySet Name="PatientIdentities" EntityType="HCPFRModel.PatientIdentities" />
           <EntitySet Name="Patients" EntityType="HCPFRModel.Patients" />
+          <EntitySet Name="Patients_Doctors_Relations" EntityType="HCPFRModel.Patients_Doctors_Relations" />
+          <EntitySet Name="Patients_Nurses_Relations" EntityType="HCPFRModel.Patients_Nurses_Relations" />
+          <EntitySet Name="PatientSearchColumns" EntityType="HCPFRModel.PatientSearchColumns" />
+          <EntitySet Name="PatientsNotes" EntityType="HCPFRModel.PatientsNotes" />
+          <EntitySet Name="PatientsVisitNotes" EntityType="HCPFRModel.PatientsVisitNotes" />
+          <EntitySet Name="Pays" EntityType="HCPFRModel.Pays" />
+          <EntitySet Name="Regions" EntityType="HCPFRModel.Regions" />
           <EntitySet Name="Roles" EntityType="HCPFRModel.Roles" />
           <EntitySet Name="sécurité_ssn" EntityType="HCPFRModel.sécurité_ssn" />
+          <EntitySet Name="SecuritySsn" EntityType="HCPFRModel.SecuritySsn" />
+          <EntitySet Name="Specialities" EntityType="HCPFRModel.Specialities" />
           <EntitySet Name="sysdiagrams" EntityType="HCPFRModel.sysdiagrams" />
           <EntitySet Name="SystemAccessLogs" EntityType="HCPFRModel.SystemAccessLogs" />
           <EntitySet Name="SystemConfigs" EntityType="HCPFRModel.SystemConfigs" />
+          <EntitySet Name="Titles" EntityType="HCPFRModel.Titles" />
           <EntitySet Name="Users" EntityType="HCPFRModel.Users" />
           <EntitySet Name="UserStatuses" EntityType="HCPFRModel.UserStatuses" />
-          <AssociationSet Name="FK__Users__nom_role__4222D4EF" Association="HCPFRModel.FK__Users__nom_role__4222D4EF">
-            <End Role="Roles" EntitySet="Roles" />
-            <End Role="Users" EntitySet="Users" />
+          <EntitySet Name="view_gen_ssn" EntityType="HCPFRModel.view_gen_ssn" />
+          <EntitySet Name="Villes" EntityType="HCPFRModel.Villes" />
+          <EntitySet Name="vw_available_ssns" EntityType="HCPFRModel.vw_available_ssns" />
+          <AssociationSet Name="FK_Doctors_Specialities" Association="HCPFRModel.FK_Doctors_Specialities">
+            <End Role="Specialities" EntitySet="Specialities" />
+            <End Role="Doctors" EntitySet="Doctors" />
           </AssociationSet>
-          <AssociationSet Name="FK__Users__Statut__4316F928" Association="HCPFRModel.FK__Users__Statut__4316F928">
-            <End Role="UserStatuses" EntitySet="UserStatuses" />
-            <End Role="Users" EntitySet="Users" />
+          <AssociationSet Name="FK__Nurses__Spéciali__251C81ED" Association="HCPFRModel.FK__Nurses__Spéciali__251C81ED">
+            <End Role="Specialities" EntitySet="Specialities" />
+            <End Role="Nurses" EntitySet="Nurses" />
           </AssociationSet>
+          <AssociationSet Name="FK__PatientId__PatId__6E01572D" Association="HCPFRModel.FK__PatientId__PatId__6E01572D">
+            <End Role="Patients" EntitySet="Patients" />
+            <End Role="PatientIdentities" EntitySet="PatientIdentities" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Patients_Doc__Id__1E6F845E" Association="HCPFRModel.FK__Patients_Doc__Id__1E6F845E">
+            <End Role="Patients" EntitySet="Patients" />
+            <End Role="Patients_Doctors_Relations" EntitySet="Patients_Doctors_Relations" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Patients_Nur__Id__17C286CF" Association="HCPFRModel.FK__Patients_Nur__Id__17C286CF">
+            <End Role="Patients" EntitySet="Patients" />
+            <End Role="Patients_Nurses_Relations" EntitySet="Patients_Nurses_Relations" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Patients___Spéci__1F63A897" Association="HCPFRModel.FK__Patients___Spéci__1F63A897">
+            <End Role="Specialities" EntitySet="Specialities" />
+            <End Role="Patients_Doctors_Relations" EntitySet="Patients_Doctors_Relations" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Patients___Spéci__18B6AB08" Association="HCPFRModel.FK__Patients___Spéci__18B6AB08">
+            <End Role="Specialities" EntitySet="Specialities" />
+            <End Role="Patients_Nurses_Relations" EntitySet="Patients_Nurses_Relations" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Regions__pays_id__6BE40491" Association="HCPFRModel.FK__Regions__pays_id__6BE40491">
+            <End Role="Pays" EntitySet="Pays" />
+            <End Role="Regions" EntitySet="Regions" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Villes__région__73852659" Association="HCPFRModel.FK__Villes__région__73852659">
+            <End Role="Regions" EntitySet="Regions" />
+            <End Role="Villes" EntitySet="Villes" />
+          </AssociationSet>
+          <FunctionImport Name="procPatientSeach2">
+            <Parameter Name="term" Mode="In" Type="String" />
+            <Parameter Name="valeur" Mode="In" Type="String" />
+          </FunctionImport>
+          <EntitySet Name="Sub_Specialties" EntityType="HCPFRModel.Sub_Specialties" />
+          <AssociationSet Name="FK__Sub_Speci__Spéci__2EA5EC27" Association="HCPFRModel.FK__Sub_Speci__Spéci__2EA5EC27">
+            <End Role="Specialities" EntitySet="Specialities" />
+            <End Role="Sub_Specialties" EntitySet="Sub_Specialties" />
+          </AssociationSet>
+          <EntitySet Name="UserPdfSplitPaths" EntityType="HCPFRModel.UserPdfSplitPaths" />
+          <FunctionImport Name="proc_add_SubSpeciality">
+            <Parameter Name="Spécialité" Mode="In" Type="String" />
+            <Parameter Name="Sous_Spécialité" Mode="In" Type="String" />
+            <Parameter Name="Description" Mode="In" Type="String" />
+          </FunctionImport>
           </EntityContainer>
         <ComplexType Name="sp_helpdiagramdefinition_Result">
           <Property Type="Int32" Name="version" Nullable="true" />
@@ -297,6 +857,113 @@
           <Property Type="String" Name="Owner" Nullable="true" MaxLength="128" />
           <Property Type="Int32" Name="OwnerID" Nullable="false" />
         </ComplexType>
+        <EntityType Name="Doctors">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Titre" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="Spécialité" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="Nom" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="Prénom" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="deuxième_nom" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="date_naissance" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="adresse" Type="String" Nullable="false" MaxLength="300" FixedLength="false" Unicode="true" />
+          <Property Name="appartement" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="ville" Type="String" Nullable="false" MaxLength="300" FixedLength="false" Unicode="true" />
+          <Property Name="état_ou_région" Type="String" MaxLength="300" FixedLength="false" Unicode="true" />
+          <Property Name="Pays" Type="String" Nullable="false" MaxLength="300" FixedLength="false" Unicode="true" />
+          <Property Name="boite_postale" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="téléphone" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="fax" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="email" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="twitter" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="whatsapp" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="linkedin" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="employeur" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="notes" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="ajouter_au" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="ajouter_par" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="modifier_au" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="modifier_par" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="date_de_la_dernière_connexion" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Specialities" Relationship="HCPFRModel.FK_Doctors_Specialities" FromRole="Doctors" ToRole="Specialities" />
+        </EntityType>
+        <EntityType Name="Genders">
+          <Key>
+            <PropertyRef Name="Genre" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Genre" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="description" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="ajouter_au" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="ajouter_par" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="modifier_au" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="modifier_par" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="IdentityTypes">
+          <Key>
+            <PropertyRef Name="Type" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Type" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="description" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="ajouter_au" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="ajouter_par" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="modifier_au" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="modifier_par" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="Nurses">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Titre" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="Spécialité" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="Nom" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="Prénom" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="deuxième_nom" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="date_naissance" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="adresse" Type="String" Nullable="false" MaxLength="300" FixedLength="false" Unicode="true" />
+          <Property Name="appartement" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="ville" Type="String" Nullable="false" MaxLength="300" FixedLength="false" Unicode="true" />
+          <Property Name="état_ou_région" Type="String" MaxLength="300" FixedLength="false" Unicode="true" />
+          <Property Name="Pays" Type="String" Nullable="false" MaxLength="300" FixedLength="false" Unicode="true" />
+          <Property Name="boite_postale" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="téléphone" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="fax" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="email" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="twitter" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="whatsapp" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="linkedin" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="employeur" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="notes" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="ajouter_au" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="ajouter_par" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="modifier_au" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="modifier_par" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="date_de_la_dernière_connexion" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Specialities" Relationship="HCPFRModel.FK__Nurses__Spéciali__251C81ED" FromRole="Nurses" ToRole="Specialities" />
+        </EntityType>
+        <EntityType Name="Patient_Addresses">
+          <Key>
+            <PropertyRef Name="PadId" />
+          </Key>
+          <Property Name="PadId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Id" Type="Guid" Nullable="false" />
+          <Property Name="adresse" Type="String" Nullable="false" MaxLength="300" FixedLength="false" Unicode="true" />
+          <Property Name="appartement" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="ville" Type="String" Nullable="false" MaxLength="300" FixedLength="false" Unicode="true" />
+          <Property Name="état_ou_région" Type="String" MaxLength="300" FixedLength="false" Unicode="true" />
+          <Property Name="Pays" Type="String" Nullable="false" MaxLength="300" FixedLength="false" Unicode="true" />
+          <Property Name="boite_postale" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="téléphone" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="Notes" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="ajouter_au" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="ajouter_par" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="modifier_au" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="modifier_par" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+        </EntityType>
         <EntityType Name="PatientEmployers">
           <Key>
             <PropertyRef Name="id" />
@@ -320,23 +987,51 @@
           <Property Name="modifier_par" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="true" />
           <Property Name="date_de_la_dernière_connexion" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="true" />
         </EntityType>
+        <EntityType Name="PatientIdentities">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Type" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="Fichier" Type="Binary" MaxLength="Max" FixedLength="false" />
+          <Property Name="PatId" Type="Guid" Nullable="false" />
+          <Property Name="Taille" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="longueur" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="largeur" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="ajouter_au" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="ajouter_par" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="modifier_au" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="modifier_par" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="Chemin_Du_Fichier" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Patients" Relationship="HCPFRModel.FK__PatientId__PatId__6E01572D" FromRole="PatientIdentities" ToRole="Patients" />
+        </EntityType>
         <EntityType Name="Patients">
           <Key>
-            <PropertyRef Name="ssn_ou_identité" />
+            <PropertyRef Name="Id" />
           </Key>
           <Property Name="Id" Type="Guid" Nullable="false" />
           <Property Name="ssn_ou_identité" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="numero_carte_identité" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Identité_expiration" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Identité_date_de_publication" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="adresse_carte_identité" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
           <Property Name="nom" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
           <Property Name="prénom" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
           <Property Name="deuxième_nom" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
           <Property Name="date_naissance" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
           <Property Name="raison_de_la_visite" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="taille" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="yeux" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="cheveux" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="adresse" Type="String" Nullable="false" MaxLength="300" FixedLength="false" Unicode="true" />
           <Property Name="appartement" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
           <Property Name="ville" Type="String" Nullable="false" MaxLength="300" FixedLength="false" Unicode="true" />
           <Property Name="état_ou_région" Type="String" MaxLength="300" FixedLength="false" Unicode="true" />
           <Property Name="Pays" Type="String" Nullable="false" MaxLength="300" FixedLength="false" Unicode="true" />
           <Property Name="boite_postale" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="genre" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="naissance" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="lieux_naissance" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="téléphone" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
           <Property Name="fax" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
           <Property Name="email" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="true" />
@@ -345,11 +1040,170 @@
           <Property Name="linkedin" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
           <Property Name="employeur" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
           <Property Name="notes" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="statut" Type="String" MaxLength="100" FixedLength="true" Unicode="true" />
           <Property Name="ajouter_au" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
           <Property Name="ajouter_par" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="true" />
-          <Property Name="modifier_au" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
-          <Property Name="modifier_par" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="true" />
-          <Property Name="date_de_la_dernière_connexion" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="modifier_au" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="modifier_par" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="date_de_la_dernière_connexion" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="PatientIdentities" Relationship="HCPFRModel.FK__PatientId__PatId__6E01572D" FromRole="Patients" ToRole="PatientIdentities" />
+          <NavigationProperty Name="Patients_Doctors_Relations" Relationship="HCPFRModel.FK__Patients_Doc__Id__1E6F845E" FromRole="Patients" ToRole="Patients_Doctors_Relations" />
+          <NavigationProperty Name="Patients_Nurses_Relations" Relationship="HCPFRModel.FK__Patients_Nur__Id__17C286CF" FromRole="Patients" ToRole="Patients_Nurses_Relations" />
+        </EntityType>
+        <EntityType Name="Patients_Doctors_Relations">
+          <Key>
+            <PropertyRef Name="Pid" />
+          </Key>
+          <Property Name="Pid" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Id" Type="Guid" Nullable="false" />
+          <Property Name="Spécialité" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="ssn_ou_identité" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="numero_carte_identité" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Identité_expiration" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Identité_date_de_publication" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="adresse_carte_identité" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="nom" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="prénom" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="deuxième_nom" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="date_naissance" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="raison_de_la_visite" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="taille" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="yeux" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="cheveux" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="adresse" Type="String" Nullable="false" MaxLength="300" FixedLength="false" Unicode="true" />
+          <Property Name="appartement" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="ville" Type="String" Nullable="false" MaxLength="300" FixedLength="false" Unicode="true" />
+          <Property Name="état_ou_région" Type="String" MaxLength="300" FixedLength="false" Unicode="true" />
+          <Property Name="Pays" Type="String" Nullable="false" MaxLength="300" FixedLength="false" Unicode="true" />
+          <Property Name="boite_postale" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="genre" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="naissance" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="lieux_naissance" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="téléphone" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="fax" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="email" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="twitter" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="whatsapp" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="linkedin" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="employeur" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="notes" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Statut" Type="Boolean" Nullable="false" />
+          <Property Name="AjouterAu" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="AjouterPar" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="ModifierAu" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="ModifierPar" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Patients" Relationship="HCPFRModel.FK__Patients_Doc__Id__1E6F845E" FromRole="Patients_Doctors_Relations" ToRole="Patients" />
+          <NavigationProperty Name="Specialities" Relationship="HCPFRModel.FK__Patients___Spéci__1F63A897" FromRole="Patients_Doctors_Relations" ToRole="Specialities" />
+        </EntityType>
+        <EntityType Name="Patients_Nurses_Relations">
+          <Key>
+            <PropertyRef Name="Pid" />
+          </Key>
+          <Property Name="Pid" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Id" Type="Guid" Nullable="false" />
+          <Property Name="Spécialité" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="ssn_ou_identité" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="numero_carte_identité" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Identité_expiration" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Identité_date_de_publication" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="adresse_carte_identité" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="nom" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="prénom" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="deuxième_nom" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="date_naissance" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="raison_de_la_visite" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="taille" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="yeux" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="cheveux" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="adresse" Type="String" Nullable="false" MaxLength="300" FixedLength="false" Unicode="true" />
+          <Property Name="appartement" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="ville" Type="String" Nullable="false" MaxLength="300" FixedLength="false" Unicode="true" />
+          <Property Name="état_ou_région" Type="String" MaxLength="300" FixedLength="false" Unicode="true" />
+          <Property Name="Pays" Type="String" Nullable="false" MaxLength="300" FixedLength="false" Unicode="true" />
+          <Property Name="boite_postale" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="genre" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="naissance" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="lieux_naissance" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="téléphone" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="fax" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="email" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="twitter" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="whatsapp" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="linkedin" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="employeur" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="notes" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Statut" Type="Boolean" Nullable="false" />
+          <Property Name="AjouterAu" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="AjouterPar" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="ModifierAu" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="ModifierPar" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Patients" Relationship="HCPFRModel.FK__Patients_Nur__Id__17C286CF" FromRole="Patients_Nurses_Relations" ToRole="Patients" />
+          <NavigationProperty Name="Specialities" Relationship="HCPFRModel.FK__Patients___Spéci__18B6AB08" FromRole="Patients_Nurses_Relations" ToRole="Specialities" />
+        </EntityType>
+        <EntityType Name="PatientSearchColumns">
+          <Key>
+            <PropertyRef Name="colonne" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="colonne" Type="String" Nullable="false" MaxLength="2000" FixedLength="false" Unicode="true" />
+          <Property Name="Statut" Type="Boolean" Nullable="false" />
+          <Property Name="ajouter_au" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="ajouter_par" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="modifier_au" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="modifier_par" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="PatientsNotes">
+          <Key>
+            <PropertyRef Name="PnId" />
+          </Key>
+          <Property Name="PnId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Id" Type="Guid" Nullable="false" />
+          <Property Name="Notes" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="ajouter_au" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="ajouter_par" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="modifier_au" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="modifier_par" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="PatientsVisitNotes">
+          <Key>
+            <PropertyRef Name="PvId" />
+          </Key>
+          <Property Name="PvId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Id" Type="Guid" Nullable="false" />
+          <Property Name="Notes" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="ajouter_au" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="ajouter_par" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="modifier_au" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="modifier_par" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="Pays">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" />
+          <Property Name="Nom" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Code2" Type="String" MaxLength="2" FixedLength="true" Unicode="false" />
+          <Property Name="Code3" Type="String" MaxLength="3" FixedLength="true" Unicode="false" />
+          <Property Name="ajouter_au" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="ajouter_par" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="modifier_au" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="modifier_par" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Regions" Relationship="HCPFRModel.FK__Regions__pays_id__6BE40491" FromRole="Pays" ToRole="Regions" />
+        </EntityType>
+        <EntityType Name="Regions">
+          <Key>
+            <PropertyRef Name="région" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="pays_id" Type="Int32" Nullable="false" />
+          <Property Name="région" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="status" Type="Boolean" Nullable="false" />
+          <Property Name="ajouter_au" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="ajouter_par" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="modifier_au" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="modifier_par" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Pays" Relationship="HCPFRModel.FK__Regions__pays_id__6BE40491" FromRole="Regions" ToRole="Pays" />
+          <NavigationProperty Name="Villes" Relationship="HCPFRModel.FK__Villes__région__73852659" FromRole="Regions" ToRole="Villes" />
         </EntityType>
         <EntityType Name="Roles">
           <Key>
@@ -363,7 +1217,6 @@
           <Property Name="ajouter_par" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="true" />
           <Property Name="modifier_au" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
           <Property Name="modifier_par" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
-          <NavigationProperty Name="Users" Relationship="HCPFRModel.FK__Users__nom_role__4222D4EF" FromRole="Roles" ToRole="Users" />
         </EntityType>
         <EntityType Name="sécurité_ssn">
           <Key>
@@ -378,13 +1231,44 @@
           <Property Name="modifier_par" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="true" />
           <Property Name="date_de_la_dernière_connexion" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="true" />
         </EntityType>
+        <EntityType Name="SecuritySsn">
+          <Key>
+            <PropertyRef Name="SsnId" />
+          </Key>
+          <Property Name="SsnId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Ssn" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="utilisateur_id" Type="Guid" />
+          <Property Name="ajouter_au" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="ajouter_par" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="modifier_au" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="modifier_par" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="Specialities">
+          <Key>
+            <PropertyRef Name="Spécialité" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Spécialité" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="Description" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Statut" Type="Boolean" Nullable="false" />
+          <Property Name="AjouterAu" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="AjouterPar" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="ModifierAu" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="ModifierPar" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Doctors" Relationship="HCPFRModel.FK_Doctors_Specialities" FromRole="Specialities" ToRole="Doctors" />
+          <NavigationProperty Name="Nurses" Relationship="HCPFRModel.FK__Nurses__Spéciali__251C81ED" FromRole="Specialities" ToRole="Nurses" />
+          <NavigationProperty Name="Patients_Doctors_Relations" Relationship="HCPFRModel.FK__Patients___Spéci__1F63A897" FromRole="Specialities" ToRole="Patients_Doctors_Relations" />
+          <NavigationProperty Name="Patients_Nurses_Relations" Relationship="HCPFRModel.FK__Patients___Spéci__18B6AB08" FromRole="Specialities" ToRole="Patients_Nurses_Relations" />
+          <NavigationProperty Name="Sub_Specialties" Relationship="HCPFRModel.FK__Sub_Speci__Spéci__2EA5EC27" FromRole="Specialities" ToRole="Sub_Specialties" />
+        </EntityType>
         <EntityType Name="sysdiagrams">
           <Key>
-            <PropertyRef Name="diagram_id" />
+            <PropertyRef Name="id" />
           </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="name" Type="String" Nullable="false" MaxLength="128" FixedLength="false" Unicode="true" />
           <Property Name="principal_id" Type="Int32" Nullable="false" />
-          <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="diagram_id" Type="Int32" Nullable="false" />
           <Property Name="version" Type="Int32" />
           <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
         </EntityType>
@@ -417,6 +1301,19 @@
           <Property Name="modifier_par" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="true" />
           <Property Name="date_de_la_dernière_connexion" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="true" />
         </EntityType>
+        <EntityType Name="Titles">
+          <Key>
+            <PropertyRef Name="Titre" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Titre" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="Description" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Actif" Type="Boolean" Nullable="false" />
+          <Property Name="ajouter_au" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="ajouter_par" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="modifier_au" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="modifier_par" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+        </EntityType>
         <EntityType Name="Users">
           <Key>
             <PropertyRef Name="email" />
@@ -432,15 +1329,13 @@
           <Property Name="modifier_au" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
           <Property Name="modifier_par" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
           <Property Name="date_de_la_dernière_connexion" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
-          <NavigationProperty Name="Roles" Relationship="HCPFRModel.FK__Users__nom_role__4222D4EF" FromRole="Users" ToRole="Roles" />
-          <NavigationProperty Name="UserStatuses" Relationship="HCPFRModel.FK__Users__Statut__4316F928" FromRole="Users" ToRole="UserStatuses" />
           <Property Name="Nom" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
           <Property Name="prénom" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
           <Property Name="deuxième_nom" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
         </EntityType>
         <EntityType Name="UserStatuses">
           <Key>
-            <PropertyRef Name="Statut" />
+            <PropertyRef Name="Id" />
           </Key>
           <Property Name="Id" Type="Guid" Nullable="false" />
           <Property Name="description" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="true" />
@@ -449,62 +1344,298 @@
           <Property Name="ajouter_par" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="true" />
           <Property Name="modifier_au" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
           <Property Name="modifier_par" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
-          <NavigationProperty Name="Users" Relationship="HCPFRModel.FK__Users__Statut__4316F928" FromRole="UserStatuses" ToRole="Users" />
         </EntityType>
-        <Association Name="FK__Users__nom_role__4222D4EF">
-          <End Type="HCPFRModel.Roles" Role="Roles" Multiplicity="1" />
-          <End Type="HCPFRModel.Users" Role="Users" Multiplicity="*" />
+        <EntityType Name="view_gen_ssn">
+          <Key>
+            <PropertyRef Name="SSN" />
+          </Key>
+          <Property Name="SSN" Type="String" Nullable="false" MaxLength="11" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="Villes">
+          <Key>
+            <PropertyRef Name="Ville" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="région" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="Ville" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="status" Type="Boolean" Nullable="false" />
+          <Property Name="ajouter_au" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="ajouter_par" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="modifier_au" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="modifier_par" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Regions" Relationship="HCPFRModel.FK__Villes__région__73852659" FromRole="Villes" ToRole="Regions" />
+        </EntityType>
+        <EntityType Name="vw_available_ssns">
+          <Key>
+            <PropertyRef Name="ssn" />
+          </Key>
+          <Property Name="ssn" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <Association Name="FK_Doctors_Specialities">
+          <End Type="HCPFRModel.Specialities" Role="Specialities" Multiplicity="1" />
+          <End Type="HCPFRModel.Doctors" Role="Doctors" Multiplicity="*" />
           <ReferentialConstraint>
-            <Principal Role="Roles">
-              <PropertyRef Name="nom_role" />
+            <Principal Role="Specialities">
+              <PropertyRef Name="Spécialité" />
             </Principal>
-            <Dependent Role="Users">
-              <PropertyRef Name="nom_role" />
+            <Dependent Role="Doctors">
+              <PropertyRef Name="Spécialité" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Users__Statut__4316F928">
-          <End Type="HCPFRModel.UserStatuses" Role="UserStatuses" Multiplicity="1" />
-          <End Type="HCPFRModel.Users" Role="Users" Multiplicity="*" />
+        <Association Name="FK__Nurses__Spéciali__251C81ED">
+          <End Type="HCPFRModel.Specialities" Role="Specialities" Multiplicity="1" />
+          <End Type="HCPFRModel.Nurses" Role="Nurses" Multiplicity="*" />
           <ReferentialConstraint>
-            <Principal Role="UserStatuses">
-              <PropertyRef Name="Statut" />
+            <Principal Role="Specialities">
+              <PropertyRef Name="Spécialité" />
             </Principal>
-            <Dependent Role="Users">
-              <PropertyRef Name="Statut" />
+            <Dependent Role="Nurses">
+              <PropertyRef Name="Spécialité" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="FK__PatientId__PatId__6E01572D">
+          <End Type="HCPFRModel.Patients" Role="Patients" Multiplicity="1" />
+          <End Type="HCPFRModel.PatientIdentities" Role="PatientIdentities" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Patients">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="PatientIdentities">
+              <PropertyRef Name="PatId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Patients_Doc__Id__1E6F845E">
+          <End Type="HCPFRModel.Patients" Role="Patients" Multiplicity="1" />
+          <End Type="HCPFRModel.Patients_Doctors_Relations" Role="Patients_Doctors_Relations" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Patients">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Patients_Doctors_Relations">
+              <PropertyRef Name="Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Patients_Nur__Id__17C286CF">
+          <End Type="HCPFRModel.Patients" Role="Patients" Multiplicity="1" />
+          <End Type="HCPFRModel.Patients_Nurses_Relations" Role="Patients_Nurses_Relations" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Patients">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Patients_Nurses_Relations">
+              <PropertyRef Name="Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Patients___Spéci__1F63A897">
+          <End Type="HCPFRModel.Specialities" Role="Specialities" Multiplicity="1" />
+          <End Type="HCPFRModel.Patients_Doctors_Relations" Role="Patients_Doctors_Relations" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Specialities">
+              <PropertyRef Name="Spécialité" />
+            </Principal>
+            <Dependent Role="Patients_Doctors_Relations">
+              <PropertyRef Name="Spécialité" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Patients___Spéci__18B6AB08">
+          <End Type="HCPFRModel.Specialities" Role="Specialities" Multiplicity="1" />
+          <End Type="HCPFRModel.Patients_Nurses_Relations" Role="Patients_Nurses_Relations" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Specialities">
+              <PropertyRef Name="Spécialité" />
+            </Principal>
+            <Dependent Role="Patients_Nurses_Relations">
+              <PropertyRef Name="Spécialité" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Regions__pays_id__6BE40491">
+          <End Type="HCPFRModel.Pays" Role="Pays" Multiplicity="1" />
+          <End Type="HCPFRModel.Regions" Role="Regions" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Pays">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Regions">
+              <PropertyRef Name="pays_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Villes__région__73852659">
+          <End Type="HCPFRModel.Regions" Role="Regions" Multiplicity="1" />
+          <End Type="HCPFRModel.Villes" Role="Villes" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Regions">
+              <PropertyRef Name="région" />
+            </Principal>
+            <Dependent Role="Villes">
+              <PropertyRef Name="région" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="Sub_Specialties">
+          <Key>
+            <PropertyRef Name="Sous_Spécialité" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Spécialité" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="Sous_Spécialité" Type="String" Nullable="false" MaxLength="300" FixedLength="false" Unicode="true" />
+          <Property Name="Description" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Statut" Type="Boolean" Nullable="false" />
+          <Property Name="AjouterAu" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="AjouterPar" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="ModifierAu" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="ModifierPar" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Specialities" Relationship="HCPFRModel.FK__Sub_Speci__Spéci__2EA5EC27" FromRole="Sub_Specialties" ToRole="Specialities" />
+        </EntityType>
+        <Association Name="FK__Sub_Speci__Spéci__2EA5EC27">
+          <End Type="HCPFRModel.Specialities" Role="Specialities" Multiplicity="1" />
+          <End Type="HCPFRModel.Sub_Specialties" Role="Sub_Specialties" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Specialities">
+              <PropertyRef Name="Spécialité" />
+            </Principal>
+            <Dependent Role="Sub_Specialties">
+              <PropertyRef Name="Spécialité" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="UserPdfSplitPaths">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ComputerName" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="Email" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="UserName" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="SavedPath" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="AjouterAu" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="AjouterPar" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="ModifierAu" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="ModifierPar" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+        </EntityType>
         </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
         <EntityContainerMapping StorageEntityContainer="HCPFRModelStoreContainer" CdmEntityContainer="HcpFrEntities">
-          <FunctionImportMapping FunctionImportName="sp_alterdiagram" FunctionName="HCPFRModel.Store.sp_alterdiagram" />
-          <FunctionImportMapping FunctionImportName="sp_creatediagram" FunctionName="HCPFRModel.Store.sp_creatediagram" />
-          <FunctionImportMapping FunctionImportName="sp_dropdiagram" FunctionName="HCPFRModel.Store.sp_dropdiagram" />
-          <FunctionImportMapping FunctionImportName="sp_helpdiagramdefinition" FunctionName="HCPFRModel.Store.sp_helpdiagramdefinition">
-            <ResultMapping>
-              <ComplexTypeMapping TypeName="HCPFRModel.sp_helpdiagramdefinition_Result">
-                <ScalarProperty Name="version" ColumnName="version" />
-                <ScalarProperty Name="definition" ColumnName="definition" />
-              </ComplexTypeMapping>
-            </ResultMapping>
-          </FunctionImportMapping>
-          <FunctionImportMapping FunctionImportName="sp_helpdiagrams" FunctionName="HCPFRModel.Store.sp_helpdiagrams">
-            <ResultMapping>
-              <ComplexTypeMapping TypeName="HCPFRModel.sp_helpdiagrams_Result">
-                <ScalarProperty Name="Database" ColumnName="Database" />
-                <ScalarProperty Name="Name" ColumnName="Name" />
-                <ScalarProperty Name="ID" ColumnName="ID" />
-                <ScalarProperty Name="Owner" ColumnName="Owner" />
-                <ScalarProperty Name="OwnerID" ColumnName="OwnerID" />
-              </ComplexTypeMapping>
-            </ResultMapping>
-          </FunctionImportMapping>
-          <FunctionImportMapping FunctionImportName="sp_renamediagram" FunctionName="HCPFRModel.Store.sp_renamediagram" />
-          <FunctionImportMapping FunctionImportName="sp_upgraddiagrams" FunctionName="HCPFRModel.Store.sp_upgraddiagrams" />
+          <EntitySetMapping Name="Doctors">
+            <EntityTypeMapping TypeName="HCPFRModel.Doctors">
+              <MappingFragment StoreEntitySet="Doctors">
+                <ScalarProperty Name="date_de_la_dernière_connexion" ColumnName="date_de_la_dernière_connexion" />
+                <ScalarProperty Name="modifier_par" ColumnName="modifier_par" />
+                <ScalarProperty Name="modifier_au" ColumnName="modifier_au" />
+                <ScalarProperty Name="ajouter_par" ColumnName="ajouter_par" />
+                <ScalarProperty Name="ajouter_au" ColumnName="ajouter_au" />
+                <ScalarProperty Name="notes" ColumnName="notes" />
+                <ScalarProperty Name="employeur" ColumnName="employeur" />
+                <ScalarProperty Name="linkedin" ColumnName="linkedin" />
+                <ScalarProperty Name="whatsapp" ColumnName="whatsapp" />
+                <ScalarProperty Name="twitter" ColumnName="twitter" />
+                <ScalarProperty Name="email" ColumnName="email" />
+                <ScalarProperty Name="fax" ColumnName="fax" />
+                <ScalarProperty Name="téléphone" ColumnName="téléphone" />
+                <ScalarProperty Name="boite_postale" ColumnName="boite_postale" />
+                <ScalarProperty Name="Pays" ColumnName="Pays" />
+                <ScalarProperty Name="état_ou_région" ColumnName="état_ou_région" />
+                <ScalarProperty Name="ville" ColumnName="ville" />
+                <ScalarProperty Name="appartement" ColumnName="appartement" />
+                <ScalarProperty Name="adresse" ColumnName="adresse" />
+                <ScalarProperty Name="date_naissance" ColumnName="date_naissance" />
+                <ScalarProperty Name="deuxième_nom" ColumnName="deuxième_nom" />
+                <ScalarProperty Name="Prénom" ColumnName="Prénom" />
+                <ScalarProperty Name="Nom" ColumnName="Nom" />
+                <ScalarProperty Name="Spécialité" ColumnName="Spécialité" />
+                <ScalarProperty Name="Titre" ColumnName="Titre" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Genders">
+            <EntityTypeMapping TypeName="HCPFRModel.Genders">
+              <MappingFragment StoreEntitySet="Genders">
+                <ScalarProperty Name="modifier_par" ColumnName="modifier_par" />
+                <ScalarProperty Name="modifier_au" ColumnName="modifier_au" />
+                <ScalarProperty Name="ajouter_par" ColumnName="ajouter_par" />
+                <ScalarProperty Name="ajouter_au" ColumnName="ajouter_au" />
+                <ScalarProperty Name="description" ColumnName="description" />
+                <ScalarProperty Name="Genre" ColumnName="Genre" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="IdentityTypes">
+            <EntityTypeMapping TypeName="HCPFRModel.IdentityTypes">
+              <MappingFragment StoreEntitySet="IdentityTypes">
+                <ScalarProperty Name="modifier_par" ColumnName="modifier_par" />
+                <ScalarProperty Name="modifier_au" ColumnName="modifier_au" />
+                <ScalarProperty Name="ajouter_par" ColumnName="ajouter_par" />
+                <ScalarProperty Name="ajouter_au" ColumnName="ajouter_au" />
+                <ScalarProperty Name="description" ColumnName="description" />
+                <ScalarProperty Name="Type" ColumnName="Type" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Nurses">
+            <EntityTypeMapping TypeName="HCPFRModel.Nurses">
+              <MappingFragment StoreEntitySet="Nurses">
+                <ScalarProperty Name="date_de_la_dernière_connexion" ColumnName="date_de_la_dernière_connexion" />
+                <ScalarProperty Name="modifier_par" ColumnName="modifier_par" />
+                <ScalarProperty Name="modifier_au" ColumnName="modifier_au" />
+                <ScalarProperty Name="ajouter_par" ColumnName="ajouter_par" />
+                <ScalarProperty Name="ajouter_au" ColumnName="ajouter_au" />
+                <ScalarProperty Name="notes" ColumnName="notes" />
+                <ScalarProperty Name="employeur" ColumnName="employeur" />
+                <ScalarProperty Name="linkedin" ColumnName="linkedin" />
+                <ScalarProperty Name="whatsapp" ColumnName="whatsapp" />
+                <ScalarProperty Name="twitter" ColumnName="twitter" />
+                <ScalarProperty Name="email" ColumnName="email" />
+                <ScalarProperty Name="fax" ColumnName="fax" />
+                <ScalarProperty Name="téléphone" ColumnName="téléphone" />
+                <ScalarProperty Name="boite_postale" ColumnName="boite_postale" />
+                <ScalarProperty Name="Pays" ColumnName="Pays" />
+                <ScalarProperty Name="état_ou_région" ColumnName="état_ou_région" />
+                <ScalarProperty Name="ville" ColumnName="ville" />
+                <ScalarProperty Name="appartement" ColumnName="appartement" />
+                <ScalarProperty Name="adresse" ColumnName="adresse" />
+                <ScalarProperty Name="date_naissance" ColumnName="date_naissance" />
+                <ScalarProperty Name="deuxième_nom" ColumnName="deuxième_nom" />
+                <ScalarProperty Name="Prénom" ColumnName="Prénom" />
+                <ScalarProperty Name="Nom" ColumnName="Nom" />
+                <ScalarProperty Name="Spécialité" ColumnName="Spécialité" />
+                <ScalarProperty Name="Titre" ColumnName="Titre" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Patient_Addresses">
+            <EntityTypeMapping TypeName="HCPFRModel.Patient_Addresses">
+              <MappingFragment StoreEntitySet="Patient_Addresses">
+                <ScalarProperty Name="modifier_par" ColumnName="modifier_par" />
+                <ScalarProperty Name="modifier_au" ColumnName="modifier_au" />
+                <ScalarProperty Name="ajouter_par" ColumnName="ajouter_par" />
+                <ScalarProperty Name="ajouter_au" ColumnName="ajouter_au" />
+                <ScalarProperty Name="Notes" ColumnName="Notes" />
+                <ScalarProperty Name="téléphone" ColumnName="téléphone" />
+                <ScalarProperty Name="boite_postale" ColumnName="boite_postale" />
+                <ScalarProperty Name="Pays" ColumnName="Pays" />
+                <ScalarProperty Name="état_ou_région" ColumnName="état_ou_région" />
+                <ScalarProperty Name="ville" ColumnName="ville" />
+                <ScalarProperty Name="appartement" ColumnName="appartement" />
+                <ScalarProperty Name="adresse" ColumnName="adresse" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="PadId" ColumnName="PadId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
           <EntitySetMapping Name="PatientEmployers">
             <EntityTypeMapping TypeName="HCPFRModel.PatientEmployers">
               <MappingFragment StoreEntitySet="PatientEmployers">
@@ -529,6 +1660,24 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
+          <EntitySetMapping Name="PatientIdentities">
+            <EntityTypeMapping TypeName="HCPFRModel.PatientIdentities">
+              <MappingFragment StoreEntitySet="PatientIdentities">
+                <ScalarProperty Name="Chemin_Du_Fichier" ColumnName="Chemin_Du_Fichier" />
+                <ScalarProperty Name="modifier_par" ColumnName="modifier_par" />
+                <ScalarProperty Name="modifier_au" ColumnName="modifier_au" />
+                <ScalarProperty Name="ajouter_par" ColumnName="ajouter_par" />
+                <ScalarProperty Name="ajouter_au" ColumnName="ajouter_au" />
+                <ScalarProperty Name="largeur" ColumnName="largeur" />
+                <ScalarProperty Name="longueur" ColumnName="longueur" />
+                <ScalarProperty Name="Taille" ColumnName="Taille" />
+                <ScalarProperty Name="PatId" ColumnName="PatId" />
+                <ScalarProperty Name="Fichier" ColumnName="Fichier" />
+                <ScalarProperty Name="Type" ColumnName="Type" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
           <EntitySetMapping Name="Patients">
             <EntityTypeMapping TypeName="HCPFRModel.Patients">
               <MappingFragment StoreEntitySet="Patients">
@@ -537,6 +1686,7 @@
                 <ScalarProperty Name="modifier_au" ColumnName="modifier_au" />
                 <ScalarProperty Name="ajouter_par" ColumnName="ajouter_par" />
                 <ScalarProperty Name="ajouter_au" ColumnName="ajouter_au" />
+                <ScalarProperty Name="statut" ColumnName="statut" />
                 <ScalarProperty Name="notes" ColumnName="notes" />
                 <ScalarProperty Name="employeur" ColumnName="employeur" />
                 <ScalarProperty Name="linkedin" ColumnName="linkedin" />
@@ -545,18 +1695,183 @@
                 <ScalarProperty Name="email" ColumnName="email" />
                 <ScalarProperty Name="fax" ColumnName="fax" />
                 <ScalarProperty Name="téléphone" ColumnName="téléphone" />
+                <ScalarProperty Name="lieux_naissance" ColumnName="lieux_naissance" />
+                <ScalarProperty Name="naissance" ColumnName="naissance" />
+                <ScalarProperty Name="genre" ColumnName="genre" />
                 <ScalarProperty Name="boite_postale" ColumnName="boite_postale" />
                 <ScalarProperty Name="Pays" ColumnName="Pays" />
                 <ScalarProperty Name="état_ou_région" ColumnName="état_ou_région" />
                 <ScalarProperty Name="ville" ColumnName="ville" />
                 <ScalarProperty Name="appartement" ColumnName="appartement" />
                 <ScalarProperty Name="adresse" ColumnName="adresse" />
+                <ScalarProperty Name="cheveux" ColumnName="cheveux" />
+                <ScalarProperty Name="yeux" ColumnName="yeux" />
+                <ScalarProperty Name="taille" ColumnName="taille" />
                 <ScalarProperty Name="raison_de_la_visite" ColumnName="raison_de_la_visite" />
                 <ScalarProperty Name="date_naissance" ColumnName="date_naissance" />
                 <ScalarProperty Name="deuxième_nom" ColumnName="deuxième_nom" />
                 <ScalarProperty Name="prénom" ColumnName="prénom" />
                 <ScalarProperty Name="nom" ColumnName="nom" />
+                <ScalarProperty Name="adresse_carte_identité" ColumnName="adresse_carte_identité" />
+                <ScalarProperty Name="Identité_date_de_publication" ColumnName="Identité_date_de_publication" />
+                <ScalarProperty Name="Identité_expiration" ColumnName="Identité_expiration" />
+                <ScalarProperty Name="numero_carte_identité" ColumnName="numero_carte_identité" />
                 <ScalarProperty Name="ssn_ou_identité" ColumnName="ssn_ou_identité" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Patients_Doctors_Relations">
+            <EntityTypeMapping TypeName="HCPFRModel.Patients_Doctors_Relations">
+              <MappingFragment StoreEntitySet="Patients_Doctors_Relations">
+                <ScalarProperty Name="ModifierPar" ColumnName="ModifierPar" />
+                <ScalarProperty Name="ModifierAu" ColumnName="ModifierAu" />
+                <ScalarProperty Name="AjouterPar" ColumnName="AjouterPar" />
+                <ScalarProperty Name="AjouterAu" ColumnName="AjouterAu" />
+                <ScalarProperty Name="Statut" ColumnName="Statut" />
+                <ScalarProperty Name="notes" ColumnName="notes" />
+                <ScalarProperty Name="employeur" ColumnName="employeur" />
+                <ScalarProperty Name="linkedin" ColumnName="linkedin" />
+                <ScalarProperty Name="whatsapp" ColumnName="whatsapp" />
+                <ScalarProperty Name="twitter" ColumnName="twitter" />
+                <ScalarProperty Name="email" ColumnName="email" />
+                <ScalarProperty Name="fax" ColumnName="fax" />
+                <ScalarProperty Name="téléphone" ColumnName="téléphone" />
+                <ScalarProperty Name="lieux_naissance" ColumnName="lieux_naissance" />
+                <ScalarProperty Name="naissance" ColumnName="naissance" />
+                <ScalarProperty Name="genre" ColumnName="genre" />
+                <ScalarProperty Name="boite_postale" ColumnName="boite_postale" />
+                <ScalarProperty Name="Pays" ColumnName="Pays" />
+                <ScalarProperty Name="état_ou_région" ColumnName="état_ou_région" />
+                <ScalarProperty Name="ville" ColumnName="ville" />
+                <ScalarProperty Name="appartement" ColumnName="appartement" />
+                <ScalarProperty Name="adresse" ColumnName="adresse" />
+                <ScalarProperty Name="cheveux" ColumnName="cheveux" />
+                <ScalarProperty Name="yeux" ColumnName="yeux" />
+                <ScalarProperty Name="taille" ColumnName="taille" />
+                <ScalarProperty Name="raison_de_la_visite" ColumnName="raison_de_la_visite" />
+                <ScalarProperty Name="date_naissance" ColumnName="date_naissance" />
+                <ScalarProperty Name="deuxième_nom" ColumnName="deuxième_nom" />
+                <ScalarProperty Name="prénom" ColumnName="prénom" />
+                <ScalarProperty Name="nom" ColumnName="nom" />
+                <ScalarProperty Name="adresse_carte_identité" ColumnName="adresse_carte_identité" />
+                <ScalarProperty Name="Identité_date_de_publication" ColumnName="Identité_date_de_publication" />
+                <ScalarProperty Name="Identité_expiration" ColumnName="Identité_expiration" />
+                <ScalarProperty Name="numero_carte_identité" ColumnName="numero_carte_identité" />
+                <ScalarProperty Name="ssn_ou_identité" ColumnName="ssn_ou_identité" />
+                <ScalarProperty Name="Spécialité" ColumnName="Spécialité" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Pid" ColumnName="Pid" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Patients_Nurses_Relations">
+            <EntityTypeMapping TypeName="HCPFRModel.Patients_Nurses_Relations">
+              <MappingFragment StoreEntitySet="Patients_Nurses_Relations">
+                <ScalarProperty Name="ModifierPar" ColumnName="ModifierPar" />
+                <ScalarProperty Name="ModifierAu" ColumnName="ModifierAu" />
+                <ScalarProperty Name="AjouterPar" ColumnName="AjouterPar" />
+                <ScalarProperty Name="AjouterAu" ColumnName="AjouterAu" />
+                <ScalarProperty Name="Statut" ColumnName="Statut" />
+                <ScalarProperty Name="notes" ColumnName="notes" />
+                <ScalarProperty Name="employeur" ColumnName="employeur" />
+                <ScalarProperty Name="linkedin" ColumnName="linkedin" />
+                <ScalarProperty Name="whatsapp" ColumnName="whatsapp" />
+                <ScalarProperty Name="twitter" ColumnName="twitter" />
+                <ScalarProperty Name="email" ColumnName="email" />
+                <ScalarProperty Name="fax" ColumnName="fax" />
+                <ScalarProperty Name="téléphone" ColumnName="téléphone" />
+                <ScalarProperty Name="lieux_naissance" ColumnName="lieux_naissance" />
+                <ScalarProperty Name="naissance" ColumnName="naissance" />
+                <ScalarProperty Name="genre" ColumnName="genre" />
+                <ScalarProperty Name="boite_postale" ColumnName="boite_postale" />
+                <ScalarProperty Name="Pays" ColumnName="Pays" />
+                <ScalarProperty Name="état_ou_région" ColumnName="état_ou_région" />
+                <ScalarProperty Name="ville" ColumnName="ville" />
+                <ScalarProperty Name="appartement" ColumnName="appartement" />
+                <ScalarProperty Name="adresse" ColumnName="adresse" />
+                <ScalarProperty Name="cheveux" ColumnName="cheveux" />
+                <ScalarProperty Name="yeux" ColumnName="yeux" />
+                <ScalarProperty Name="taille" ColumnName="taille" />
+                <ScalarProperty Name="raison_de_la_visite" ColumnName="raison_de_la_visite" />
+                <ScalarProperty Name="date_naissance" ColumnName="date_naissance" />
+                <ScalarProperty Name="deuxième_nom" ColumnName="deuxième_nom" />
+                <ScalarProperty Name="prénom" ColumnName="prénom" />
+                <ScalarProperty Name="nom" ColumnName="nom" />
+                <ScalarProperty Name="adresse_carte_identité" ColumnName="adresse_carte_identité" />
+                <ScalarProperty Name="Identité_date_de_publication" ColumnName="Identité_date_de_publication" />
+                <ScalarProperty Name="Identité_expiration" ColumnName="Identité_expiration" />
+                <ScalarProperty Name="numero_carte_identité" ColumnName="numero_carte_identité" />
+                <ScalarProperty Name="ssn_ou_identité" ColumnName="ssn_ou_identité" />
+                <ScalarProperty Name="Spécialité" ColumnName="Spécialité" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Pid" ColumnName="Pid" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PatientSearchColumns">
+            <EntityTypeMapping TypeName="HCPFRModel.PatientSearchColumns">
+              <MappingFragment StoreEntitySet="PatientSearchColumns">
+                <ScalarProperty Name="modifier_par" ColumnName="modifier_par" />
+                <ScalarProperty Name="modifier_au" ColumnName="modifier_au" />
+                <ScalarProperty Name="ajouter_par" ColumnName="ajouter_par" />
+                <ScalarProperty Name="ajouter_au" ColumnName="ajouter_au" />
+                <ScalarProperty Name="Statut" ColumnName="Statut" />
+                <ScalarProperty Name="colonne" ColumnName="colonne" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PatientsNotes">
+            <EntityTypeMapping TypeName="HCPFRModel.PatientsNotes">
+              <MappingFragment StoreEntitySet="PatientsNotes">
+                <ScalarProperty Name="modifier_par" ColumnName="modifier_par" />
+                <ScalarProperty Name="modifier_au" ColumnName="modifier_au" />
+                <ScalarProperty Name="ajouter_par" ColumnName="ajouter_par" />
+                <ScalarProperty Name="ajouter_au" ColumnName="ajouter_au" />
+                <ScalarProperty Name="Notes" ColumnName="Notes" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="PnId" ColumnName="PnId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PatientsVisitNotes">
+            <EntityTypeMapping TypeName="HCPFRModel.PatientsVisitNotes">
+              <MappingFragment StoreEntitySet="PatientsVisitNotes">
+                <ScalarProperty Name="modifier_par" ColumnName="modifier_par" />
+                <ScalarProperty Name="modifier_au" ColumnName="modifier_au" />
+                <ScalarProperty Name="ajouter_par" ColumnName="ajouter_par" />
+                <ScalarProperty Name="ajouter_au" ColumnName="ajouter_au" />
+                <ScalarProperty Name="Notes" ColumnName="Notes" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="PvId" ColumnName="PvId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Pays">
+            <EntityTypeMapping TypeName="HCPFRModel.Pays">
+              <MappingFragment StoreEntitySet="Pays">
+                <ScalarProperty Name="modifier_par" ColumnName="modifier_par" />
+                <ScalarProperty Name="modifier_au" ColumnName="modifier_au" />
+                <ScalarProperty Name="ajouter_par" ColumnName="ajouter_par" />
+                <ScalarProperty Name="ajouter_au" ColumnName="ajouter_au" />
+                <ScalarProperty Name="Code3" ColumnName="Code3" />
+                <ScalarProperty Name="Code2" ColumnName="Code2" />
+                <ScalarProperty Name="Nom" ColumnName="Nom" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Regions">
+            <EntityTypeMapping TypeName="HCPFRModel.Regions">
+              <MappingFragment StoreEntitySet="Regions">
+                <ScalarProperty Name="modifier_par" ColumnName="modifier_par" />
+                <ScalarProperty Name="modifier_au" ColumnName="modifier_au" />
+                <ScalarProperty Name="ajouter_par" ColumnName="ajouter_par" />
+                <ScalarProperty Name="ajouter_au" ColumnName="ajouter_au" />
+                <ScalarProperty Name="status" ColumnName="status" />
+                <ScalarProperty Name="région" ColumnName="région" />
+                <ScalarProperty Name="pays_id" ColumnName="pays_id" />
                 <ScalarProperty Name="Id" ColumnName="Id" />
               </MappingFragment>
             </EntityTypeMapping>
@@ -589,6 +1904,33 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
+          <EntitySetMapping Name="SecuritySsn">
+            <EntityTypeMapping TypeName="HCPFRModel.SecuritySsn">
+              <MappingFragment StoreEntitySet="SecuritySsn">
+                <ScalarProperty Name="modifier_par" ColumnName="modifier_par" />
+                <ScalarProperty Name="modifier_au" ColumnName="modifier_au" />
+                <ScalarProperty Name="ajouter_par" ColumnName="ajouter_par" />
+                <ScalarProperty Name="ajouter_au" ColumnName="ajouter_au" />
+                <ScalarProperty Name="utilisateur_id" ColumnName="utilisateur_id" />
+                <ScalarProperty Name="Ssn" ColumnName="Ssn" />
+                <ScalarProperty Name="SsnId" ColumnName="SsnId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Specialities">
+            <EntityTypeMapping TypeName="HCPFRModel.Specialities">
+              <MappingFragment StoreEntitySet="Specialities">
+                <ScalarProperty Name="ModifierPar" ColumnName="ModifierPar" />
+                <ScalarProperty Name="ModifierAu" ColumnName="ModifierAu" />
+                <ScalarProperty Name="AjouterPar" ColumnName="AjouterPar" />
+                <ScalarProperty Name="AjouterAu" ColumnName="AjouterAu" />
+                <ScalarProperty Name="Statut" ColumnName="Statut" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="Spécialité" ColumnName="Spécialité" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
           <EntitySetMapping Name="sysdiagrams">
             <EntityTypeMapping TypeName="HCPFRModel.sysdiagrams">
               <MappingFragment StoreEntitySet="sysdiagrams">
@@ -597,6 +1939,7 @@
                 <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
                 <ScalarProperty Name="principal_id" ColumnName="principal_id" />
                 <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="id" ColumnName="id" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -627,6 +1970,20 @@
                 <ScalarProperty Name="ajouter_au" ColumnName="ajouter_au" />
                 <ScalarProperty Name="valeur" ColumnName="valeur" />
                 <ScalarProperty Name="clé" ColumnName="clé" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Titles">
+            <EntityTypeMapping TypeName="HCPFRModel.Titles">
+              <MappingFragment StoreEntitySet="Titles">
+                <ScalarProperty Name="modifier_par" ColumnName="modifier_par" />
+                <ScalarProperty Name="modifier_au" ColumnName="modifier_au" />
+                <ScalarProperty Name="ajouter_par" ColumnName="ajouter_par" />
+                <ScalarProperty Name="ajouter_au" ColumnName="ajouter_au" />
+                <ScalarProperty Name="Actif" ColumnName="Actif" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="Titre" ColumnName="Titre" />
                 <ScalarProperty Name="Id" ColumnName="Id" />
               </MappingFragment>
             </EntityTypeMapping>
@@ -664,7 +2021,67 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          </EntityContainerMapping>
+          <EntitySetMapping Name="view_gen_ssn">
+            <EntityTypeMapping TypeName="HCPFRModel.view_gen_ssn">
+              <MappingFragment StoreEntitySet="view_gen_ssn">
+                <ScalarProperty Name="SSN" ColumnName="SSN" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Villes">
+            <EntityTypeMapping TypeName="HCPFRModel.Villes">
+              <MappingFragment StoreEntitySet="Villes">
+                <ScalarProperty Name="modifier_par" ColumnName="modifier_par" />
+                <ScalarProperty Name="modifier_au" ColumnName="modifier_au" />
+                <ScalarProperty Name="ajouter_par" ColumnName="ajouter_par" />
+                <ScalarProperty Name="ajouter_au" ColumnName="ajouter_au" />
+                <ScalarProperty Name="status" ColumnName="status" />
+                <ScalarProperty Name="Ville" ColumnName="Ville" />
+                <ScalarProperty Name="région" ColumnName="région" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="vw_available_ssns">
+            <EntityTypeMapping TypeName="HCPFRModel.vw_available_ssns">
+              <MappingFragment StoreEntitySet="vw_available_ssns">
+                <ScalarProperty Name="ssn" ColumnName="ssn" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <FunctionImportMapping FunctionImportName="procPatientSeach2" FunctionName="HCPFRModel.Store.procPatientSeach2" />
+          <EntitySetMapping Name="Sub_Specialties">
+            <EntityTypeMapping TypeName="HCPFRModel.Sub_Specialties">
+              <MappingFragment StoreEntitySet="Sub_Specialties">
+                <ScalarProperty Name="ModifierPar" ColumnName="ModifierPar" />
+                <ScalarProperty Name="ModifierAu" ColumnName="ModifierAu" />
+                <ScalarProperty Name="AjouterPar" ColumnName="AjouterPar" />
+                <ScalarProperty Name="AjouterAu" ColumnName="AjouterAu" />
+                <ScalarProperty Name="Statut" ColumnName="Statut" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="Sous_Spécialité" ColumnName="Sous_Spécialité" />
+                <ScalarProperty Name="Spécialité" ColumnName="Spécialité" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="UserPdfSplitPaths">
+            <EntityTypeMapping TypeName="HCPFRModel.UserPdfSplitPaths">
+              <MappingFragment StoreEntitySet="UserPdfSplitPaths">
+                <ScalarProperty Name="ModifierPar" ColumnName="ModifierPar" />
+                <ScalarProperty Name="ModifierAu" ColumnName="ModifierAu" />
+                <ScalarProperty Name="AjouterPar" ColumnName="AjouterPar" />
+                <ScalarProperty Name="AjouterAu" ColumnName="AjouterAu" />
+                <ScalarProperty Name="SavedPath" ColumnName="SavedPath" />
+                <ScalarProperty Name="UserName" ColumnName="UserName" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="ComputerName" ColumnName="ComputerName" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <FunctionImportMapping FunctionImportName="proc_add_SubSpeciality" FunctionName="HCPFRModel.Store.proc_add_SubSpeciality" />
+        </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>
   </edmx:Runtime>

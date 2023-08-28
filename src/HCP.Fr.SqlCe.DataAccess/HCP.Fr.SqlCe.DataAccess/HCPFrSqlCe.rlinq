@@ -1,0 +1,425 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<DomainModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" dslVersion="2.0.0.0" name="HCPFrSqlCe" namespace="HCP.Fr.SqlCe.DataAccess" showPropertiesCompartment="true" xmlns="http://www.telerik.com/ORM">
+  <orm:orm name="HCPFrSqlCe" backend="sqlce" xmlns:orm="http://tempuri.org/ORM">
+    <orm:namespace name="HCP.Fr.SqlCe.DataAccess" default="true">
+      <orm:class name="Scope_info" uniqueId="77a00ba8-803f-4152-bc98-b9720eeb113d">
+        <orm:table name="scope_info" />
+        <orm:identity>
+          <orm:single-field field-name="_sync_Scope_Name" />
+        </orm:identity>
+        <orm:concurrency strategy="changed" />
+        <orm:field name="_scope_Local_Id" property="Scope_local_id" behavior="readwrite" uniqueId="1e73a3dd-12d5-4adc-9dff-64c9ddbeb28b" type="System.Int32">
+          <orm:column name="scope_local_id" sql-type="int" nullable="false" length="0" scale="0" ado-type="Int32" />
+        </orm:field>
+        <orm:field name="_scope_Id" property="Scope_id" behavior="readwrite" uniqueId="9f163c93-1385-4524-a13f-344f9d96873f" type="System.Guid">
+          <orm:column name="scope_id" sql-type="uniqueidentifier" nullable="false" length="0" scale="0" has-default-value="true" ado-type="Guid" />
+        </orm:field>
+        <orm:field name="_sync_Scope_Name" property="Sync_scope_name" behavior="readwrite" uniqueId="2f0fdb1a-060b-4ec8-93d9-faf93fb4ad3b" type="System.String">
+          <orm:column name="sync_scope_name" sql-type="nvarchar" nullable="false" length="100" scale="0" primary-key="true" ado-type="UnicodeStringVariableLength" />
+        </orm:field>
+        <orm:field name="_scope_Sync_Knowledge" property="Scope_sync_knowledge" behavior="readwrite" uniqueId="a2770454-03f8-4d06-aece-86d3a57d95c4" type="System.Byte[]">
+          <orm:column name="scope_sync_knowledge" sql-type="image" nullable="true" length="0" scale="0" ado-type="LongVarBinary" />
+        </orm:field>
+        <orm:field name="_scope_Tombstone_Cleanup_Knowledge" property="Scope_tombstone_cleanup_knowledge" behavior="readwrite" uniqueId="cb2d623e-a670-4023-aa2a-88c78c8f0743" type="System.Byte[]">
+          <orm:column name="scope_tombstone_cleanup_knowledge" sql-type="image" nullable="true" length="0" scale="0" ado-type="LongVarBinary" />
+        </orm:field>
+        <orm:field name="_scope_Timestamp" property="Scope_timestamp" behavior="readwrite" uniqueId="5f3d6968-3713-400a-88e9-4621445bec3c" type="System.Nullable`1[[System.Int64, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]">
+          <orm:column name="scope_timestamp" sql-type="bigint" nullable="true" length="0" scale="0" ado-type="Int64" />
+        </orm:field>
+        <orm:field name="_snapshot_Timestamp" property="Snapshot_timestamp" behavior="readwrite" uniqueId="b3723be0-9b62-4585-a791-91a8f697b7e4" type="System.Nullable`1[[System.Int64, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]">
+          <orm:column name="snapshot_timestamp" sql-type="bigint" nullable="true" length="0" scale="0" ado-type="Int64" />
+        </orm:field>
+        <orm:field name="_scope_Config_Id" property="Scope_config_id" behavior="readwrite" uniqueId="922b41b6-0b14-4a4c-9526-0b9fb8d957e9" type="System.Nullable`1[[System.Guid, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]">
+          <orm:column name="scope_config_id" sql-type="uniqueidentifier" nullable="true" length="0" scale="0" ado-type="Guid" />
+        </orm:field>
+        <orm:field name="_scope_User_Comment" property="Scope_user_comment" behavior="readwrite" uniqueId="922912d3-b448-4bad-82df-8c9aaf4d9099" type="System.String">
+          <orm:column name="scope_user_comment" sql-type="ntext" nullable="true" length="0" scale="0" ado-type="UnicodeStringInfiniteLength" />
+        </orm:field>
+        <orm:field name="_scope_Tomb_Mark" property="Scope_tomb_mark" behavior="readwrite" uniqueId="76d670cc-42c9-4b41-b560-08f4e5f2a873" type="System.Int64">
+          <orm:column name="scope_tomb_mark" sql-type="bigint" nullable="false" length="0" scale="0" has-default-value="true" ado-type="Int64" />
+        </orm:field>
+      </orm:class>
+      <orm:class name="Scope_config" uniqueId="d2593712-2631-47b7-90a5-d3d98e4f299a">
+        <orm:table name="scope_config" />
+        <orm:identity>
+          <orm:key-generator name="guid" />
+          <orm:single-field field-name="_config_Id" />
+        </orm:identity>
+        <orm:concurrency strategy="changed" />
+        <orm:field name="_config_Id" property="Config_id" behavior="readwrite" uniqueId="7c3367d6-949d-4556-829f-5c5e80c9a896" type="System.Guid">
+          <orm:column name="config_id" sql-type="uniqueidentifier" nullable="false" length="0" scale="0" primary-key="true" ado-type="Guid" />
+        </orm:field>
+        <orm:field name="_config_Data" property="Config_data" behavior="readwrite" uniqueId="48014182-2447-4694-839f-1bb41c32b68a" type="System.String">
+          <orm:column name="config_data" sql-type="ntext" nullable="false" length="0" scale="0" ado-type="UnicodeStringInfiniteLength" />
+        </orm:field>
+      </orm:class>
+      <orm:class name="Schema_info" uniqueId="2501263a-0681-4dcd-97a1-37b624e142a8">
+        <orm:table name="schema_info" />
+        <orm:identity>
+          <orm:multiple-field>
+            <orm:single-field field-name="_schema_Major_Version" />
+            <orm:single-field field-name="_schema_Minor_Version" />
+          </orm:multiple-field>
+        </orm:identity>
+        <orm:concurrency strategy="changed" />
+        <orm:field name="_schema_Major_Version" property="Schema_major_version" behavior="readwrite" uniqueId="35c16965-d4cd-46d6-abb1-ad5746e01709" type="System.Int32">
+          <orm:column name="schema_major_version" sql-type="int" nullable="false" length="0" scale="0" primary-key="true" ado-type="Int32" />
+        </orm:field>
+        <orm:field name="_schema_Minor_Version" property="Schema_minor_version" behavior="readwrite" uniqueId="9fdad100-f1f3-431b-9b1d-af74dbc1dd81" type="System.Int32">
+          <orm:column name="schema_minor_version" sql-type="int" nullable="false" length="0" scale="0" primary-key="true" ado-type="Int32" />
+        </orm:field>
+        <orm:field name="_schema_Extended_Info" property="Schema_extended_info" behavior="readwrite" uniqueId="6f223bdd-deaa-4042-a13b-adcba048ea92" type="System.String">
+          <orm:column name="schema_extended_info" sql-type="nvarchar" nullable="false" length="100" scale="0" ado-type="UnicodeStringVariableLength" />
+        </orm:field>
+      </orm:class>
+      <orm:class name="Patients_tracking" uniqueId="5723d148-9f96-46a0-8f13-f282d8ab6d8e">
+        <orm:table name="Patients_tracking" />
+        <orm:identity>
+          <orm:key-generator name="guid" />
+          <orm:single-field field-name="_id" />
+        </orm:identity>
+        <orm:concurrency strategy="changed" />
+        <orm:field name="_id" property="Id" behavior="readwrite" uniqueId="77df26dc-a655-40c8-aafc-10de7677da13" type="System.Guid">
+          <orm:column name="Id" sql-type="uniqueidentifier" nullable="false" length="0" scale="0" primary-key="true" ado-type="Guid" />
+        </orm:field>
+        <orm:field name="_sync_Row_Is_Tombstone" property="Sync_row_is_tombstone" behavior="readwrite" uniqueId="d7359dab-f076-4b34-b66a-7e59d85b0e7b" type="System.Int32">
+          <orm:column name="sync_row_is_tombstone" sql-type="int" nullable="false" length="0" scale="0" ado-type="Int32" />
+        </orm:field>
+        <orm:field name="_sync_Update_Peer_Key" property="Sync_update_peer_key" behavior="readwrite" uniqueId="0041b4ad-c5a2-49f3-9795-7bb4392f5f15" type="System.Int32">
+          <orm:column name="sync_update_peer_key" sql-type="int" nullable="false" length="0" scale="0" ado-type="Int32" />
+        </orm:field>
+        <orm:field name="_sync_Update_Peer_Timestamp" property="Sync_update_peer_timestamp" behavior="readwrite" uniqueId="c20e4e32-e199-4092-be85-f53ac6b695bf" type="System.Int64">
+          <orm:column name="sync_update_peer_timestamp" sql-type="bigint" nullable="false" length="0" scale="0" ado-type="Int64" />
+        </orm:field>
+        <orm:field name="_sync_Create_Peer_Key" property="Sync_create_peer_key" behavior="readwrite" uniqueId="aa590244-240c-44b5-b5b3-38d9db400db4" type="System.Int32">
+          <orm:column name="sync_create_peer_key" sql-type="int" nullable="false" length="0" scale="0" ado-type="Int32" />
+        </orm:field>
+        <orm:field name="_sync_Create_Peer_Timestamp" property="Sync_create_peer_timestamp" behavior="readwrite" uniqueId="c56f5c40-89e9-4da5-9c27-ef0450d895d7" type="System.Int64">
+          <orm:column name="sync_create_peer_timestamp" sql-type="bigint" nullable="false" length="0" scale="0" ado-type="Int64" />
+        </orm:field>
+        <orm:field name="_sync_Update_Bsn" property="Sync_update_bsn" behavior="readwrite" uniqueId="bba6bb35-ab95-408d-8669-7ba84048f3d2" type="System.Int64">
+          <orm:column name="sync_update_bsn" sql-type="bigint" nullable="false" length="0" scale="0" has-default-value="true" ado-type="Int64" />
+        </orm:field>
+        <orm:field name="_last_Change_Datetime" property="Last_change_datetime" behavior="readwrite" uniqueId="2589dd4c-4730-43b8-a019-24eb38be5baa" type="System.Nullable`1[[System.DateTime, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]">
+          <orm:column name="last_change_datetime" sql-type="datetime" nullable="true" length="0" scale="3" has-default-value="true" ado-type="DateTime" />
+        </orm:field>
+        <orm:index name="sysChangeTxBsn_idx">
+          <orm:columnMapping>
+            <orm:column name="sync_update_bsn" sql-type="bigint" nullable="false" length="0" scale="0" has-default-value="true" ado-type="Int64" />
+          </orm:columnMapping>
+        </orm:index>
+      </orm:class>
+      <orm:class name="Patient" uniqueId="2e11abee-a6d9-423d-aa7f-443817aaaa31">
+        <orm:table name="Patients" />
+        <orm:identity>
+          <orm:key-generator name="guid" />
+          <orm:single-field field-name="_id" />
+        </orm:identity>
+        <orm:concurrency strategy="changed" />
+        <orm:field name="_id" property="Id" behavior="readwrite" uniqueId="03080bf0-1259-4eef-908d-c494cf1f4338" type="System.Guid">
+          <orm:column name="Id" sql-type="uniqueidentifier" nullable="false" length="0" scale="0" primary-key="true" ado-type="Guid" />
+        </orm:field>
+        <orm:field name="_ssn_Ou_Identité" property="Ssn_ou_identité" behavior="readwrite" uniqueId="92b149c8-886d-46d4-bfdb-9699e29700ea" type="System.String">
+          <orm:column name="ssn_ou_identité" sql-type="nvarchar" nullable="false" length="100" scale="0" ado-type="UnicodeStringVariableLength" />
+        </orm:field>
+        <orm:field name="_numero_Carte_Identité" property="Numero_carte_identité" behavior="readwrite" uniqueId="0e35b614-eaaf-4227-aac8-c24157e13f2e" type="System.String">
+          <orm:column name="numero_carte_identité" sql-type="nvarchar" nullable="true" length="50" scale="0" ado-type="UnicodeStringVariableLength" />
+        </orm:field>
+        <orm:field name="_identité_Expiration" property="Identité_expiration" behavior="readwrite" uniqueId="dcdd26f6-ca41-4c4e-98d1-25d25bfbd26a" type="System.String">
+          <orm:column name="Identité_expiration" sql-type="nvarchar" nullable="true" length="50" scale="0" ado-type="UnicodeStringVariableLength" />
+        </orm:field>
+        <orm:field name="_identité_Date_De_Publication" property="Identité_date_de_publication" behavior="readwrite" uniqueId="5b2940f4-0357-438e-bcf7-5d788d0d619d" type="System.String">
+          <orm:column name="Identité_date_de_publication" sql-type="nvarchar" nullable="true" length="50" scale="0" ado-type="UnicodeStringVariableLength" />
+        </orm:field>
+        <orm:field name="_adresse_Carte_Identité" property="Adresse_carte_identité" behavior="readwrite" uniqueId="b6883ec1-04aa-4585-a860-4db0d02fa745" type="System.String">
+          <orm:column name="adresse_carte_identité" sql-type="nvarchar" nullable="true" length="100" scale="0" ado-type="UnicodeStringVariableLength" />
+        </orm:field>
+        <orm:field name="_nom" property="Nom" behavior="readwrite" uniqueId="1236b3f0-5681-479d-9c0c-2482fe9f49e1" type="System.String">
+          <orm:column name="nom" sql-type="nvarchar" nullable="false" length="100" scale="0" ado-type="UnicodeStringVariableLength" />
+        </orm:field>
+        <orm:field name="_prénom" property="Prénom" behavior="readwrite" uniqueId="0e751e43-53bb-409a-9e88-fdbc445c8fe9" type="System.String">
+          <orm:column name="prénom" sql-type="nvarchar" nullable="false" length="100" scale="0" ado-type="UnicodeStringVariableLength" />
+        </orm:field>
+        <orm:field name="_deuxième_Nom" property="Deuxième_nom" behavior="readwrite" uniqueId="3a5d8feb-41e1-4910-8924-aed35a1a298c" type="System.String">
+          <orm:column name="deuxième_nom" sql-type="nvarchar" nullable="true" length="100" scale="0" ado-type="UnicodeStringVariableLength" />
+        </orm:field>
+        <orm:field name="_date_Naissance" property="Date_naissance" behavior="readwrite" uniqueId="1822d366-eb06-4f51-8185-44937844d074" type="System.String">
+          <orm:column name="date_naissance" sql-type="nvarchar" nullable="false" length="100" scale="0" ado-type="UnicodeStringVariableLength" />
+        </orm:field>
+        <orm:field name="_raison_De_La_Visite" property="Raison_de_la_visite" behavior="readwrite" uniqueId="b44ba3ca-c2bf-40af-9b36-a3a71eb9abc8" type="System.String">
+          <orm:column name="raison_de_la_visite" sql-type="ntext" nullable="false" length="0" scale="0" ado-type="UnicodeStringInfiniteLength" />
+        </orm:field>
+        <orm:field name="_taille" property="Taille" behavior="readwrite" uniqueId="0a69c14d-b72f-4353-a0b3-68e1918a145f" type="System.String">
+          <orm:column name="taille" sql-type="nvarchar" nullable="true" length="20" scale="0" ado-type="UnicodeStringVariableLength" />
+        </orm:field>
+        <orm:field name="_yeux" property="Yeux" behavior="readwrite" uniqueId="f15b6629-318d-4801-8a6c-e2531565daf4" type="System.String">
+          <orm:column name="yeux" sql-type="nvarchar" nullable="true" length="50" scale="0" ado-type="UnicodeStringVariableLength" />
+        </orm:field>
+        <orm:field name="_cheveux" property="Cheveux" behavior="readwrite" uniqueId="49c4d9a9-fcbc-4e60-b94b-cd704a38d800" type="System.String">
+          <orm:column name="cheveux" sql-type="nvarchar" nullable="true" length="50" scale="0" ado-type="UnicodeStringVariableLength" />
+        </orm:field>
+        <orm:field name="_adresse" property="Adresse" behavior="readwrite" uniqueId="15ce0e66-3be1-4f6c-a680-a4de596cf83a" type="System.String">
+          <orm:column name="adresse" sql-type="nvarchar" nullable="false" length="300" scale="0" ado-type="UnicodeStringVariableLength" />
+        </orm:field>
+        <orm:field name="_appartement" property="Appartement" behavior="readwrite" uniqueId="8336dce0-b6df-4c68-a5a1-2123a19aec22" type="System.String">
+          <orm:column name="appartement" sql-type="nvarchar" nullable="true" length="20" scale="0" ado-type="UnicodeStringVariableLength" />
+        </orm:field>
+        <orm:field name="_ville" property="Ville" behavior="readwrite" uniqueId="9764a25f-dc08-4934-871c-62e609a570b2" type="System.String">
+          <orm:column name="ville" sql-type="nvarchar" nullable="false" length="300" scale="0" ado-type="UnicodeStringVariableLength" />
+        </orm:field>
+        <orm:field name="_état_Ou_Région" property="État_ou_région" behavior="readwrite" uniqueId="38d76808-45a5-4a71-9aee-64f68c7b7887" type="System.String">
+          <orm:column name="état_ou_région" sql-type="nvarchar" nullable="true" length="300" scale="0" ado-type="UnicodeStringVariableLength" />
+        </orm:field>
+        <orm:field name="_pays" property="Pays" behavior="readwrite" uniqueId="a7a1f08a-656b-4781-be47-f7c11c70c20c" type="System.String">
+          <orm:column name="Pays" sql-type="nvarchar" nullable="false" length="300" scale="0" ado-type="UnicodeStringVariableLength" />
+        </orm:field>
+        <orm:field name="_boite_Postale" property="Boite_postale" behavior="readwrite" uniqueId="f57f7d2c-66e5-4655-a212-6b5390ce312a" type="System.String">
+          <orm:column name="boite_postale" sql-type="nvarchar" nullable="false" length="50" scale="0" ado-type="UnicodeStringVariableLength" />
+        </orm:field>
+        <orm:field name="_genre" property="Genre" behavior="readwrite" uniqueId="8f151a62-9ec5-406c-96f4-a5474a810eb8" type="System.String">
+          <orm:column name="genre" sql-type="nvarchar" nullable="true" length="50" scale="0" ado-type="UnicodeStringVariableLength" />
+        </orm:field>
+        <orm:field name="_naissance" property="Naissance" behavior="readwrite" uniqueId="7fa9d0f0-92c1-4b5f-9d21-a99527294abe" type="System.String">
+          <orm:column name="naissance" sql-type="nvarchar" nullable="true" length="20" scale="0" ado-type="UnicodeStringVariableLength" />
+        </orm:field>
+        <orm:field name="_lieux_Naissance" property="Lieux_naissance" behavior="readwrite" uniqueId="6a367932-917e-468e-9723-c717a4db1558" type="System.String">
+          <orm:column name="lieux_naissance" sql-type="nvarchar" nullable="true" length="50" scale="0" ado-type="UnicodeStringVariableLength" />
+        </orm:field>
+        <orm:field name="_téléphone" property="Téléphone" behavior="readwrite" uniqueId="a56e24e3-741e-4703-a73f-4dd6810b28e5" type="System.String">
+          <orm:column name="téléphone" sql-type="nvarchar" nullable="false" length="20" scale="0" ado-type="UnicodeStringVariableLength" />
+        </orm:field>
+        <orm:field name="_fax" property="Fax" behavior="readwrite" uniqueId="48841e72-d5c1-450f-9a42-c8fd70ca42f5" type="System.String">
+          <orm:column name="fax" sql-type="nvarchar" nullable="true" length="20" scale="0" ado-type="UnicodeStringVariableLength" />
+        </orm:field>
+        <orm:field name="_email" property="Email" behavior="readwrite" uniqueId="f114c4f6-9e0d-4aaa-8087-a5115f553ab7" type="System.String">
+          <orm:column name="email" sql-type="nvarchar" nullable="false" length="200" scale="0" ado-type="UnicodeStringVariableLength" />
+        </orm:field>
+        <orm:field name="_twitter" property="Twitter" behavior="readwrite" uniqueId="b65a6f63-eac3-4dfa-b2cf-cf3c7eb2dbb6" type="System.String">
+          <orm:column name="twitter" sql-type="nvarchar" nullable="true" length="200" scale="0" ado-type="UnicodeStringVariableLength" />
+        </orm:field>
+        <orm:field name="_whatsapp" property="Whatsapp" behavior="readwrite" uniqueId="adad3f29-a032-48db-a360-c95dd0c53141" type="System.String">
+          <orm:column name="whatsapp" sql-type="nvarchar" nullable="true" length="200" scale="0" ado-type="UnicodeStringVariableLength" />
+        </orm:field>
+        <orm:field name="_linkedin" property="Linkedin" behavior="readwrite" uniqueId="ac515ee5-6c55-42cb-98d1-4ecd477fc571" type="System.String">
+          <orm:column name="linkedin" sql-type="nvarchar" nullable="true" length="200" scale="0" ado-type="UnicodeStringVariableLength" />
+        </orm:field>
+        <orm:field name="_employeur" property="Employeur" behavior="readwrite" uniqueId="8672e9da-971e-4d91-a8d4-499d24222db7" type="System.String">
+          <orm:column name="employeur" sql-type="nvarchar" nullable="true" length="200" scale="0" ado-type="UnicodeStringVariableLength" />
+        </orm:field>
+        <orm:field name="_notes" property="Notes" behavior="readwrite" uniqueId="018bda60-d95a-4057-8c1f-d40f42347ba3" type="System.String">
+          <orm:column name="notes" sql-type="ntext" nullable="true" length="0" scale="0" ado-type="UnicodeStringInfiniteLength" />
+        </orm:field>
+        <orm:field name="_statut" property="Statut" behavior="readwrite" uniqueId="8b83d660-2738-4252-a8b9-071b657b946f" type="System.String">
+          <orm:column name="statut" sql-type="nchar" nullable="true" length="100" scale="0" ado-type="UnicodeStringFixedLength" />
+        </orm:field>
+        <orm:field name="_ajouter_Au" property="Ajouter_au" behavior="readwrite" uniqueId="7254a7db-e9ae-4620-b674-6846904ce854" type="System.String">
+          <orm:column name="ajouter_au" sql-type="nvarchar" nullable="false" length="100" scale="0" ado-type="UnicodeStringVariableLength" />
+        </orm:field>
+        <orm:field name="_ajouter_Par" property="Ajouter_par" behavior="readwrite" uniqueId="61869cc6-642a-4189-a5f5-18638b68b1ad" type="System.String">
+          <orm:column name="ajouter_par" sql-type="nvarchar" nullable="false" length="200" scale="0" ado-type="UnicodeStringVariableLength" />
+        </orm:field>
+        <orm:field name="_modifier_Au" property="Modifier_au" behavior="readwrite" uniqueId="3c40c949-73c0-43f4-8f9f-59c0ce270970" type="System.String">
+          <orm:column name="modifier_au" sql-type="nvarchar" nullable="true" length="100" scale="0" ado-type="UnicodeStringVariableLength" />
+        </orm:field>
+        <orm:field name="_modifier_Par" property="Modifier_par" behavior="readwrite" uniqueId="9da18ae8-5327-4eed-98ea-c9e1a9f3a53d" type="System.String">
+          <orm:column name="modifier_par" sql-type="nvarchar" nullable="true" length="200" scale="0" ado-type="UnicodeStringVariableLength" />
+        </orm:field>
+        <orm:field name="_date_De_La_Dernière_Connexion" property="Date_de_la_dernière_connexion" behavior="readwrite" uniqueId="62b1edab-ff8e-4c44-b3ee-3e2e123652c7" type="System.String">
+          <orm:column name="date_de_la_dernière_connexion" sql-type="nvarchar" nullable="true" length="200" scale="0" ado-type="UnicodeStringVariableLength" />
+        </orm:field>
+      </orm:class>
+    </orm:namespace>
+    <orm:schema schema="">
+      <orm:table name="scope_info">
+        <orm:column name="scope_local_id" sql-type="int" nullable="false" length="0" scale="0" ado-type="Int32" />
+        <orm:column name="scope_id" sql-type="uniqueidentifier" nullable="false" length="0" scale="0" has-default-value="true" ado-type="Guid" />
+        <orm:column name="sync_scope_name" sql-type="nvarchar" nullable="false" length="100" scale="0" primary-key="true" ado-type="UnicodeStringVariableLength" />
+        <orm:column name="scope_sync_knowledge" sql-type="image" nullable="true" length="0" scale="0" ado-type="LongVarBinary" />
+        <orm:column name="scope_tombstone_cleanup_knowledge" sql-type="image" nullable="true" length="0" scale="0" ado-type="LongVarBinary" />
+        <orm:column name="scope_timestamp" sql-type="bigint" nullable="true" length="0" scale="0" ado-type="Int64" />
+        <orm:column name="snapshot_timestamp" sql-type="bigint" nullable="true" length="0" scale="0" ado-type="Int64" />
+        <orm:column name="scope_config_id" sql-type="uniqueidentifier" nullable="true" length="0" scale="0" ado-type="Guid" />
+        <orm:column name="scope_user_comment" sql-type="ntext" nullable="true" length="0" scale="0" ado-type="UnicodeStringInfiniteLength" />
+        <orm:column name="scope_tomb_mark" sql-type="bigint" nullable="false" length="0" scale="0" has-default-value="true" ado-type="Int64" />
+      </orm:table>
+      <orm:table name="scope_config">
+        <orm:column name="config_id" sql-type="uniqueidentifier" nullable="false" length="0" scale="0" primary-key="true" ado-type="Guid" />
+        <orm:column name="config_data" sql-type="ntext" nullable="false" length="0" scale="0" ado-type="UnicodeStringInfiniteLength" />
+      </orm:table>
+      <orm:table name="schema_info">
+        <orm:column name="schema_major_version" sql-type="int" nullable="false" length="0" scale="0" primary-key="true" ado-type="Int32" />
+        <orm:column name="schema_minor_version" sql-type="int" nullable="false" length="0" scale="0" primary-key="true" ado-type="Int32" />
+        <orm:column name="schema_extended_info" sql-type="nvarchar" nullable="false" length="100" scale="0" ado-type="UnicodeStringVariableLength" />
+      </orm:table>
+      <orm:table name="Patients_tracking">
+        <orm:column name="Id" sql-type="uniqueidentifier" nullable="false" length="0" scale="0" primary-key="true" ado-type="Guid" />
+        <orm:column name="sync_row_is_tombstone" sql-type="int" nullable="false" length="0" scale="0" ado-type="Int32" />
+        <orm:column name="sync_update_peer_key" sql-type="int" nullable="false" length="0" scale="0" ado-type="Int32" />
+        <orm:column name="sync_update_peer_timestamp" sql-type="bigint" nullable="false" length="0" scale="0" ado-type="Int64" />
+        <orm:column name="sync_create_peer_key" sql-type="int" nullable="false" length="0" scale="0" ado-type="Int32" />
+        <orm:column name="sync_create_peer_timestamp" sql-type="bigint" nullable="false" length="0" scale="0" ado-type="Int64" />
+        <orm:column name="sync_update_bsn" sql-type="bigint" nullable="false" length="0" scale="0" has-default-value="true" ado-type="Int64" />
+        <orm:column name="last_change_datetime" sql-type="datetime" nullable="true" length="0" scale="3" has-default-value="true" ado-type="DateTime" />
+        <orm:index name="sysChangeTxBsn_idx">
+          <orm:columnMapping>
+            <orm:column name="sync_update_bsn" sql-type="bigint" nullable="false" length="0" scale="0" has-default-value="true" ado-type="Int64" />
+          </orm:columnMapping>
+        </orm:index>
+      </orm:table>
+      <orm:table name="Patients">
+        <orm:column name="Id" sql-type="uniqueidentifier" nullable="false" length="0" scale="0" primary-key="true" ado-type="Guid" />
+        <orm:column name="ssn_ou_identité" sql-type="nvarchar" nullable="false" length="100" scale="0" ado-type="UnicodeStringVariableLength" />
+        <orm:column name="numero_carte_identité" sql-type="nvarchar" nullable="true" length="50" scale="0" ado-type="UnicodeStringVariableLength" />
+        <orm:column name="Identité_expiration" sql-type="nvarchar" nullable="true" length="50" scale="0" ado-type="UnicodeStringVariableLength" />
+        <orm:column name="Identité_date_de_publication" sql-type="nvarchar" nullable="true" length="50" scale="0" ado-type="UnicodeStringVariableLength" />
+        <orm:column name="adresse_carte_identité" sql-type="nvarchar" nullable="true" length="100" scale="0" ado-type="UnicodeStringVariableLength" />
+        <orm:column name="nom" sql-type="nvarchar" nullable="false" length="100" scale="0" ado-type="UnicodeStringVariableLength" />
+        <orm:column name="prénom" sql-type="nvarchar" nullable="false" length="100" scale="0" ado-type="UnicodeStringVariableLength" />
+        <orm:column name="deuxième_nom" sql-type="nvarchar" nullable="true" length="100" scale="0" ado-type="UnicodeStringVariableLength" />
+        <orm:column name="date_naissance" sql-type="nvarchar" nullable="false" length="100" scale="0" ado-type="UnicodeStringVariableLength" />
+        <orm:column name="raison_de_la_visite" sql-type="ntext" nullable="false" length="0" scale="0" ado-type="UnicodeStringInfiniteLength" />
+        <orm:column name="taille" sql-type="nvarchar" nullable="true" length="20" scale="0" ado-type="UnicodeStringVariableLength" />
+        <orm:column name="yeux" sql-type="nvarchar" nullable="true" length="50" scale="0" ado-type="UnicodeStringVariableLength" />
+        <orm:column name="cheveux" sql-type="nvarchar" nullable="true" length="50" scale="0" ado-type="UnicodeStringVariableLength" />
+        <orm:column name="adresse" sql-type="nvarchar" nullable="false" length="300" scale="0" ado-type="UnicodeStringVariableLength" />
+        <orm:column name="appartement" sql-type="nvarchar" nullable="true" length="20" scale="0" ado-type="UnicodeStringVariableLength" />
+        <orm:column name="ville" sql-type="nvarchar" nullable="false" length="300" scale="0" ado-type="UnicodeStringVariableLength" />
+        <orm:column name="état_ou_région" sql-type="nvarchar" nullable="true" length="300" scale="0" ado-type="UnicodeStringVariableLength" />
+        <orm:column name="Pays" sql-type="nvarchar" nullable="false" length="300" scale="0" ado-type="UnicodeStringVariableLength" />
+        <orm:column name="boite_postale" sql-type="nvarchar" nullable="false" length="50" scale="0" ado-type="UnicodeStringVariableLength" />
+        <orm:column name="genre" sql-type="nvarchar" nullable="true" length="50" scale="0" ado-type="UnicodeStringVariableLength" />
+        <orm:column name="naissance" sql-type="nvarchar" nullable="true" length="20" scale="0" ado-type="UnicodeStringVariableLength" />
+        <orm:column name="lieux_naissance" sql-type="nvarchar" nullable="true" length="50" scale="0" ado-type="UnicodeStringVariableLength" />
+        <orm:column name="téléphone" sql-type="nvarchar" nullable="false" length="20" scale="0" ado-type="UnicodeStringVariableLength" />
+        <orm:column name="fax" sql-type="nvarchar" nullable="true" length="20" scale="0" ado-type="UnicodeStringVariableLength" />
+        <orm:column name="email" sql-type="nvarchar" nullable="false" length="200" scale="0" ado-type="UnicodeStringVariableLength" />
+        <orm:column name="twitter" sql-type="nvarchar" nullable="true" length="200" scale="0" ado-type="UnicodeStringVariableLength" />
+        <orm:column name="whatsapp" sql-type="nvarchar" nullable="true" length="200" scale="0" ado-type="UnicodeStringVariableLength" />
+        <orm:column name="linkedin" sql-type="nvarchar" nullable="true" length="200" scale="0" ado-type="UnicodeStringVariableLength" />
+        <orm:column name="employeur" sql-type="nvarchar" nullable="true" length="200" scale="0" ado-type="UnicodeStringVariableLength" />
+        <orm:column name="notes" sql-type="ntext" nullable="true" length="0" scale="0" ado-type="UnicodeStringInfiniteLength" />
+        <orm:column name="statut" sql-type="nchar" nullable="true" length="100" scale="0" ado-type="UnicodeStringFixedLength" />
+        <orm:column name="ajouter_au" sql-type="nvarchar" nullable="false" length="100" scale="0" ado-type="UnicodeStringVariableLength" />
+        <orm:column name="ajouter_par" sql-type="nvarchar" nullable="false" length="200" scale="0" ado-type="UnicodeStringVariableLength" />
+        <orm:column name="modifier_au" sql-type="nvarchar" nullable="true" length="100" scale="0" ado-type="UnicodeStringVariableLength" />
+        <orm:column name="modifier_par" sql-type="nvarchar" nullable="true" length="200" scale="0" ado-type="UnicodeStringVariableLength" />
+        <orm:column name="date_de_la_dernière_connexion" sql-type="nvarchar" nullable="true" length="200" scale="0" ado-type="UnicodeStringVariableLength" />
+      </orm:table>
+    </orm:schema>
+    <orm:relational-naming-settings>
+      <orm:remove-camel-case>False</orm:remove-camel-case>
+      <orm:source-strategy>Property</orm:source-strategy>
+    </orm:relational-naming-settings>
+  </orm:orm>
+  <ModelSettings xmlns="">
+    <AppConfigConnectionPropertyName>HCPFrSqlCeConnection</AppConfigConnectionPropertyName>
+    <AppConfigConnectionString>Data Source=C:\ProgramData\ABIBOU-PC.sdf;Max Database Size=4090</AppConfigConnectionString>
+    <InitialCatalog>ABIBOU-PC</InitialCatalog>
+    <NamingSettings>
+      <ClassRules>
+        <CaseMode>PascalCase</CaseMode>
+        <PluralizationMode>Singularize</PluralizationMode>
+      </ClassRules>
+      <FieldRules>
+        <AddPrefix>_</AddPrefix>
+        <CaseMode>CamelCase</CaseMode>
+      </FieldRules>
+      <PropertyRules>
+        <CaseMode>PascalCase</CaseMode>
+      </PropertyRules>
+    </NamingSettings>
+    <CodeGenerationSettings>
+      <MappingDefinitionType>Xml</MappingDefinitionType>
+    </CodeGenerationSettings>
+    <SchemaUpdateSettings />
+    <BackendConfigurationSettings>
+      <BackendConfiguration>
+        <Backend>SqlCe</Backend>
+        <ProviderName>Microsoft.SqlServerCe.Client.3.5</ProviderName>
+      </BackendConfiguration>
+    </BackendConfigurationSettings>
+  </ModelSettings>
+  <Types>
+    <DomainClass Id="77a00ba8-803f-4152-bc98-b9720eeb113d" name="Scope_info" namespace="HCP.Fr.SqlCe.DataAccess" showPropertiesCompartment="true" concurrencyMode="Changed" showNavigationCompartment="true" showImplementationCompartment="true">
+      <Property Id="2f0fdb1a-060b-4ec8-93d9-faf93fb4ad3b" name="Sync_scope_name" label="Sync_scope_name : String" kind="Persistent" identity="true" fieldName="_sync_Scope_Name" />
+      <Property Id="922b41b6-0b14-4a4c-9526-0b9fb8d957e9" name="Scope_config_id" type="Guid" label="Scope_config_id : Guid" nullable="true" kind="Persistent" fieldName="_scope_Config_Id" />
+      <Property Id="9f163c93-1385-4524-a13f-344f9d96873f" name="Scope_id" type="Guid" label="Scope_id : Guid" kind="Persistent" fieldName="_scope_Id" />
+      <Property Id="1e73a3dd-12d5-4adc-9dff-64c9ddbeb28b" name="Scope_local_id" type="Int32" label="Scope_local_id : Int32" kind="Persistent" fieldName="_scope_Local_Id" />
+      <Property Id="a2770454-03f8-4d06-aece-86d3a57d95c4" name="Scope_sync_knowledge" type="Byte[]" label="Scope_sync_knowledge : Byte[]" kind="Persistent" fieldName="_scope_Sync_Knowledge" />
+      <Property Id="5f3d6968-3713-400a-88e9-4621445bec3c" name="Scope_timestamp" type="Int64" label="Scope_timestamp : Int64" nullable="true" kind="Persistent" fieldName="_scope_Timestamp" />
+      <Property Id="76d670cc-42c9-4b41-b560-08f4e5f2a873" name="Scope_tomb_mark" type="Int64" label="Scope_tomb_mark : Int64" kind="Persistent" fieldName="_scope_Tomb_Mark" />
+      <Property Id="cb2d623e-a670-4023-aa2a-88c78c8f0743" name="Scope_tombstone_cleanup_knowledge" type="Byte[]" label="Scope_tombstone_cleanup_knowledge : Byte[]" kind="Persistent" fieldName="_scope_Tombstone_Cleanup_Knowledge" />
+      <Property Id="922912d3-b448-4bad-82df-8c9aaf4d9099" name="Scope_user_comment" label="Scope_user_comment : String" kind="Persistent" fieldName="_scope_User_Comment" />
+      <Property Id="b3723be0-9b62-4585-a791-91a8f697b7e4" name="Snapshot_timestamp" type="Int64" label="Snapshot_timestamp : Int64" nullable="true" kind="Persistent" fieldName="_snapshot_Timestamp" />
+    </DomainClass>
+    <DomainClass Id="d2593712-2631-47b7-90a5-d3d98e4f299a" name="Scope_config" namespace="HCP.Fr.SqlCe.DataAccess" showPropertiesCompartment="true" identityMechanism="Guid" concurrencyMode="Changed" showNavigationCompartment="true" showImplementationCompartment="true">
+      <Property Id="7c3367d6-949d-4556-829f-5c5e80c9a896" name="Config_id" type="Guid" label="Config_id : Guid" kind="Persistent" identity="true" fieldName="_config_Id" />
+      <Property Id="48014182-2447-4694-839f-1bb41c32b68a" name="Config_data" label="Config_data : String" kind="Persistent" fieldName="_config_Data" />
+    </DomainClass>
+    <DomainClass Id="2501263a-0681-4dcd-97a1-37b624e142a8" name="Schema_info" namespace="HCP.Fr.SqlCe.DataAccess" showPropertiesCompartment="true" concurrencyMode="Changed" showNavigationCompartment="true" showImplementationCompartment="true">
+      <Property Id="35c16965-d4cd-46d6-abb1-ad5746e01709" name="Schema_major_version" type="Int32" label="Schema_major_version : Int32" kind="Persistent" identity="true" fieldName="_schema_Major_Version" />
+      <Property Id="9fdad100-f1f3-431b-9b1d-af74dbc1dd81" name="Schema_minor_version" type="Int32" label="Schema_minor_version : Int32" kind="Persistent" identity="true" fieldName="_schema_Minor_Version" />
+      <Property Id="6f223bdd-deaa-4042-a13b-adcba048ea92" name="Schema_extended_info" label="Schema_extended_info : String" kind="Persistent" fieldName="_schema_Extended_Info" />
+    </DomainClass>
+    <DomainClass Id="5723d148-9f96-46a0-8f13-f282d8ab6d8e" name="Patients_tracking" namespace="HCP.Fr.SqlCe.DataAccess" showPropertiesCompartment="true" identityMechanism="Guid" concurrencyMode="Changed" showNavigationCompartment="true" showImplementationCompartment="true">
+      <Property Id="77df26dc-a655-40c8-aafc-10de7677da13" name="Id" type="Guid" label="Id : Guid" kind="Persistent" identity="true" fieldName="_id" />
+      <Property Id="2589dd4c-4730-43b8-a019-24eb38be5baa" name="Last_change_datetime" type="DateTime" label="Last_change_datetime : DateTime" nullable="true" kind="Persistent" fieldName="_last_Change_Datetime" />
+      <Property Id="aa590244-240c-44b5-b5b3-38d9db400db4" name="Sync_create_peer_key" type="Int32" label="Sync_create_peer_key : Int32" kind="Persistent" fieldName="_sync_Create_Peer_Key" />
+      <Property Id="c56f5c40-89e9-4da5-9c27-ef0450d895d7" name="Sync_create_peer_timestamp" type="Int64" label="Sync_create_peer_timestamp : Int64" kind="Persistent" fieldName="_sync_Create_Peer_Timestamp" />
+      <Property Id="d7359dab-f076-4b34-b66a-7e59d85b0e7b" name="Sync_row_is_tombstone" type="Int32" label="Sync_row_is_tombstone : Int32" kind="Persistent" fieldName="_sync_Row_Is_Tombstone" />
+      <Property Id="bba6bb35-ab95-408d-8669-7ba84048f3d2" name="Sync_update_bsn" type="Int64" label="Sync_update_bsn : Int64" kind="Persistent" fieldName="_sync_Update_Bsn" />
+      <Property Id="0041b4ad-c5a2-49f3-9795-7bb4392f5f15" name="Sync_update_peer_key" type="Int32" label="Sync_update_peer_key : Int32" kind="Persistent" fieldName="_sync_Update_Peer_Key" />
+      <Property Id="c20e4e32-e199-4092-be85-f53ac6b695bf" name="Sync_update_peer_timestamp" type="Int64" label="Sync_update_peer_timestamp : Int64" kind="Persistent" fieldName="_sync_Update_Peer_Timestamp" />
+    </DomainClass>
+    <DomainClass Id="2e11abee-a6d9-423d-aa7f-443817aaaa31" name="Patient" namespace="HCP.Fr.SqlCe.DataAccess" showPropertiesCompartment="true" identityMechanism="Guid" concurrencyMode="Changed" showNavigationCompartment="true" showImplementationCompartment="true">
+      <Property Id="03080bf0-1259-4eef-908d-c494cf1f4338" name="Id" type="Guid" label="Id : Guid" kind="Persistent" identity="true" fieldName="_id" />
+      <Property Id="15ce0e66-3be1-4f6c-a680-a4de596cf83a" name="Adresse" label="Adresse : String" kind="Persistent" fieldName="_adresse" />
+      <Property Id="b6883ec1-04aa-4585-a860-4db0d02fa745" name="Adresse_carte_identité" label="Adresse_carte_identité : String" kind="Persistent" fieldName="_adresse_Carte_Identité" />
+      <Property Id="7254a7db-e9ae-4620-b674-6846904ce854" name="Ajouter_au" label="Ajouter_au : String" kind="Persistent" fieldName="_ajouter_Au" />
+      <Property Id="61869cc6-642a-4189-a5f5-18638b68b1ad" name="Ajouter_par" label="Ajouter_par : String" kind="Persistent" fieldName="_ajouter_Par" />
+      <Property Id="8336dce0-b6df-4c68-a5a1-2123a19aec22" name="Appartement" label="Appartement : String" kind="Persistent" fieldName="_appartement" />
+      <Property Id="f57f7d2c-66e5-4655-a212-6b5390ce312a" name="Boite_postale" label="Boite_postale : String" kind="Persistent" fieldName="_boite_Postale" />
+      <Property Id="49c4d9a9-fcbc-4e60-b94b-cd704a38d800" name="Cheveux" label="Cheveux : String" kind="Persistent" fieldName="_cheveux" />
+      <Property Id="62b1edab-ff8e-4c44-b3ee-3e2e123652c7" name="Date_de_la_dernière_connexion" label="Date_de_la_dernière_connexion : String" kind="Persistent" fieldName="_date_De_La_Dernière_Connexion" />
+      <Property Id="1822d366-eb06-4f51-8185-44937844d074" name="Date_naissance" label="Date_naissance : String" kind="Persistent" fieldName="_date_Naissance" />
+      <Property Id="3a5d8feb-41e1-4910-8924-aed35a1a298c" name="Deuxième_nom" label="Deuxième_nom : String" kind="Persistent" fieldName="_deuxième_Nom" />
+      <Property Id="f114c4f6-9e0d-4aaa-8087-a5115f553ab7" name="Email" label="Email : String" kind="Persistent" fieldName="_email" />
+      <Property Id="8672e9da-971e-4d91-a8d4-499d24222db7" name="Employeur" label="Employeur : String" kind="Persistent" fieldName="_employeur" />
+      <Property Id="38d76808-45a5-4a71-9aee-64f68c7b7887" name="État_ou_région" label="État_ou_région : String" kind="Persistent" fieldName="_état_Ou_Région" />
+      <Property Id="48841e72-d5c1-450f-9a42-c8fd70ca42f5" name="Fax" label="Fax : String" kind="Persistent" fieldName="_fax" />
+      <Property Id="8f151a62-9ec5-406c-96f4-a5474a810eb8" name="Genre" label="Genre : String" kind="Persistent" fieldName="_genre" />
+      <Property Id="5b2940f4-0357-438e-bcf7-5d788d0d619d" name="Identité_date_de_publication" label="Identité_date_de_publication : String" kind="Persistent" fieldName="_identité_Date_De_Publication" />
+      <Property Id="dcdd26f6-ca41-4c4e-98d1-25d25bfbd26a" name="Identité_expiration" label="Identité_expiration : String" kind="Persistent" fieldName="_identité_Expiration" />
+      <Property Id="6a367932-917e-468e-9723-c717a4db1558" name="Lieux_naissance" label="Lieux_naissance : String" kind="Persistent" fieldName="_lieux_Naissance" />
+      <Property Id="ac515ee5-6c55-42cb-98d1-4ecd477fc571" name="Linkedin" label="Linkedin : String" kind="Persistent" fieldName="_linkedin" />
+      <Property Id="3c40c949-73c0-43f4-8f9f-59c0ce270970" name="Modifier_au" label="Modifier_au : String" kind="Persistent" fieldName="_modifier_Au" />
+      <Property Id="9da18ae8-5327-4eed-98ea-c9e1a9f3a53d" name="Modifier_par" label="Modifier_par : String" kind="Persistent" fieldName="_modifier_Par" />
+      <Property Id="7fa9d0f0-92c1-4b5f-9d21-a99527294abe" name="Naissance" label="Naissance : String" kind="Persistent" fieldName="_naissance" />
+      <Property Id="1236b3f0-5681-479d-9c0c-2482fe9f49e1" name="Nom" label="Nom : String" kind="Persistent" fieldName="_nom" />
+      <Property Id="018bda60-d95a-4057-8c1f-d40f42347ba3" name="Notes" label="Notes : String" kind="Persistent" fieldName="_notes" />
+      <Property Id="0e35b614-eaaf-4227-aac8-c24157e13f2e" name="Numero_carte_identité" label="Numero_carte_identité : String" kind="Persistent" fieldName="_numero_Carte_Identité" />
+      <Property Id="a7a1f08a-656b-4781-be47-f7c11c70c20c" name="Pays" label="Pays : String" kind="Persistent" fieldName="_pays" />
+      <Property Id="0e751e43-53bb-409a-9e88-fdbc445c8fe9" name="Prénom" label="Prénom : String" kind="Persistent" fieldName="_prénom" />
+      <Property Id="b44ba3ca-c2bf-40af-9b36-a3a71eb9abc8" name="Raison_de_la_visite" label="Raison_de_la_visite : String" kind="Persistent" fieldName="_raison_De_La_Visite" />
+      <Property Id="92b149c8-886d-46d4-bfdb-9699e29700ea" name="Ssn_ou_identité" label="Ssn_ou_identité : String" kind="Persistent" fieldName="_ssn_Ou_Identité" />
+      <Property Id="8b83d660-2738-4252-a8b9-071b657b946f" name="Statut" label="Statut : String" kind="Persistent" fieldName="_statut" />
+      <Property Id="0a69c14d-b72f-4353-a0b3-68e1918a145f" name="Taille" label="Taille : String" kind="Persistent" fieldName="_taille" />
+      <Property Id="a56e24e3-741e-4703-a73f-4dd6810b28e5" name="Téléphone" label="Téléphone : String" kind="Persistent" fieldName="_téléphone" />
+      <Property Id="b65a6f63-eac3-4dfa-b2cf-cf3c7eb2dbb6" name="Twitter" label="Twitter : String" kind="Persistent" fieldName="_twitter" />
+      <Property Id="9764a25f-dc08-4934-871c-62e609a570b2" name="Ville" label="Ville : String" kind="Persistent" fieldName="_ville" />
+      <Property Id="adad3f29-a032-48db-a360-c95dd0c53141" name="Whatsapp" label="Whatsapp : String" kind="Persistent" fieldName="_whatsapp" />
+      <Property Id="f15b6629-318d-4801-8a6c-e2531565daf4" name="Yeux" label="Yeux : String" kind="Persistent" fieldName="_yeux" />
+    </DomainClass>
+  </Types>
+  <domainContext>
+    <domainModelHasDomainContext Id="0d5edc96-46f6-4c8e-b78d-124bb247d778">
+      <domainContainer name="HCPFrSqlCe" namespace="HCP.Fr.SqlCe.DataAccess" showPropertiesCompartment="true">
+        <entitySetProperty name="Scope_infos" namespace="HCP.Fr.SqlCe.DataAccess" type="Scope_info" label="Scope_infos : IQueryable&lt;HCP.Fr.SqlCe.DataAccess.Scope_info&gt;" />
+        <entitySetProperty name="Scope_configs" namespace="HCP.Fr.SqlCe.DataAccess" type="Scope_config" label="Scope_configs : IQueryable&lt;HCP.Fr.SqlCe.DataAccess.Scope_config&gt;" />
+        <entitySetProperty name="Schema_infos" namespace="HCP.Fr.SqlCe.DataAccess" type="Schema_info" label="Schema_infos : IQueryable&lt;HCP.Fr.SqlCe.DataAccess.Schema_info&gt;" />
+        <entitySetProperty name="Patients_trackings" namespace="HCP.Fr.SqlCe.DataAccess" type="Patients_tracking" label="Patients_trackings : IQueryable&lt;HCP.Fr.SqlCe.DataAccess.Patients_tracking&gt;" />
+        <entitySetProperty name="Patients" namespace="HCP.Fr.SqlCe.DataAccess" type="Patient" label="Patients : IQueryable&lt;HCP.Fr.SqlCe.DataAccess.Patient&gt;" />
+      </domainContainer>
+    </domainModelHasDomainContext>
+  </domainContext>
+</DomainModel>

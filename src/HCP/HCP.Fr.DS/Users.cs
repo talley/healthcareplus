@@ -28,8 +28,5 @@ namespace HCP.Fr.DS
         public string Nom { get; set; }
         public string prénom { get; set; }
         public string deuxième_nom { get; set; }
-    
-        public virtual Roles Roles { get; set; }
-        public virtual UserStatuses UserStatuses { get; set; }
     }
 }

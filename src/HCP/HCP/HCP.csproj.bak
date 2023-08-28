@@ -1,0 +1,717 @@
+﻿<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\EntityFramework.6.4.4\build\EntityFramework.props" Condition="Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{3D60C05F-A9B0-417A-970C-741037BABC2B}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>HCP</RootNamespace>
+    <AssemblyName>HCP</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationManifest>app.manifest</ApplicationManifest>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Dapper, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Dapper.2.0.138\lib\net461\Dapper.dll</HintPath>
+    </Reference>
+    <Reference Include="Dapper.Contrib, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Dapper.Contrib.2.0.78\lib\net461\Dapper.Contrib.dll</HintPath>
+    </Reference>
+    <Reference Include="DevComponents.DotNetBar2, Version=14.1.0.37, Culture=neutral, PublicKeyToken=7eb7c3a35b91de04, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.BonusSkins.v23.1" />
+    <Reference Include="DevExpress.Data.Desktop.v23.1" />
+    <Reference Include="DevExpress.Data.v23.1" />
+    <Reference Include="DevExpress.Dialogs.v23.1.Core, Version=23.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Images.v23.1, Version=23.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Office.v23.1.Core, Version=23.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Pdf.v23.1.Core, Version=23.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.RichEdit.v23.1.Core, Version=23.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Utils.v23.1" />
+    <Reference Include="DevExpress.Sparkline.v23.1.Core" />
+    <Reference Include="DevExpress.XtraBars.v23.1, Version=23.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraDialogs.v23.1, Version=23.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraEditors.v23.1" />
+    <Reference Include="DevExpress.Printing.v23.1.Core" />
+    <Reference Include="DevExpress.Drawing.v23.1" />
+    <Reference Include="DevExpress.XtraGrid.v23.1, Version=23.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraLayout.v23.1, Version=23.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraPrinting.v23.1, Version=23.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraRichEdit.v23.1, Version=23.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraTreeList.v23.1, Version=23.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.4.4\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.4.4\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="EntLibContrib.Common, Version=5.0.505.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntLibContrib.Common.5.0.505.0\lib\NET35\EntLibContrib.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Humanizer, Version=2.14.0.0, Culture=neutral, PublicKeyToken=979442b78dfc278e, processorArchitecture=MSIL">
+      <HintPath>..\packages\Humanizer.Core.2.14.1\lib\netstandard2.0\Humanizer.dll</HintPath>
+    </Reference>
+    <Reference Include="Infragistics4.Shared.v22.2, Version=22.2.20222.16, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb" />
+    <Reference Include="Infragistics4.Win.Misc.v22.2, Version=22.2.20222.16, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb, processorArchitecture=MSIL" />
+    <Reference Include="Infragistics4.Win.UltraWinTree.v22.2, Version=22.2.20222.16, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb, processorArchitecture=MSIL" />
+    <Reference Include="Infragistics4.Win.v22.2, Version=22.2.20222.16, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb" />
+    <Reference Include="Krypton, Version=1.0.0.0, Culture=neutral, processorArchitecture=x86">
+      <HintPath>..\packages\Krypton.2.0.0.0\lib\net40-Client\Krypton.dll</HintPath>
+    </Reference>
+    <Reference Include="Krypton.Docking, Version=70.22.11.312, Culture=neutral, PublicKeyToken=a87e673e9ecb6e8e, processorArchitecture=MSIL">
+      <HintPath>..\packages\Krypton.Docking.70.22.11.312\lib\net48\Krypton.Docking.dll</HintPath>
+    </Reference>
+    <Reference Include="Krypton.Navigator, Version=70.22.11.312, Culture=neutral, PublicKeyToken=a87e673e9ecb6e8e, processorArchitecture=MSIL">
+      <HintPath>..\packages\Krypton.Navigator.70.22.11.312\lib\net48\Krypton.Navigator.dll</HintPath>
+    </Reference>
+    <Reference Include="Krypton.Ribbon, Version=70.22.11.312, Culture=neutral, PublicKeyToken=a87e673e9ecb6e8e, processorArchitecture=MSIL">
+      <HintPath>..\packages\Krypton.Ribbon.70.22.11.312\lib\net48\Krypton.Ribbon.dll</HintPath>
+    </Reference>
+    <Reference Include="Krypton.Toolkit, Version=70.22.11.312, Culture=neutral, PublicKeyToken=a87e673e9ecb6e8e, processorArchitecture=MSIL">
+      <HintPath>..\packages\Krypton.Toolkit.70.22.11.312\lib\net48\Krypton.Toolkit.dll</HintPath>
+    </Reference>
+    <Reference Include="Krypton.Workspace, Version=70.22.11.312, Culture=neutral, PublicKeyToken=a87e673e9ecb6e8e, processorArchitecture=MSIL">
+      <HintPath>..\packages\Krypton.Workspace.70.22.11.312\lib\net48\Krypton.Workspace.dll</HintPath>
+    </Reference>
+    <Reference Include="MediaFoundation, Version=3.1.0.32450, Culture=neutral, PublicKeyToken=36fa660e1d6ebf8d, processorArchitecture=MSIL">
+      <HintPath>..\lib\RCWF\2023.1.117.48\MediaFoundation.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Bcl.AsyncInterfaces, Version=7.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Bcl.AsyncInterfaces.7.0.0\lib\net462\Microsoft.Bcl.AsyncInterfaces.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Bcl.HashCode, Version=1.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Bcl.HashCode.1.1.1\lib\net461\Microsoft.Bcl.HashCode.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Logging.Abstractions, Version=7.0.0.1, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.Logging.Abstractions.7.0.1\lib\net462\Microsoft.Extensions.Logging.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.EnterpriseLibrary.Common, Version=6.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\EnterpriseLibrary.Common.6.0.1304.0\lib\NET45\Microsoft.Practices.EnterpriseLibrary.Common.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Practices.EnterpriseLibrary.Data, Version=6.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\EnterpriseLibrary.Data.6.0.1304.0\lib\NET45\Microsoft.Practices.EnterpriseLibrary.Data.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Practices.EnterpriseLibrary.ExceptionHandling, Version=6.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\EnterpriseLibrary.ExceptionHandling.6.0.1304.0\lib\NET45\Microsoft.Practices.EnterpriseLibrary.ExceptionHandling.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Practices.EnterpriseLibrary.Logging, Version=6.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\EnterpriseLibrary.Logging.6.0.1304.0\lib\NET45\Microsoft.Practices.EnterpriseLibrary.Logging.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Practices.EnterpriseLibrary.Validation, Version=6.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\EnterpriseLibrary.Validation.6.0.1304.0\lib\NET45\Microsoft.Practices.EnterpriseLibrary.Validation.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Practices.ServiceLocation, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" />
+    <Reference Include="Microsoft.Practices.Unity, Version=2.0.414.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Cquential.Microsoft.Practices.Unity.2.0.414\lib\net35\Microsoft.Practices.Unity.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.Unity.Interception, Version=2.1.505.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Unity.Interception.2.1.505.0\lib\NET35\Microsoft.Practices.Unity.Interception.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.Unity.Interception.Configuration, Version=2.1.505.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Unity.Interception.2.1.505.0\lib\NET35\Microsoft.Practices.Unity.Interception.Configuration.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Toolkit.Uwp.Notifications, Version=7.0.0.0, Culture=neutral, PublicKeyToken=4aff67a105548ee2, processorArchitecture=MSIL">
+      <HintPath>..\lib\RCWF\2023.1.117.48\Microsoft.Toolkit.Uwp.Notifications.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Npgsql, Version=7.0.4.0, Culture=neutral, PublicKeyToken=5d8b90d52f46fda7, processorArchitecture=MSIL">
+      <HintPath>..\packages\Npgsql.7.0.4\lib\netstandard2.0\Npgsql.dll</HintPath>
+    </Reference>
+    <Reference Include="ServiceStack.Common, Version=6.0.0.0, Culture=neutral, PublicKeyToken=02c12cbda47e6587, processorArchitecture=MSIL">
+      <HintPath>..\packages\ServiceStack.Common.6.9.0\lib\net472\ServiceStack.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="ServiceStack.Interfaces, Version=6.0.0.0, Culture=neutral, PublicKeyToken=02c12cbda47e6587, processorArchitecture=MSIL">
+      <HintPath>..\packages\ServiceStack.Interfaces.6.9.0\lib\net472\ServiceStack.Interfaces.dll</HintPath>
+    </Reference>
+    <Reference Include="ServiceStack.OrmLite, Version=6.0.0.0, Culture=neutral, PublicKeyToken=02c12cbda47e6587, processorArchitecture=MSIL">
+      <HintPath>..\packages\ServiceStack.OrmLite.6.9.0\lib\net472\ServiceStack.OrmLite.dll</HintPath>
+    </Reference>
+    <Reference Include="ServiceStack.OrmLite.PostgreSQL, Version=6.0.0.0, Culture=neutral, PublicKeyToken=02c12cbda47e6587, processorArchitecture=MSIL">
+      <HintPath>..\packages\ServiceStack.OrmLite.PostgreSQL.6.9.0\lib\net472\ServiceStack.OrmLite.PostgreSQL.dll</HintPath>
+    </Reference>
+    <Reference Include="ServiceStack.Text, Version=6.0.0.0, Culture=neutral, PublicKeyToken=02c12cbda47e6587, processorArchitecture=MSIL">
+      <HintPath>..\packages\ServiceStack.Text.6.9.0\lib\net472\ServiceStack.Text.dll</HintPath>
+    </Reference>
+    <Reference Include="SqlKata, Version=2.4.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\SqlKata.2.4.0\lib\netstandard2.0\SqlKata.dll</HintPath>
+    </Reference>
+    <Reference Include="SqlKata.Execution, Version=2.4.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\SqlKata.Execution.2.4.0\lib\netstandard2.0\SqlKata.Execution.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Buffers, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Buffers.4.5.1\lib\net461\System.Buffers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Collections.Immutable, Version=7.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Collections.Immutable.7.0.0\lib\net462\System.Collections.Immutable.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Design" />
+    <Reference Include="System.Diagnostics.DiagnosticSource, Version=7.0.0.2, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Diagnostics.DiagnosticSource.7.0.2\lib\net462\System.Diagnostics.DiagnosticSource.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Memory, Version=4.0.1.2, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Memory.4.5.5\lib\net461\System.Memory.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net" />
+    <Reference Include="System.Numerics" />
+    <Reference Include="System.Numerics.Vectors, Version=4.1.4.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Numerics.Vectors.4.5.0\lib\net46\System.Numerics.Vectors.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.CompilerServices.Unsafe, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Runtime.CompilerServices.Unsafe.6.0.0\lib\net461\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.Serialization.Formatters.Soap" />
+    <Reference Include="System.Text.Encodings.Web, Version=7.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Text.Encodings.Web.7.0.0\lib\net462\System.Text.Encodings.Web.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Text.Json, Version=7.0.0.3, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Text.Json.7.0.3\lib\net462\System.Text.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Threading.Channels, Version=7.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Threading.Channels.7.0.0\lib\net462\System.Threading.Channels.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Threading.Tasks.Extensions, Version=4.2.0.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Threading.Tasks.Extensions.4.5.4\lib\net461\System.Threading.Tasks.Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ValueTuple, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.ValueTuple.4.5.0\lib\net47\System.ValueTuple.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Telerik.Documents.SpreadsheetStreaming, Version=2023.1.104.40, Culture=neutral, PublicKeyToken=5803cfa389c90ce7, processorArchitecture=MSIL">
+      <HintPath>..\lib\RCWF\2023.1.117.48\Telerik.Documents.SpreadsheetStreaming.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Telerik.WinControls, Version=2023.1.117.48, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL">
+      <HintPath>..\lib\RCWF\2023.1.117.48\Telerik.WinControls.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Telerik.WinControls.ChartView, Version=2023.1.117.48, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL">
+      <HintPath>..\lib\RCWF\2023.1.117.48\Telerik.WinControls.ChartView.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Telerik.WinControls.GridView, Version=2023.1.117.48, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL">
+      <HintPath>..\lib\RCWF\2023.1.117.48\Telerik.WinControls.GridView.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Telerik.WinControls.PdfViewer, Version=2023.1.117.48, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL">
+      <HintPath>..\lib\RCWF\2023.1.117.48\Telerik.WinControls.PdfViewer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Telerik.WinControls.PivotGrid, Version=2023.1.117.48, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL">
+      <HintPath>..\lib\RCWF\2023.1.117.48\Telerik.WinControls.PivotGrid.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Telerik.WinControls.RadChart, Version=2023.1.117.48, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL">
+      <HintPath>..\lib\RCWF\2023.1.117.48\Telerik.WinControls.RadChart.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Telerik.WinControls.RadDiagram, Version=2023.1.117.48, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL">
+      <HintPath>..\lib\RCWF\2023.1.117.48\Telerik.WinControls.RadDiagram.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Telerik.WinControls.RadDock, Version=2023.1.117.48, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL">
+      <HintPath>..\lib\RCWF\2023.1.117.48\Telerik.WinControls.RadDock.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Telerik.WinControls.RadMap, Version=2023.1.117.48, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL">
+      <HintPath>..\lib\RCWF\2023.1.117.48\Telerik.WinControls.RadMap.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Telerik.WinControls.RadMarkupEditor, Version=2023.1.117.48, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL">
+      <HintPath>..\lib\RCWF\2023.1.117.48\Telerik.WinControls.RadMarkupEditor.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Telerik.WinControls.RadSpreadsheet, Version=2023.1.117.48, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL">
+      <HintPath>..\lib\RCWF\2023.1.117.48\Telerik.WinControls.RadSpreadsheet.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Telerik.WinControls.RadToastNotification, Version=2023.1.117.48, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL">
+      <HintPath>..\lib\RCWF\2023.1.117.48\Telerik.WinControls.RadToastNotification.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Telerik.WinControls.RadToastNotification.Design, Version=2023.1.117.48, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL">
+      <HintPath>..\lib\RCWF\2023.1.117.48\Telerik.WinControls.RadToastNotification.Design.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Telerik.WinControls.RadWebCam, Version=2023.1.117.48, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL">
+      <HintPath>..\lib\RCWF\2023.1.117.48\Telerik.WinControls.RadWebCam.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Telerik.WinControls.RichTextEditor, Version=2023.1.117.48, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL">
+      <HintPath>..\lib\RCWF\2023.1.117.48\Telerik.WinControls.RichTextEditor.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Telerik.WinControls.Scheduler, Version=2023.1.117.48, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL">
+      <HintPath>..\lib\RCWF\2023.1.117.48\Telerik.WinControls.Scheduler.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Telerik.WinControls.SpellChecker, Version=2023.1.117.48, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL">
+      <HintPath>..\lib\RCWF\2023.1.117.48\Telerik.WinControls.SpellChecker.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Telerik.WinControls.SyntaxEditor, Version=2023.1.117.48, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL">
+      <HintPath>..\lib\RCWF\2023.1.117.48\Telerik.WinControls.SyntaxEditor.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Telerik.WinControls.Themes.Crystal, Version=2023.1.117.48, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL">
+      <HintPath>..\lib\RCWF\2023.1.117.48\Telerik.WinControls.Themes.Crystal.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Telerik.WinControls.UI, Version=2023.1.117.48, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL">
+      <HintPath>..\lib\RCWF\2023.1.117.48\Telerik.WinControls.UI.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Telerik.Windows.Documents.CMapUtils, Version=2023.1.104.40, Culture=neutral, PublicKeyToken=5803cfa389c90ce7, processorArchitecture=MSIL">
+      <HintPath>..\lib\RCWF\2023.1.117.48\Telerik.Windows.Documents.CMapUtils.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Telerik.Windows.Documents.Core, Version=2023.1.104.40, Culture=neutral, PublicKeyToken=5803cfa389c90ce7, processorArchitecture=MSIL">
+      <HintPath>..\lib\RCWF\2023.1.117.48\Telerik.Windows.Documents.Core.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Telerik.Windows.Documents.Fixed, Version=2023.1.104.40, Culture=neutral, PublicKeyToken=5803cfa389c90ce7, processorArchitecture=MSIL">
+      <HintPath>..\lib\RCWF\2023.1.117.48\Telerik.Windows.Documents.Fixed.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Telerik.Windows.Documents.Flow, Version=2023.1.104.40, Culture=neutral, PublicKeyToken=5803cfa389c90ce7, processorArchitecture=MSIL">
+      <HintPath>..\lib\RCWF\2023.1.117.48\Telerik.Windows.Documents.Flow.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Telerik.Windows.Documents.Flow.FormatProviders.Doc, Version=2023.1.104.40, Culture=neutral, PublicKeyToken=5803cfa389c90ce7, processorArchitecture=MSIL">
+      <HintPath>..\lib\RCWF\2023.1.117.48\Telerik.Windows.Documents.Flow.FormatProviders.Doc.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Telerik.Windows.Documents.Flow.FormatProviders.Pdf, Version=2023.1.104.40, Culture=neutral, PublicKeyToken=5803cfa389c90ce7, processorArchitecture=MSIL">
+      <HintPath>..\lib\RCWF\2023.1.117.48\Telerik.Windows.Documents.Flow.FormatProviders.Pdf.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Telerik.Windows.Documents.Spreadsheet, Version=2023.1.104.40, Culture=neutral, PublicKeyToken=5803cfa389c90ce7, processorArchitecture=MSIL">
+      <HintPath>..\lib\RCWF\2023.1.117.48\Telerik.Windows.Documents.Spreadsheet.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Telerik.Windows.Documents.Spreadsheet.FormatProviders.OpenXml, Version=2023.1.104.40, Culture=neutral, PublicKeyToken=5803cfa389c90ce7, processorArchitecture=MSIL">
+      <HintPath>..\lib\RCWF\2023.1.117.48\Telerik.Windows.Documents.Spreadsheet.FormatProviders.OpenXml.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Telerik.Windows.Documents.Spreadsheet.FormatProviders.Pdf, Version=2023.1.104.40, Culture=neutral, PublicKeyToken=5803cfa389c90ce7, processorArchitecture=MSIL">
+      <HintPath>..\lib\RCWF\2023.1.117.48\Telerik.Windows.Documents.Spreadsheet.FormatProviders.Pdf.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Telerik.Windows.Documents.Spreadsheet.FormatProviders.Xls, Version=2023.1.104.40, Culture=neutral, PublicKeyToken=5803cfa389c90ce7, processorArchitecture=MSIL">
+      <HintPath>..\lib\RCWF\2023.1.117.48\Telerik.Windows.Documents.Spreadsheet.FormatProviders.Xls.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Telerik.Windows.MediaFoundation, Version=2023.1.111.40, Culture=neutral, PublicKeyToken=5803cfa389c90ce7, processorArchitecture=MSIL">
+      <HintPath>..\lib\RCWF\2023.1.117.48\Telerik.Windows.MediaFoundation.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Telerik.Windows.Zip, Version=2023.1.104.40, Culture=neutral, PublicKeyToken=5803cfa389c90ce7, processorArchitecture=MSIL">
+      <HintPath>..\lib\RCWF\2023.1.117.48\Telerik.Windows.Zip.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="TelerikCommon, Version=2023.1.117.48, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL">
+      <HintPath>..\lib\RCWF\2023.1.117.48\TelerikCommon.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="TelerikData, Version=2023.1.117.48, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL">
+      <HintPath>..\lib\RCWF\2023.1.117.48\TelerikData.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="TelerikExport, Version=2023.1.117.48, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL">
+      <HintPath>..\lib\RCWF\2023.1.117.48\TelerikExport.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="UIAutomationProvider" />
+    <Reference Include="UIAutomationTypes" />
+    <Reference Include="Unity.Abstractions, Version=5.11.7.0, Culture=neutral, PublicKeyToken=489b6accfaf20ef0, processorArchitecture=MSIL">
+      <HintPath>..\packages\Unity.5.11.10\lib\net48\Unity.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Container, Version=5.11.11.0, Culture=neutral, PublicKeyToken=489b6accfaf20ef0, processorArchitecture=MSIL">
+      <HintPath>..\packages\Unity.5.11.10\lib\net48\Unity.Container.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Form1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form1.Designer.cs">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Fr\Admin\frAdminAddUser.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Fr\Admin\frAdminAddUser.Designer.cs">
+      <DependentUpon>frAdminAddUser.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Fr\Admin\frAdminDashBoard.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Fr\Admin\frAdminDashBoard.Designer.cs">
+      <DependentUpon>frAdminDashBoard.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Fr\Admin\frAdminDisableUser.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Fr\Admin\frAdminDisableUser.Designer.cs">
+      <DependentUpon>frAdminDisableUser.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Fr\Admin\frAdminEditUser.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Fr\Admin\frAdminEditUser.Designer.cs">
+      <DependentUpon>frAdminEditUser.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Fr\Admin\frAdminManageUsers.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Fr\Admin\frAdminManageUsers.Designer.cs">
+      <DependentUpon>frAdminManageUsers.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Fr\Admin\SpecialitiesUI\fruAddSpeciality.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Fr\Admin\SpecialitiesUI\fruAddSpeciality.Designer.cs">
+      <DependentUpon>fruAddSpeciality.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Fr\ErrorManager.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Fr\ErrorManager.Designer.cs">
+      <DependentUpon>ErrorManager.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Fr\frLogin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Fr\frLogin.Designer.cs">
+      <DependentUpon>frLogin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Fr\Helpers\PatientHelpers.cs" />
+    <Compile Include="Fr\User\FruDashBoard.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Fr\User\FruDashBoard.Designer.cs">
+      <DependentUpon>FruDashBoard.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Fr\User\PatientsUI\fruEditPatient.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Fr\User\PatientsUI\fruEditPatient.Designer.cs">
+      <DependentUpon>fruEditPatient.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Fr\User\PatientsUI\fruEditPatientNote.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Fr\User\PatientsUI\fruEditPatientNote.Designer.cs">
+      <DependentUpon>fruEditPatientNote.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Fr\User\PatientsUI\fruNewPatient.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Fr\User\PatientsUI\fruNewPatient.Designer.cs">
+      <DependentUpon>fruNewPatient.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Fr\User\PatientsUI\fruNewPatientAddress.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Fr\User\PatientsUI\fruNewPatientAddress.Designer.cs">
+      <DependentUpon>fruNewPatientAddress.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Fr\User\PatientsUI\fruNewPatientRaisonVisite.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Fr\User\PatientsUI\fruNewPatientRaisonVisite.Designer.cs">
+      <DependentUpon>fruNewPatientRaisonVisite.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Fr\User\PatientsUI\fruPatientsManagement.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Fr\User\PatientsUI\fruPatientsManagement.Designer.cs">
+      <DependentUpon>fruPatientsManagement.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Helpers\ApplicationHelper.cs" />
+    <Compile Include="Helpers\CommonHelpers.cs" />
+    <Compile Include="Helpers\ConnectionHelper.cs" />
+    <Compile Include="Helpers\DevExpressFrHelper.cs" />
+    <Compile Include="Helpers\EmailHelper.cs" />
+    <Compile Include="Helpers\PathsHelper.cs" />
+    <Compile Include="SplashScreenMain.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SplashScreenMain.Designer.cs">
+      <DependentUpon>SplashScreenMain.cs</DependentUpon>
+    </Compile>
+    <Content Include="dapper_tricks.txt" />
+    <Content Include="Dlls\GDPicture14\Developer Readme.txt" />
+    <Content Include="Dlls\GDPicture14\Redist\COM Interop\GdPicture.NET.14.dll" />
+    <Content Include="Dlls\GDPicture14\Redist\COM Interop\GdPictureComReg.exe" />
+    <Content Include="Dlls\GDPicture14\Redist\DocuVieware %28.NET 4.5%29\GdPicture.NET.14.WEB.DocuVieware.dll" />
+    <Content Include="Dlls\GDPicture14\Redist\DocuVieware %28.NET 4.5%29\GdPicture.NET.14.WEB.DocuVieware.xml" />
+    <Content Include="Dlls\GDPicture14\Redist\DocuVieware %28Resources%29\docuvieware-min.css" />
+    <Content Include="Dlls\GDPicture14\Redist\DocuVieware %28Resources%29\docuvieware-min.js" />
+    <Content Include="Dlls\GDPicture14\Redist\Framework 4.0\GdPicture.NET.14.dll" />
+    <Content Include="Dlls\GDPicture14\Redist\Framework 4.0\GdPicture.NET.14.xml" />
+    <Content Include="Dlls\GDPicture14\Redist\GdPicture.NET.14.barcode.1d.reader.64.dll" />
+    <Content Include="Dlls\GDPicture14\Redist\GdPicture.NET.14.barcode.1d.reader.dll" />
+    <Content Include="Dlls\GDPicture14\Redist\GdPicture.NET.14.barcode.2d.reader.64.dll" />
+    <Content Include="Dlls\GDPicture14\Redist\GdPicture.NET.14.barcode.2d.reader.dll" />
+    <Content Include="Dlls\GDPicture14\Redist\GdPicture.NET.14.document.analyzer.64.dll" />
+    <Content Include="Dlls\GDPicture14\Redist\GdPicture.NET.14.document.analyzer.dll" />
+    <Content Include="Dlls\GDPicture14\Redist\GdPicture.NET.14.filters.64.dll" />
+    <Content Include="Dlls\GDPicture14\Redist\GdPicture.NET.14.filters.dll" />
+    <Content Include="Dlls\GDPicture14\Redist\GdPicture.NET.14.image.gdimgplug.64.dll" />
+    <Content Include="Dlls\GDPicture14\Redist\GdPicture.NET.14.image.gdimgplug.dll" />
+    <Content Include="Dlls\GDPicture14\Redist\GdPicture.NET.14.jbig2.encoder.64.dll" />
+    <Content Include="Dlls\GDPicture14\Redist\GdPicture.NET.14.jbig2.encoder.dll" />
+    <Content Include="Dlls\GDPicture14\Redist\GdPicture.NET.14.ocr.tesseract.3.64.dll" />
+    <Content Include="Dlls\GDPicture14\Redist\GdPicture.NET.14.ocr.tesseract.3.dll" />
+    <Content Include="Dlls\GDPicture14\Redist\GdPicture.NET.14.omr.64.dll" />
+    <Content Include="Dlls\GDPicture14\Redist\GdPicture.NET.14.omr.dll" />
+    <Content Include="Dlls\GDPicture14\Redist\GdPicture.NET.14.twain.client.64.dll" />
+    <Content Include="Dlls\GDPicture14\Redist\GdPicture.NET.14.twain.client.dll" />
+    <Content Include="Dlls\GDPicture14\Redist\OCR\_how_to_get_other_languages.txt" />
+    <Content Include="Dlls\GDPicture14\Redist\TWAIN\32-bit\TWAINDSM.dll" />
+    <Content Include="Dlls\GDPicture14\Redist\TWAIN\64-bit\TWAINDSM.dll" />
+    <Content Include="Dlls\GDPicture14\Redist\WIA\wiaaut.dll" />
+    <Content Include="Dlls\SautinSoft.PdfFocus.dll" />
+    <Content Include="InsertBinaryIntoSqlServer.cs.txt" />
+    <Compile Include="ProcessManager.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Form1.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Fr\Admin\frAdminAddUser.resx">
+      <DependentUpon>frAdminAddUser.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Fr\Admin\frAdminDashBoard.resx">
+      <DependentUpon>frAdminDashBoard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Fr\Admin\frAdminDisableUser.resx">
+      <DependentUpon>frAdminDisableUser.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Fr\Admin\frAdminEditUser.resx">
+      <DependentUpon>frAdminEditUser.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Fr\Admin\frAdminManageUsers.resx">
+      <DependentUpon>frAdminManageUsers.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Fr\Admin\SpecialitiesUI\fruAddSpeciality.resx">
+      <DependentUpon>fruAddSpeciality.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Fr\ErrorManager.resx">
+      <DependentUpon>ErrorManager.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Fr\frLogin.resx">
+      <DependentUpon>frLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Fr\User\FruDashBoard.resx">
+      <DependentUpon>FruDashBoard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Fr\User\PatientsUI\fruEditPatient.resx">
+      <DependentUpon>fruEditPatient.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Fr\User\PatientsUI\fruEditPatientNote.resx">
+      <DependentUpon>fruEditPatientNote.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Fr\User\PatientsUI\fruNewPatient.resx">
+      <DependentUpon>fruNewPatient.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Fr\User\PatientsUI\fruNewPatientAddress.resx">
+      <DependentUpon>fruNewPatientAddress.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Fr\User\PatientsUI\fruNewPatientRaisonVisite.resx">
+      <DependentUpon>fruNewPatientRaisonVisite.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Fr\User\PatientsUI\fruPatientsManagement.resx">
+      <DependentUpon>fruPatientsManagement.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\licenses.licx" />
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="SplashScreenMain.resx">
+      <DependentUpon>SplashScreenMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="App.config" />
+    <None Include="app.manifest" />
+    <None Include="Dlls\GDPicture14\Redist\COM Interop\GdPicture.NET.14.64.tlb" />
+    <None Include="Dlls\GDPicture14\Redist\COM Interop\GdPicture.NET.14.tlb" />
+    <None Include="Dlls\GDPicture14\Redist\OCR\ara.traineddata" />
+    <None Include="Dlls\GDPicture14\Redist\OCR\deu.traineddata" />
+    <None Include="Dlls\GDPicture14\Redist\OCR\eng.traineddata" />
+    <None Include="Dlls\GDPicture14\Redist\OCR\fra.traineddata" />
+    <None Include="Dlls\GDPicture14\Redist\OCR\heb.traineddata" />
+    <None Include="Dlls\GDPicture14\Redist\OCR\ita.traineddata" />
+    <None Include="Dlls\GDPicture14\Redist\OCR\nld.traineddata" />
+    <None Include="Dlls\GDPicture14\Redist\OCR\por.traineddata" />
+    <None Include="Dlls\GDPicture14\Redist\OCR\spa.traineddata" />
+    <None Include="Dlls\GDPicture14\Redist\OCR\vie.traineddata" />
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <None Include="SautinSoft.PdfFocus.chm" />
+    <None Include="The Ultimate List of Medical Specialties and Subspecialties.pdf" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="DevExpressTricks.txt" />
+    <Content Include="Dlls\Entlibs\e.txt" />
+    <Content Include="Dlls\Entlibs\Microsoft.Practices.EnterpriseLibrary.Caching.Database.dll" />
+    <Content Include="Dlls\Entlibs\Microsoft.Practices.EnterpriseLibrary.Caching.dll" />
+    <Content Include="Dlls\Entlibs\Microsoft.Practices.EnterpriseLibrary.Common.dll" />
+    <Content Include="Dlls\Entlibs\Microsoft.Practices.EnterpriseLibrary.Data.dll" />
+    <Content Include="Dlls\Entlibs\Microsoft.Practices.EnterpriseLibrary.ExceptionHandling.dll" />
+    <Content Include="Dlls\Entlibs\Microsoft.Practices.EnterpriseLibrary.ExceptionHandling.Logging.dll" />
+    <Content Include="Dlls\Entlibs\Microsoft.Practices.EnterpriseLibrary.ExceptionHandling.WCF.dll" />
+    <Content Include="Dlls\Entlibs\Microsoft.Practices.EnterpriseLibrary.Logging.Database.dll" />
+    <Content Include="Dlls\Entlibs\Microsoft.Practices.EnterpriseLibrary.Logging.dll" />
+    <Content Include="Dlls\Entlibs\Microsoft.Practices.EnterpriseLibrary.PolicyInjection.dll" />
+    <Content Include="Dlls\Entlibs\Microsoft.Practices.EnterpriseLibrary.Security.Cryptography.dll" />
+    <Content Include="Dlls\Entlibs\Microsoft.Practices.EnterpriseLibrary.SemanticLogging.dll" />
+    <Content Include="Dlls\Entlibs\Microsoft.Practices.EnterpriseLibrary.TransientFaultHandling.Caching.dll" />
+    <Content Include="Dlls\Entlibs\Microsoft.Practices.EnterpriseLibrary.TransientFaultHandling.Configuration.dll" />
+    <Content Include="Dlls\Entlibs\Microsoft.Practices.EnterpriseLibrary.TransientFaultHandling.Data.dll" />
+    <Content Include="Dlls\Entlibs\Microsoft.Practices.EnterpriseLibrary.TransientFaultHandling.dll" />
+    <Content Include="Dlls\Entlibs\Microsoft.Practices.EnterpriseLibrary.TransientFaultHandling.ServiceBus.dll" />
+    <Content Include="Dlls\Entlibs\Microsoft.Practices.EnterpriseLibrary.TransientFaultHandling.WindowsAzure.Storage.dll" />
+    <Content Include="Dlls\Entlibs\Microsoft.Practices.EnterpriseLibrary.Validation.dll" />
+    <Content Include="Dlls\Entlibs\Microsoft.Practices.EnterpriseLibrary.Validation.Integration.WCF.dll" />
+    <Content Include="Dlls\Entlibs\Microsoft.Practices.ServiceLocation.dll" />
+    <Content Include="Dlls\Entlibs\Microsoft.Practices.Unity.Configuration.dll" />
+    <Content Include="Dlls\Entlibs\Microsoft.Practices.Unity.dll" />
+    <Content Include="Dlls\Entlibs\Microsoft.Practices.Unity.Interception.Configuration.dll" />
+    <Content Include="Dlls\Entlibs\Microsoft.Practices.Unity.Interception.dll" />
+    <Content Include="Dlls\Microsoft.Practices.Unity.dll" />
+    <Content Include="Dlls\PDFTron\Lib\PDFNetLoader.dll" />
+    <Content Include="Dlls\PDFTron\Lib\PDFNet\x64\PDFNet.dll" />
+    <Content Include="Dlls\PDFTron\Lib\PDFNet\x64\PDFNet.xml" />
+    <Content Include="Dlls\PDFTron\Lib\PDFNet\x86\PDFNet.dll" />
+    <Content Include="Dlls\PDFTron\Lib\PDFNet\x86\PDFNet.xml" />
+    <Content Include="Dlls\PDFTron\Read me _ password 123.txt" />
+    <Content Include="Dlls\Unity.Abstractions.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Dlls\Unity.Container.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="En\Notes.txt" />
+    <Content Include="Fr\Notes.txt" />
+    <Content Include="Images\x.gif" />
+    <Content Include="Paging Devexpress gridcontrol.png" />
+    <Content Include="SautinSoft.PdfFocus.dll" />
+    <Content Include="See for EditPatient.png" />
+    <Content Include="SetApplicationCulture.txt" />
+    <Content Include="SplitPanel.txt" />
+    <Content Include="UsedUIToolkit.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Fr\Admin\PatientsUI\" />
+    <Folder Include="Fr\Sys\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\DatabaseSwitcher\DatabaseSwitcher.csproj">
+      <Project>{95eeef1a-f429-437b-8ccd-f3da393dff15}</Project>
+      <Name>DatabaseSwitcher</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\HCP.Fr.Dao\HCP.Fr.Dao.csproj">
+      <Project>{AE19CF4C-7448-4921-83E2-A2DFD710A39B}</Project>
+      <Name>HCP.Fr.Dao</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\HCP.Fr.DS\HCP.Fr.DS.csproj">
+      <Project>{D470AD77-9FAA-46DE-B734-A4438E35FF73}</Project>
+      <Name>HCP.Fr.DS</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\HCP.Fr.Logging\HCP.Fr.Logging.csproj">
+      <Project>{3f84fb4e-c95c-4c8a-819a-1fc7aae1956b}</Project>
+      <Name>HCP.Fr.Logging</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <COMReference Include="WIA">
+      <Guid>{94A0E92D-43C0-494E-AC29-FD45948A5221}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <UserProperties ShouldAddDPIScalingManifest="True" />
+    </VisualStudio>
+  </ProjectExtensions>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\EntityFramework.6.4.4\build\EntityFramework.props'))" />
+    <Error Condition="!Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\EntityFramework.6.4.4\build\EntityFramework.targets'))" />
+  </Target>
+  <Import Project="..\packages\EntityFramework.6.4.4\build\EntityFramework.targets" Condition="Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.targets')" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

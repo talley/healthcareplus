@@ -14,12 +14,6 @@ namespace HCP.Fr.DS
     
     public partial class UserStatuses
     {
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public UserStatuses()
-        {
-            this.Users = new HashSet<Users>();
-        }
-    
         public System.Guid Id { get; set; }
         public string description { get; set; }
         public string Statut { get; set; }
@@ -27,8 +21,5 @@ namespace HCP.Fr.DS
         public string ajouter_par { get; set; }
         public string modifier_au { get; set; }
         public string modifier_par { get; set; }
-    
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Users> Users { get; set; }
     }
 }

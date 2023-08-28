@@ -1,0 +1,46 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<entityDiagramsDiagram dslVersion="2.0.0.0" absoluteBounds="0, 0, 11, 13.5" name="HCPFrSqlCe">
+  <DomainModelMoniker name="/HCPFrSqlCe" />
+  <nestedChildShapes>
+    <classShape Id="99e71453-a591-41a2-a451-15d6f069c3c7" absoluteBounds="0.75, 0.75, 1.5, 3.301183268229166" fillColor="225, 249, 128, 67" outlineColor="213, 71, 0" textColor="White">
+      <DomainClassMoniker name="/HCPFrSqlCe/Scope_info" />
+      <nestedChildShapes>
+        <elementListCompartment Id="ce71fea5-c577-41f0-83e9-47d8a5c44cb3" absoluteBounds="0.765, 1.2599999999999998, 1.4700000000000002, 2.172403971354167" name="AttributesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="2215b56d-9247-41d5-ae20-8cde695c08e1" absoluteBounds="0.765, 3.4424039713541665, 1.4700000000000002, 0.2493896484375" name="ImplementationsCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="eb8814e2-221f-4f34-b53e-51c59b28a7f0" absoluteBounds="0.765, 3.7017936197916663, 1.4700000000000002, 0.2493896484375" name="NavigationCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="537efb33-8328-4b79-876f-e85a6ca3126d" absoluteBounds="2.75, 0.75, 1.5, 1.7627718098958329" fillColor="225, 249, 128, 67" outlineColor="213, 71, 0" textColor="White">
+      <DomainClassMoniker name="/HCPFrSqlCe/Scope_config" />
+      <nestedChildShapes>
+        <elementListCompartment Id="bdfa3ad8-bb22-4e50-b132-a491bcfa4edb" absoluteBounds="2.765, 1.2599999999999998, 1.4700000000000002, 0.63399251302083326" name="AttributesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="9869ff27-02f2-4eba-a8eb-bc21fffb5c16" absoluteBounds="2.765, 1.9039925130208335, 1.4700000000000002, 0.2493896484375" name="ImplementationsCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="19d679a1-0f53-48c8-97fa-233a8e1b71ec" absoluteBounds="2.765, 2.1633821614583333, 1.4700000000000002, 0.2493896484375" name="NavigationCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="3082a962-078a-4aaf-a1eb-c0dd62eb3a1a" absoluteBounds="2.75, 3.75, 1.5, 1.9550732421875008" fillColor="225, 249, 128, 67" outlineColor="213, 71, 0" textColor="White">
+      <DomainClassMoniker name="/HCPFrSqlCe/Schema_info" />
+      <nestedChildShapes>
+        <elementListCompartment Id="354d3f17-508c-439c-904b-512eb273fc2c" absoluteBounds="2.765, 4.26, 1.4700000000000002, 0.8262939453125" name="AttributesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="9c2bb45a-fde4-4894-aa91-6680a5afcb31" absoluteBounds="2.765, 5.0962939453125, 1.4700000000000002, 0.2493896484375" name="ImplementationsCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="da29d62f-9080-40e2-b9b3-e97043f02e33" absoluteBounds="2.765, 5.35568359375, 1.4700000000000002, 0.2493896484375" name="NavigationCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="02f86183-f2e6-40e3-a61e-185fb006c896" absoluteBounds="4.75, 0.75, 1.5, 2.9165804036458329" fillColor="225, 249, 128, 67" outlineColor="213, 71, 0" textColor="White">
+      <DomainClassMoniker name="/HCPFrSqlCe/Patients_tracking" />
+      <nestedChildShapes>
+        <elementListCompartment Id="eb13ad18-26a9-4554-bdcc-1a4aad462f7a" absoluteBounds="4.7650000000000006, 1.2599999999999998, 1.4700000000000002, 1.7878011067708333" name="AttributesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="c5c24328-c282-42ce-859e-17036e4ebcc6" absoluteBounds="4.7650000000000006, 3.0578011067708331, 1.4700000000000002, 0.2493896484375" name="ImplementationsCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="66df0f95-8376-420f-9be0-7e84a1e36237" absoluteBounds="4.7650000000000006, 3.3171907552083333, 1.4700000000000002, 0.2493896484375" name="NavigationCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="acca6703-ab8d-42e4-b186-376b7f354f18" absoluteBounds="4.75, 4.75, 1.5, 8.4933219401041669" fillColor="225, 249, 128, 67" outlineColor="213, 71, 0" textColor="White">
+      <DomainClassMoniker name="/HCPFrSqlCe/Patient" />
+      <nestedChildShapes>
+        <elementListCompartment Id="7491e8f7-5f5b-43a8-a5fb-037a22e8cae0" absoluteBounds="4.7650000000000006, 5.26, 1.4700000000000002, 7.3645426432291661" name="AttributesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="3dba562e-ffa9-4bef-bb56-39775db337fb" absoluteBounds="4.7650000000000006, 12.634542643229166, 1.4700000000000002, 0.2493896484375" name="ImplementationsCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="cbcf5c1e-2332-4564-97e1-4f5f320b74d3" absoluteBounds="4.7650000000000006, 12.893932291666665, 1.4700000000000002, 0.2493896484375" name="NavigationCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+  </nestedChildShapes>
+</entityDiagramsDiagram>

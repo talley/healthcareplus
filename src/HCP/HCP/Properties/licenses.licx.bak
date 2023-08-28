@@ -1,0 +1,16 @@
+DevExpress.XtraEditors.CheckEdit, DevExpress.XtraEditors.v23.1, Version=23.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a
+DevExpress.XtraGrid.GridControl, DevExpress.XtraGrid.v23.1, Version=23.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a
+DevExpress.XtraRichEdit.RichEditControl, DevExpress.XtraRichEdit.v23.1, Version=23.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a
+Infragistics.Win.UltraWinTree.UltraTree, Infragistics4.Win.UltraWinTree.v22.2, Version=22.2.20222.16, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb
+Telerik.WinControls.UI.RadPageView, Telerik.WinControls.UI, Version=2023.1.117.48, Culture=neutral, PublicKeyToken=5bb2a467cbec794e
+Telerik.WinControls.UI.RadMultiColumnComboBox, Telerik.WinControls.GridView, Version=2023.1.117.48, Culture=neutral, PublicKeyToken=5bb2a467cbec794e
+DevExpress.XtraEditors.PictureEdit, DevExpress.XtraEditors.v23.1, Version=23.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a
+DevExpress.XtraEditors.LookUpEdit, DevExpress.XtraEditors.v23.1, Version=23.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a
+Telerik.WinControls.UI.RadTreeView, Telerik.WinControls.UI, Version=2023.1.117.48, Culture=neutral, PublicKeyToken=5bb2a467cbec794e
+DevExpress.XtraEditors.TextEdit, DevExpress.XtraEditors.v23.1, Version=23.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a
+Telerik.WinControls.UI.RadSplitContainer, Telerik.WinControls.UI, Version=2023.1.117.48, Culture=neutral, PublicKeyToken=5bb2a467cbec794e
+DevExpress.XtraEditors.ComboBoxEdit, DevExpress.XtraEditors.v23.1, Version=23.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a
+Infragistics.Win.Misc.UltraLabel, Infragistics4.Win.Misc.v22.2, Version=22.2.20222.16, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb
+Telerik.WinControls.Themes.CrystalTheme, Telerik.WinControls.Themes.Crystal, Version=2023.1.117.48, Culture=neutral, PublicKeyToken=5bb2a467cbec794e
+DevExpress.XtraEditors.DateEdit, DevExpress.XtraEditors.v23.1, Version=23.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a
+Telerik.WinControls.UI.RadRichTextEditor, Telerik.WinControls.RichTextEditor, Version=2023.1.117.48, Culture=neutral, PublicKeyToken=5bb2a467cbec794e

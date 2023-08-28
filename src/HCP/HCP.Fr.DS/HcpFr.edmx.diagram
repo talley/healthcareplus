@@ -4,18 +4,47 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="339b4d19d1544f9693164843f31d36eb" Name="Diagram1">
-        <EntityTypeShape EntityType="HCPFRModel.PatientEmployers" Width="1.5" PointX="5.75" PointY="0.75" />
-        <EntityTypeShape EntityType="HCPFRModel.Patients" Width="1.5" PointX="2.75" PointY="5.75" />
-        <EntityTypeShape EntityType="HCPFRModel.Roles" Width="1.5" PointX="0.75" PointY="1.375" />
-        <EntityTypeShape EntityType="HCPFRModel.sécurité_ssn" Width="1.5" PointX="4.75" PointY="6.75" />
-        <EntityTypeShape EntityType="HCPFRModel.sysdiagrams" Width="1.5" PointX="6.75" PointY="6.75" />
-        <EntityTypeShape EntityType="HCPFRModel.SystemAccessLogs" Width="1.5" PointX="7.75" PointY="0.75" />
-        <EntityTypeShape EntityType="HCPFRModel.SystemConfigs" Width="1.5" PointX="8.75" PointY="4.75" />
-        <EntityTypeShape EntityType="HCPFRModel.Users" Width="1.5" PointX="3" PointY="1" />
-        <EntityTypeShape EntityType="HCPFRModel.UserStatuses" Width="1.5" PointX="0.75" PointY="5.5" />
-        <AssociationConnector Association="HCPFRModel.FK__Users__nom_role__4222D4EF" />
-        <AssociationConnector Association="HCPFRModel.FK__Users__Statut__4316F928" />
+      <Diagram DiagramId="339b4d19d1544f9693164843f31d36eb" Name="Diagram1" ZoomLevel="74">
+        <EntityTypeShape EntityType="HCPFRModel.Doctors" Width="1.5" PointX="3" PointY="11.875" />
+        <EntityTypeShape EntityType="HCPFRModel.Genders" Width="1.5" PointX="0.75" PointY="0.75" />
+        <EntityTypeShape EntityType="HCPFRModel.IdentityTypes" Width="1.5" PointX="0.75" PointY="4.75" />
+        <EntityTypeShape EntityType="HCPFRModel.Nurses" Width="1.5" PointX="3" PointY="37.75" />
+        <EntityTypeShape EntityType="HCPFRModel.Patient_Addresses" Width="1.5" PointX="8.75" PointY="4.75" />
+        <EntityTypeShape EntityType="HCPFRModel.PatientEmployers" Width="1.5" PointX="8.75" PointY="9.75" />
+        <EntityTypeShape EntityType="HCPFRModel.PatientIdentities" Width="1.5" PointX="6" PointY="4.75" />
+        <EntityTypeShape EntityType="HCPFRModel.Patients" Width="1.5" PointX="3.75" PointY="2.125" />
+        <EntityTypeShape EntityType="HCPFRModel.Patients_Doctors_Relations" Width="1.5" PointX="3" PointY="19.125" />
+        <EntityTypeShape EntityType="HCPFRModel.Patients_Nurses_Relations" Width="1.5" PointX="6" PointY="14.125" />
+        <EntityTypeShape EntityType="HCPFRModel.PatientSearchColumns" Width="1.5" PointX="0.75" PointY="8.75" />
+        <EntityTypeShape EntityType="HCPFRModel.PatientsNotes" Width="1.5" PointX="5.75" PointY="9.75" />
+        <EntityTypeShape EntityType="HCPFRModel.PatientsVisitNotes" Width="1.5" PointX="10.75" PointY="4.75" />
+        <EntityTypeShape EntityType="HCPFRModel.Pays" Width="1.5" PointX="5.75" PointY="1.125" />
+        <EntityTypeShape EntityType="HCPFRModel.Regions" Width="1.5" PointX="8" PointY="1" />
+        <EntityTypeShape EntityType="HCPFRModel.Roles" Width="1.5" PointX="10.75" PointY="8.75" />
+        <EntityTypeShape EntityType="HCPFRModel.sécurité_ssn" Width="1.5" PointX="12.75" PointY="0.75" />
+        <EntityTypeShape EntityType="HCPFRModel.SecuritySsn" Width="1.5" PointX="12.75" PointY="4.75" />
+        <EntityTypeShape EntityType="HCPFRModel.Specialities" Width="1.5" PointX="0.75" PointY="16.875" />
+        <EntityTypeShape EntityType="HCPFRModel.sysdiagrams" Width="1.5" PointX="12.75" PointY="8.75" />
+        <EntityTypeShape EntityType="HCPFRModel.SystemAccessLogs" Width="1.5" PointX="10.75" PointY="12.75" />
+        <EntityTypeShape EntityType="HCPFRModel.SystemConfigs" Width="1.5" PointX="12.75" PointY="11.75" />
+        <EntityTypeShape EntityType="HCPFRModel.Titles" Width="1.5" PointX="14.75" PointY="0.75" />
+        <EntityTypeShape EntityType="HCPFRModel.Users" Width="1.5" PointX="14.75" PointY="4.75" />
+        <EntityTypeShape EntityType="HCPFRModel.UserStatuses" Width="1.5" PointX="14.75" PointY="9.75" />
+        <EntityTypeShape EntityType="HCPFRModel.view_gen_ssn" Width="1.5" PointX="14.75" PointY="13.75" />
+        <EntityTypeShape EntityType="HCPFRModel.Villes" Width="1.5" PointX="10.25" PointY="1.125" />
+        <EntityTypeShape EntityType="HCPFRModel.vw_available_ssns" Width="1.5" PointX="12.75" PointY="15.75" />
+        <AssociationConnector Association="HCPFRModel.FK_Doctors_Specialities" />
+        <AssociationConnector Association="HCPFRModel.FK__Nurses__Spéciali__251C81ED" />
+        <AssociationConnector Association="HCPFRModel.FK__PatientId__PatId__6E01572D" />
+        <AssociationConnector Association="HCPFRModel.FK__Patients_Doc__Id__1E6F845E" />
+        <AssociationConnector Association="HCPFRModel.FK__Patients_Nur__Id__17C286CF" />
+        <AssociationConnector Association="HCPFRModel.FK__Patients___Spéci__1F63A897" />
+        <AssociationConnector Association="HCPFRModel.FK__Patients___Spéci__18B6AB08" />
+        <AssociationConnector Association="HCPFRModel.FK__Regions__pays_id__6BE40491" />
+        <AssociationConnector Association="HCPFRModel.FK__Villes__région__73852659" />
+        <EntityTypeShape EntityType="HCPFRModel.Sub_Specialties" Width="1.5" PointX="3" PointY="29.125" />
+        <AssociationConnector Association="HCPFRModel.FK__Sub_Speci__Spéci__2EA5EC27" />
+        <EntityTypeShape EntityType="HCPFRModel.UserPdfSplitPaths" Width="1.5" PointX="15.375" PointY="15.75" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

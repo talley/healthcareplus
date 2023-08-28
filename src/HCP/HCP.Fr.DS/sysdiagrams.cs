@@ -14,6 +14,7 @@ namespace HCP.Fr.DS
     
     public partial class sysdiagrams
     {
+        public int id { get; set; }
         public string name { get; set; }
         public int principal_id { get; set; }
         public int diagram_id { get; set; }

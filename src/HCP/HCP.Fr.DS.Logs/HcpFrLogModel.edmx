@@ -1,0 +1,147 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="HCPFR_LogsModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="ErrorsLogs">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Message" Type="nvarchar(max)" />
+          <Property Name="MessageTemplate" Type="nvarchar(max)" />
+          <Property Name="Level" Type="nvarchar" MaxLength="128" />
+          <Property Name="TimeStamp" Type="smalldatetime" Nullable="false" />
+          <Property Name="Exception" Type="nvarchar(max)" />
+          <Property Name="Properties" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="ExceptionLogs">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="application" Type="nvarchar" MaxLength="200" Nullable="false" />
+          <Property Name="Message" Type="nvarchar(max)" />
+          <Property Name="Source" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="Nom_de_fichier" Type="nvarchar(max)" />
+          <Property Name="Numéro_de_ligne" Type="int" />
+          <Property Name="nom_de_la_méthode" Type="nvarchar" MaxLength="50" />
+          <Property Name="trace_de_la_pile" Type="nvarchar(max)" />
+          <Property Name="HResult" Type="int" />
+          <Property Name="HelpURL" Type="nvarchar(max)" />
+          <Property Name="ajouter_au" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="ajouter_par" Type="nvarchar" MaxLength="200" Nullable="false" />
+          <Property Name="modifier_au" Type="nvarchar" MaxLength="100" />
+          <Property Name="modifier_par" Type="nvarchar" MaxLength="200" />
+          <Property Name="date_de_la_dernière_connexion" Type="nvarchar" MaxLength="200" />
+        </EntityType>
+        <EntityContainer Name="HCPFR_LogsModelStoreContainer">
+          <EntitySet Name="ErrorsLogs" EntityType="Self.ErrorsLogs" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ExceptionLogs" EntityType="Self.ExceptionLogs" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="HCPFR_LogsModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityContainer Name="HCPFR_LogsEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="ErrorsLogs" EntityType="HCPFR_LogsModel.ErrorsLogs" />
+          <EntitySet Name="ExceptionLogs" EntityType="HCPFR_LogsModel.ExceptionLogs" />
+        </EntityContainer>
+        <EntityType Name="ErrorsLogs">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Message" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="MessageTemplate" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Level" Type="String" MaxLength="128" FixedLength="false" Unicode="true" />
+          <Property Name="TimeStamp" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="Exception" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Properties" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="ExceptionLogs">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="application" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="Message" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Source" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Nom_de_fichier" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Numéro_de_ligne" Type="Int32" />
+          <Property Name="nom_de_la_méthode" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="trace_de_la_pile" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="HResult" Type="Int32" />
+          <Property Name="HelpURL" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="ajouter_au" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="ajouter_par" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="modifier_au" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="modifier_par" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="date_de_la_dernière_connexion" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+        </EntityType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="HCPFR_LogsModelStoreContainer" CdmEntityContainer="HCPFR_LogsEntities">
+          <EntitySetMapping Name="ErrorsLogs">
+            <EntityTypeMapping TypeName="HCPFR_LogsModel.ErrorsLogs">
+              <MappingFragment StoreEntitySet="ErrorsLogs">
+                <ScalarProperty Name="Properties" ColumnName="Properties" />
+                <ScalarProperty Name="Exception" ColumnName="Exception" />
+                <ScalarProperty Name="TimeStamp" ColumnName="TimeStamp" />
+                <ScalarProperty Name="Level" ColumnName="Level" />
+                <ScalarProperty Name="MessageTemplate" ColumnName="MessageTemplate" />
+                <ScalarProperty Name="Message" ColumnName="Message" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ExceptionLogs">
+            <EntityTypeMapping TypeName="HCPFR_LogsModel.ExceptionLogs">
+              <MappingFragment StoreEntitySet="ExceptionLogs">
+                <ScalarProperty Name="date_de_la_dernière_connexion" ColumnName="date_de_la_dernière_connexion" />
+                <ScalarProperty Name="modifier_par" ColumnName="modifier_par" />
+                <ScalarProperty Name="modifier_au" ColumnName="modifier_au" />
+                <ScalarProperty Name="ajouter_par" ColumnName="ajouter_par" />
+                <ScalarProperty Name="ajouter_au" ColumnName="ajouter_au" />
+                <ScalarProperty Name="HelpURL" ColumnName="HelpURL" />
+                <ScalarProperty Name="HResult" ColumnName="HResult" />
+                <ScalarProperty Name="trace_de_la_pile" ColumnName="trace_de_la_pile" />
+                <ScalarProperty Name="nom_de_la_méthode" ColumnName="nom_de_la_méthode" />
+                <ScalarProperty Name="Numéro_de_ligne" ColumnName="Numéro_de_ligne" />
+                <ScalarProperty Name="Nom_de_fichier" ColumnName="Nom_de_fichier" />
+                <ScalarProperty Name="Source" ColumnName="Source" />
+                <ScalarProperty Name="Message" ColumnName="Message" />
+                <ScalarProperty Name="application" ColumnName="application" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

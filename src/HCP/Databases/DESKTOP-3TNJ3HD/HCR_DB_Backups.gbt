@@ -1,0 +1,111 @@
+<XML>
+  <GENERAL>
+    <Type bCount="2" rCount="0" bCountBig="2">0</Type>
+    <Priority>2</Priority>
+    <Enabled>True</Enabled>
+    <Name>HCR_DB_Backups</Name>
+    <ArchiveFolderName>HCR_DB_Backups</ArchiveFolderName>
+    <Description></Description>
+    <Email></Email>
+    <NextRunTime>Never.</NextRunTime>
+    <LastRunTime>19/04/2023 - 11:08:00 AM</LastRunTime>
+    <SetCollision purge="3">replace</SetCollision>
+    <ItemCollision delete="False">version</ItemCollision>
+    <SyncType></SyncType>
+    <SyncCollision></SyncCollision>
+    <StartRunPath wait="False"></StartRunPath>
+    <EndRunPath wait="False"></EndRunPath>
+    <OnError-show play="False" email="False">Popup</OnError-show>
+    <OnWarning-show play="False" email="False">Popup</OnWarning-show>
+    <OnSummary-show play="False" email="False">Popup</OnSummary-show>
+    <SNotScheduled>True</SNotScheduled>
+    <SOneTimeRun date="0" time="0"></SOneTimeRun>
+    <SWindowsStartup>False</SWindowsStartup>
+    <SWindowsShutDown>False</SWindowsShutDown>
+    <SFolderChange>False</SFolderChange>
+    <SDays>False</SDays>
+    <SDays_days>1</SDays_days>
+    <SDays_when>0</SDays_when>
+    <SDays_hour>0.797369930602144</SDays_hour>
+    <SWeeks>False</SWeeks>
+    <SWeeks_days>0</SWeeks_days>
+    <SWeeks_when>0</SWeeks_when>
+    <SWeeks_hour>0.797369930602144</SWeeks_hour>
+    <SWork_days>1234567</SWork_days>
+    <SRunMissed>False</SRunMissed>
+    <CreateDate>45028.7989124769</CreateDate>
+    <WorkingNow>False</WorkingNow>
+    <FormatDisk>False</FormatDisk>
+    <Split>False</Split>
+    <Span>False</Span>
+    <MaxVolum>0</MaxVolum>
+    <Complementary>False</Complementary>
+    <EraseCD>False</EraseCD>
+    <QuickErase>True</QuickErase>
+    <EnabledScheduler>False</EnabledScheduler>
+    <GBT_Version Simple="False">1.0.4</GBT_Version>
+    <TaskGUID>{1ED979E3-B5C8-4F56-B1A4-C9B3D9C3DE2B}</TaskGUID>
+    <ShutDown>False</ShutDown>
+    <LogOff>False</LogOff>
+    <SYNC_ByDateAndCRC>False</SYNC_ByDateAndCRC>
+    <SYNC_SyncAction>0</SYNC_SyncAction>
+    <SYNC_SyncPrompt>0</SYNC_SyncPrompt>
+    <SYNC_PromptDeleted>True</SYNC_PromptDeleted>
+    <SYNC_IgnoreDeleted>False</SYNC_IgnoreDeleted>
+    <SYNC_FolderToFolder>False</SYNC_FolderToFolder>
+    <CreateDesktopShortcut>False</CreateDesktopShortcut>
+    <Scheduler_DelayedTime>0</Scheduler_DelayedTime>
+    <VerifyBackup>False</VerifyBackup>
+    <SHours>False</SHours>
+    <SHours_hours>0</SHours_hours>
+    <SHours_hour>0.797369930602144</SHours_hour>
+    <SHours_backups>1</SHours_backups>
+    <SHours_donebackups>0</SHours_donebackups>
+    <CountStacks>False</CountStacks>
+    <SWakeUp>False</SWakeUp>
+    <Standby>False</Standby>
+    <Hibernate>False</Hibernate>
+    <TaskGroupID>0</TaskGroupID>
+    <OwnerUser>Talley</OwnerUser>
+    <UserToExecuteDomain></UserToExecuteDomain>
+    <UserToExecuteName></UserToExecuteName>
+    <UserToExecutePass></UserToExecutePass>
+    <LastRunStatus>3</LastRunStatus>
+    <RetryTask interval="0" nexttime="0" dest="">False</RetryTask>
+  </GENERAL>
+  <SOURCE>
+    <AlsoFoldersMask>False</AlsoFoldersMask>
+    <ExcludeTemp>False</ExcludeTemp>
+    <ExcludeSysTemp>True</ExcludeSysTemp>
+    <InclusionMask></InclusionMask>
+    <ExclusionMask></ExclusionMask>
+    <Environment>
+      <EnvVar name="USERNAME">Talley</EnvVar>
+      <EnvVar name="COMPUTERNAME">DESKTOP[{^:45~]}3TNJ3HD</EnvVar>
+      <EnvVar name="USERPROFILE">C:\Users\Talley</EnvVar>
+      <EnvVar name="APPDATA">C:\Users\Talley\AppData\Roaming</EnvVar>
+      <EnvVar name="LOCALAPPDATA">C:\Users\Talley\AppData\Local</EnvVar>
+    </Environment>
+    <file>
+      <path>C:\Program Files\Microsoft SQL Server\MSSQL16.MSSQLSERVER\MSSQL\DATA\HCPFR_log.ldf</path>
+    </file>
+    <file>
+      <path>C:\Program Files\Microsoft SQL Server\MSSQL16.MSSQLSERVER\MSSQL\DATA\HCPFR_Staging.mdf</path>
+    </file>
+    <file>
+      <path>C:\Program Files\Microsoft SQL Server\MSSQL16.MSSQLSERVER\MSSQL\DATA\HCPFR_Staging_log.ldf</path>
+    </file>
+  </SOURCE>
+  <DESTINATION>
+    <root dtype="0" rb="1">
+      <path>C:\GitApps\healthcareplus\src\HCP\Databases\DESKTOP-3TNJ3HD\</path>
+      <pathlist>C:\GitApps\healthcareplus\src\HCP\Databases</pathlist>
+      <pathfail>C:\GitApps\healthcareplus\src\HCP\Databases\DESKTOP-3TNJ3HD\</pathfail>
+      <generic_path></generic_path>
+    </root>
+    <archive selfextracting="False" security="" password="" _hash="d41d8cd98f00b204e9800998ecf8427e" quality="5" eachfilecompress="False">False</archive>
+    <list CDWriteSpeed="" DVDWriteSpeed="" VerifyMedium="False" DiskLabel="" BackupSize="0"></list>
+    <image type="0" compression="0" checksum="0" device="0">False</image>
+  </DESTINATION>
+  <UserCategory>1</UserCategory>
+</XML>

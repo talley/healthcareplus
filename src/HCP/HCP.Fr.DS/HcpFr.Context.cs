@@ -27,15 +27,36 @@ namespace HCP.Fr.DS
             throw new UnintentionalCodeFirstException();
         }
     
+        public virtual DbSet<Doctors> Doctors { get; set; }
+        public virtual DbSet<Genders> Genders { get; set; }
+        public virtual DbSet<IdentityTypes> IdentityTypes { get; set; }
+        public virtual DbSet<Nurses> Nurses { get; set; }
+        public virtual DbSet<Patient_Addresses> Patient_Addresses { get; set; }
         public virtual DbSet<PatientEmployers> PatientEmployers { get; set; }
+        public virtual DbSet<PatientIdentities> PatientIdentities { get; set; }
         public virtual DbSet<Patients> Patients { get; set; }
+        public virtual DbSet<Patients_Doctors_Relations> Patients_Doctors_Relations { get; set; }
+        public virtual DbSet<Patients_Nurses_Relations> Patients_Nurses_Relations { get; set; }
+        public virtual DbSet<PatientSearchColumns> PatientSearchColumns { get; set; }
+        public virtual DbSet<PatientsNotes> PatientsNotes { get; set; }
+        public virtual DbSet<PatientsVisitNotes> PatientsVisitNotes { get; set; }
+        public virtual DbSet<Pays> Pays { get; set; }
+        public virtual DbSet<Regions> Regions { get; set; }
         public virtual DbSet<Roles> Roles { get; set; }
         public virtual DbSet<sécurité_ssn> sécurité_ssn { get; set; }
+        public virtual DbSet<SecuritySsn> SecuritySsn { get; set; }
+        public virtual DbSet<Specialities> Specialities { get; set; }
         public virtual DbSet<sysdiagrams> sysdiagrams { get; set; }
         public virtual DbSet<SystemAccessLogs> SystemAccessLogs { get; set; }
         public virtual DbSet<SystemConfigs> SystemConfigs { get; set; }
+        public virtual DbSet<Titles> Titles { get; set; }
         public virtual DbSet<Users> Users { get; set; }
         public virtual DbSet<UserStatuses> UserStatuses { get; set; }
+        public virtual DbSet<view_gen_ssn> view_gen_ssn { get; set; }
+        public virtual DbSet<Villes> Villes { get; set; }
+        public virtual DbSet<vw_available_ssns> vw_available_ssns { get; set; }
+        public virtual DbSet<Sub_Specialties> Sub_Specialties { get; set; }
+        public virtual DbSet<UserPdfSplitPaths> UserPdfSplitPaths { get; set; }
     
         public virtual int sp_alterdiagram(string diagramname, Nullable<int> owner_id, Nullable<int> version, byte[] definition)
         {
@@ -138,6 +159,41 @@ namespace HCP.Fr.DS
         public virtual int sp_upgraddiagrams()
         {
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("sp_upgraddiagrams");
+        }
+    
+        public virtual ObjectResult<string> proc_available_ssns()
+        {
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<string>("proc_available_ssns");
+        }
+    
+        public virtual int procPatientSeach2(string term, string valeur)
+        {
+            var termParameter = term != null ?
+                new ObjectParameter("term", term) :
+                new ObjectParameter("term", typeof(string));
+    
+            var valeurParameter = valeur != null ?
+                new ObjectParameter("valeur", valeur) :
+                new ObjectParameter("valeur", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("procPatientSeach2", termParameter, valeurParameter);
+        }
+    
+        public virtual int proc_add_SubSpeciality(string spécialité, string sous_Spécialité, string description)
+        {
+            var spécialitéParameter = spécialité != null ?
+                new ObjectParameter("Spécialité", spécialité) :
+                new ObjectParameter("Spécialité", typeof(string));
+    
+            var sous_SpécialitéParameter = sous_Spécialité != null ?
+                new ObjectParameter("Sous_Spécialité", sous_Spécialité) :
+                new ObjectParameter("Sous_Spécialité", typeof(string));
+    
+            var descriptionParameter = description != null ?
+                new ObjectParameter("Description", description) :
+                new ObjectParameter("Description", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("proc_add_SubSpeciality", spécialitéParameter, sous_SpécialitéParameter, descriptionParameter);
         }
     }
 }

@@ -39,3 +39,58 @@ public frAdminManageUsers(string email)
             var data = e.Row;
 
         }
+--------------best fit EditLookUp-------------
+ private void BestFitLookupEdit(LookUpEdit lookupctrl)
+        {
+            lookupctrl.Properties.BestFit();
+            int width = 0;
+            foreach (LookUpColumnInfo column in lookupctrl.Properties.Columns)
+                width += column.Width;
+            lookupctrl.Properties.PopupWidth = width + 4;
+        }
+
+----------------hide column after loading data-----
+
+gridView1.Columns["Id"].Visible = false;
+
+--------------grid cell color------------
+void gridView1_RowCellStyle(object sender, RowCellStyleEventArgs e)  {
+            GridView currentView = sender as GridView;
+            if (e.Column.FieldName == "Customer")   {
+                bool value = Convert.ToBoolean(currentView.GetRowCellValue(e.RowHandle, "Flag_Customer"));
+                if (value)
+                    e.Appearance.BackColor = Color.Red;
+            }
+            if (e.Column.FieldName == "Vendor")   {
+                bool value = Convert.ToBoolean(currentView.GetRowCellValue(e.RowHandle, "Flat_Vendor"));
+                if (value)
+                    e.Appearance.BackColor = Color.Red;
+            }
+        }
+------------grid double click-----------------------
+private void gridView1_DoubleClick(object sender, EventArgs e)
+        {
+
+            GridView view = (GridView)sender;
+            Point pt = view.GridControl.PointToClient(MousePosition);
+            GridHitInfo info = view.CalcHitInfo(pt);
+            if ((info.InRow || info.InRowCell) &  info.Column != null)
+	        {
+                var grid = sender as GridView;
+                Object cellValue = view.GetRowCellValue(info.RowHandle, info.Column);
+                //MessageBox.Show(string.Format("Made a doubleclick at rowhandle: {0}, columnhandle: {1}, value: {2}.",
+                //    info.RowHandle, info.Column.ColumnHandle, cellValue));
+                    dynamic selected_row = grid.GetRow(info.RowHandle);
+                   if (selected_row != null)
+                   {
+                        new fruEditPatient(selected_row.Id, "test@test.com").ShowDialog();
+                    }
+            }
+        }
+
+        --------------set text value LookupEdit(combo)-------------
+         drpgenres.Properties.NullText=patient.genre;
+
+         --------------enable paging-------------
+
+         gridcontrol1 -> EmbeddedNavigator
